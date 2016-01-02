@@ -1,0 +1,494 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		E0E390471C3857620000CDFA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0E390461C3857620000CDFA /* AppDelegate.swift */; };
+		E0E390491C3857620000CDFA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E0E390481C3857620000CDFA /* Assets.xcassets */; };
+		E0E3904C1C3857620000CDFA /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = E0E3904A1C3857620000CDFA /* MainMenu.xib */; };
+		E0E390571C3857620000CDFA /* Weather_Pollution_BarTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0E390561C3857620000CDFA /* Weather_Pollution_BarTests.swift */; };
+		E0E390621C3857620000CDFA /* Weather_Pollution_BarUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0E390611C3857620000CDFA /* Weather_Pollution_BarUITests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		E0E390531C3857620000CDFA /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = E0E3903B1C3857620000CDFA /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = E0E390421C3857620000CDFA;
+			remoteInfo = "Weather Pollution Bar";
+		};
+		E0E3905E1C3857620000CDFA /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = E0E3903B1C3857620000CDFA /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = E0E390421C3857620000CDFA;
+			remoteInfo = "Weather Pollution Bar";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		E0E390431C3857620000CDFA /* Weather Pollution Bar.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Weather Pollution Bar.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		E0E390461C3857620000CDFA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		E0E390481C3857620000CDFA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		E0E3904B1C3857620000CDFA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/MainMenu.xib; sourceTree = "<group>"; };
+		E0E3904D1C3857620000CDFA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E0E390521C3857620000CDFA /* Weather Pollution BarTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Weather Pollution BarTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		E0E390561C3857620000CDFA /* Weather_Pollution_BarTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Weather_Pollution_BarTests.swift; sourceTree = "<group>"; };
+		E0E390581C3857620000CDFA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E0E3905D1C3857620000CDFA /* Weather Pollution BarUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Weather Pollution BarUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		E0E390611C3857620000CDFA /* Weather_Pollution_BarUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Weather_Pollution_BarUITests.swift; sourceTree = "<group>"; };
+		E0E390631C3857620000CDFA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		E0E390401C3857620000CDFA /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E0E3904F1C3857620000CDFA /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E0E3905A1C3857620000CDFA /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		E0E3903A1C3857620000CDFA = {
+			isa = PBXGroup;
+			children = (
+				E0E390451C3857620000CDFA /* Weather Pollution Bar */,
+				E0E390551C3857620000CDFA /* Weather Pollution BarTests */,
+				E0E390601C3857620000CDFA /* Weather Pollution BarUITests */,
+				E0E390441C3857620000CDFA /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		E0E390441C3857620000CDFA /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				E0E390431C3857620000CDFA /* Weather Pollution Bar.app */,
+				E0E390521C3857620000CDFA /* Weather Pollution BarTests.xctest */,
+				E0E3905D1C3857620000CDFA /* Weather Pollution BarUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		E0E390451C3857620000CDFA /* Weather Pollution Bar */ = {
+			isa = PBXGroup;
+			children = (
+				E0E390461C3857620000CDFA /* AppDelegate.swift */,
+				E0E390481C3857620000CDFA /* Assets.xcassets */,
+				E0E3904A1C3857620000CDFA /* MainMenu.xib */,
+				E0E3904D1C3857620000CDFA /* Info.plist */,
+			);
+			path = "Weather Pollution Bar";
+			sourceTree = "<group>";
+		};
+		E0E390551C3857620000CDFA /* Weather Pollution BarTests */ = {
+			isa = PBXGroup;
+			children = (
+				E0E390561C3857620000CDFA /* Weather_Pollution_BarTests.swift */,
+				E0E390581C3857620000CDFA /* Info.plist */,
+			);
+			path = "Weather Pollution BarTests";
+			sourceTree = "<group>";
+		};
+		E0E390601C3857620000CDFA /* Weather Pollution BarUITests */ = {
+			isa = PBXGroup;
+			children = (
+				E0E390611C3857620000CDFA /* Weather_Pollution_BarUITests.swift */,
+				E0E390631C3857620000CDFA /* Info.plist */,
+			);
+			path = "Weather Pollution BarUITests";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		E0E390421C3857620000CDFA /* Weather Pollution Bar */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E0E390661C3857620000CDFA /* Build configuration list for PBXNativeTarget "Weather Pollution Bar" */;
+			buildPhases = (
+				E0E3903F1C3857620000CDFA /* Sources */,
+				E0E390401C3857620000CDFA /* Frameworks */,
+				E0E390411C3857620000CDFA /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Weather Pollution Bar";
+			productName = "Weather Pollution Bar";
+			productReference = E0E390431C3857620000CDFA /* Weather Pollution Bar.app */;
+			productType = "com.apple.product-type.application";
+		};
+		E0E390511C3857620000CDFA /* Weather Pollution BarTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E0E390691C3857620000CDFA /* Build configuration list for PBXNativeTarget "Weather Pollution BarTests" */;
+			buildPhases = (
+				E0E3904E1C3857620000CDFA /* Sources */,
+				E0E3904F1C3857620000CDFA /* Frameworks */,
+				E0E390501C3857620000CDFA /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				E0E390541C3857620000CDFA /* PBXTargetDependency */,
+			);
+			name = "Weather Pollution BarTests";
+			productName = "Weather Pollution BarTests";
+			productReference = E0E390521C3857620000CDFA /* Weather Pollution BarTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		E0E3905C1C3857620000CDFA /* Weather Pollution BarUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E0E3906C1C3857620000CDFA /* Build configuration list for PBXNativeTarget "Weather Pollution BarUITests" */;
+			buildPhases = (
+				E0E390591C3857620000CDFA /* Sources */,
+				E0E3905A1C3857620000CDFA /* Frameworks */,
+				E0E3905B1C3857620000CDFA /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				E0E3905F1C3857620000CDFA /* PBXTargetDependency */,
+			);
+			name = "Weather Pollution BarUITests";
+			productName = "Weather Pollution BarUITests";
+			productReference = E0E3905D1C3857620000CDFA /* Weather Pollution BarUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		E0E3903B1C3857620000CDFA /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0720;
+				LastUpgradeCheck = 0720;
+				ORGANIZATIONNAME = "Madhur Ahuja";
+				TargetAttributes = {
+					E0E390421C3857620000CDFA = {
+						CreatedOnToolsVersion = 7.2;
+					};
+					E0E390511C3857620000CDFA = {
+						CreatedOnToolsVersion = 7.2;
+						TestTargetID = E0E390421C3857620000CDFA;
+					};
+					E0E3905C1C3857620000CDFA = {
+						CreatedOnToolsVersion = 7.2;
+						TestTargetID = E0E390421C3857620000CDFA;
+					};
+				};
+			};
+			buildConfigurationList = E0E3903E1C3857620000CDFA /* Build configuration list for PBXProject "Weather Pollution Bar" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = E0E3903A1C3857620000CDFA;
+			productRefGroup = E0E390441C3857620000CDFA /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				E0E390421C3857620000CDFA /* Weather Pollution Bar */,
+				E0E390511C3857620000CDFA /* Weather Pollution BarTests */,
+				E0E3905C1C3857620000CDFA /* Weather Pollution BarUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		E0E390411C3857620000CDFA /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E0E390491C3857620000CDFA /* Assets.xcassets in Resources */,
+				E0E3904C1C3857620000CDFA /* MainMenu.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E0E390501C3857620000CDFA /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E0E3905B1C3857620000CDFA /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		E0E3903F1C3857620000CDFA /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E0E390471C3857620000CDFA /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E0E3904E1C3857620000CDFA /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E0E390571C3857620000CDFA /* Weather_Pollution_BarTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E0E390591C3857620000CDFA /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E0E390621C3857620000CDFA /* Weather_Pollution_BarUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		E0E390541C3857620000CDFA /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = E0E390421C3857620000CDFA /* Weather Pollution Bar */;
+			targetProxy = E0E390531C3857620000CDFA /* PBXContainerItemProxy */;
+		};
+		E0E3905F1C3857620000CDFA /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = E0E390421C3857620000CDFA /* Weather Pollution Bar */;
+			targetProxy = E0E3905E1C3857620000CDFA /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		E0E3904A1C3857620000CDFA /* MainMenu.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				E0E3904B1C3857620000CDFA /* Base */,
+			);
+			name = MainMenu.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		E0E390641C3857620000CDFA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		E0E390651C3857620000CDFA /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		E0E390671C3857620000CDFA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = "Weather Pollution Bar/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "in.co.madhur.Weather-Pollution-Bar";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		E0E390681C3857620000CDFA /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = "Weather Pollution Bar/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "in.co.madhur.Weather-Pollution-Bar";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		E0E3906A1C3857620000CDFA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = "Weather Pollution BarTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "in.co.madhur.Weather-Pollution-BarTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Weather Pollution Bar.app/Contents/MacOS/Weather Pollution Bar";
+			};
+			name = Debug;
+		};
+		E0E3906B1C3857620000CDFA /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = "Weather Pollution BarTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "in.co.madhur.Weather-Pollution-BarTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Weather Pollution Bar.app/Contents/MacOS/Weather Pollution Bar";
+			};
+			name = Release;
+		};
+		E0E3906D1C3857620000CDFA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = "Weather Pollution BarUITests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "in.co.madhur.Weather-Pollution-BarUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = "Weather Pollution Bar";
+				USES_XCTRUNNER = YES;
+			};
+			name = Debug;
+		};
+		E0E3906E1C3857620000CDFA /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = "Weather Pollution BarUITests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "in.co.madhur.Weather-Pollution-BarUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = "Weather Pollution Bar";
+				USES_XCTRUNNER = YES;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		E0E3903E1C3857620000CDFA /* Build configuration list for PBXProject "Weather Pollution Bar" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E0E390641C3857620000CDFA /* Debug */,
+				E0E390651C3857620000CDFA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		E0E390661C3857620000CDFA /* Build configuration list for PBXNativeTarget "Weather Pollution Bar" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E0E390671C3857620000CDFA /* Debug */,
+				E0E390681C3857620000CDFA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		E0E390691C3857620000CDFA /* Build configuration list for PBXNativeTarget "Weather Pollution BarTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E0E3906A1C3857620000CDFA /* Debug */,
+				E0E3906B1C3857620000CDFA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		E0E3906C1C3857620000CDFA /* Build configuration list for PBXNativeTarget "Weather Pollution BarUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E0E3906D1C3857620000CDFA /* Debug */,
+				E0E3906E1C3857620000CDFA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = E0E3903B1C3857620000CDFA /* Project object */;
+}
