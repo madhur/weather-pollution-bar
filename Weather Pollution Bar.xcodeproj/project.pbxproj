@@ -12,6 +12,12 @@
 		E0E3904C1C3857620000CDFA /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = E0E3904A1C3857620000CDFA /* MainMenu.xib */; };
 		E0E390571C3857620000CDFA /* Weather_Pollution_BarTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0E390561C3857620000CDFA /* Weather_Pollution_BarTests.swift */; };
 		E0E390621C3857620000CDFA /* Weather_Pollution_BarUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0E390611C3857620000CDFA /* Weather_Pollution_BarUITests.swift */; };
+		E0E390701C38C61B0000CDFA /* StatusMenuController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0E3906F1C38C61B0000CDFA /* StatusMenuController.swift */; };
+		E0E390731C38CE180000CDFA /* SettingsWindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0E390711C38CE180000CDFA /* SettingsWindowController.swift */; };
+		E0E390741C38CE180000CDFA /* SettingsWindowController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E0E390721C38CE180000CDFA /* SettingsWindowController.xib */; };
+		E0E390771C38CE2B0000CDFA /* AboutWindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0E390751C38CE2B0000CDFA /* AboutWindowController.swift */; };
+		E0E390781C38CE2B0000CDFA /* AboutWindowController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E0E390761C38CE2B0000CDFA /* AboutWindowController.xib */; };
+		E0E3907A1C38E6660000CDFA /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0E390791C38E6660000CDFA /* Constants.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -43,6 +49,12 @@
 		E0E3905D1C3857620000CDFA /* Weather Pollution BarUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Weather Pollution BarUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E0E390611C3857620000CDFA /* Weather_Pollution_BarUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Weather_Pollution_BarUITests.swift; sourceTree = "<group>"; };
 		E0E390631C3857620000CDFA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E0E3906F1C38C61B0000CDFA /* StatusMenuController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StatusMenuController.swift; sourceTree = "<group>"; };
+		E0E390711C38CE180000CDFA /* SettingsWindowController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsWindowController.swift; sourceTree = "<group>"; };
+		E0E390721C38CE180000CDFA /* SettingsWindowController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SettingsWindowController.xib; sourceTree = "<group>"; };
+		E0E390751C38CE2B0000CDFA /* AboutWindowController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AboutWindowController.swift; sourceTree = "<group>"; };
+		E0E390761C38CE2B0000CDFA /* AboutWindowController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AboutWindowController.xib; sourceTree = "<group>"; };
+		E0E390791C38E6660000CDFA /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,6 +109,12 @@
 				E0E390481C3857620000CDFA /* Assets.xcassets */,
 				E0E3904A1C3857620000CDFA /* MainMenu.xib */,
 				E0E3904D1C3857620000CDFA /* Info.plist */,
+				E0E3906F1C38C61B0000CDFA /* StatusMenuController.swift */,
+				E0E390711C38CE180000CDFA /* SettingsWindowController.swift */,
+				E0E390721C38CE180000CDFA /* SettingsWindowController.xib */,
+				E0E390751C38CE2B0000CDFA /* AboutWindowController.swift */,
+				E0E390761C38CE2B0000CDFA /* AboutWindowController.xib */,
+				E0E390791C38E6660000CDFA /* Constants.swift */,
 			);
 			path = "Weather Pollution Bar";
 			sourceTree = "<group>";
@@ -224,6 +242,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				E0E390491C3857620000CDFA /* Assets.xcassets in Resources */,
+				E0E390781C38CE2B0000CDFA /* AboutWindowController.xib in Resources */,
+				E0E390741C38CE180000CDFA /* SettingsWindowController.xib in Resources */,
 				E0E3904C1C3857620000CDFA /* MainMenu.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -249,6 +269,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E0E3907A1C38E6660000CDFA /* Constants.swift in Sources */,
+				E0E390701C38C61B0000CDFA /* StatusMenuController.swift in Sources */,
+				E0E390771C38CE2B0000CDFA /* AboutWindowController.swift in Sources */,
+				E0E390731C38CE180000CDFA /* SettingsWindowController.swift in Sources */,
 				E0E390471C3857620000CDFA /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
