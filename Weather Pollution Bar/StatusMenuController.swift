@@ -26,7 +26,7 @@ class StatusMenuController: NSObject
         
     }
     
-    @IBAction func quickClicked(sender: NSMenuItem)
+    @IBAction func quitClicked(sender: NSMenuItem)
     {
         NSApplication.sharedApplication().terminate(self)
     }

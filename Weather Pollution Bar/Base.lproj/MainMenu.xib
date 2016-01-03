@@ -40,7 +40,7 @@
                 <menuItem title="Quit" id="LHI-Pc-PvG">
                     <modifierMask key="keyEquivalentModifierMask"/>
                     <connections>
-                        <action selector="quickClicked:" target="6u1-zs-h70" id="CAL-1e-0ya"/>
+                        <action selector="quitClicked:" target="6u1-zs-h70" id="beY-tY-g58"/>
                     </connections>
                 </menuItem>
             </items>
