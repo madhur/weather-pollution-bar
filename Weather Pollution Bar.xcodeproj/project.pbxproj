@@ -7,9 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E0AB53411C3D5B1800E761F7 /* WeatherView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0AB533F1C3D5B1800E761F7 /* WeatherView.swift */; };
+		E0AB53421C3D5B1800E761F7 /* WeatherView.xib in Resources */ = {isa = PBXBuildFile; fileRef = E0AB53401C3D5B1800E761F7 /* WeatherView.xib */; };
+		E0AB53451C3D5B2B00E761F7 /* PollutionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0AB53431C3D5B2B00E761F7 /* PollutionView.swift */; };
+		E0AB53461C3D5B2B00E761F7 /* PollutionView.xib in Resources */ = {isa = PBXBuildFile; fileRef = E0AB53441C3D5B2B00E761F7 /* PollutionView.xib */; };
 		E0CE54A41C39A35600EA0050 /* WeatherFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0CE54A31C39A35600EA0050 /* WeatherFetcher.swift */; };
 		E0CE54A61C39A35F00EA0050 /* PollutionFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0CE54A51C39A35F00EA0050 /* PollutionFetcher.swift */; };
-		E0CE54A81C39AE0400EA0050 /* WeatherCity.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0CE54A71C39AE0400EA0050 /* WeatherCity.swift */; };
+		E0CE54AA1C3A3A5700EA0050 /* WeatherCity.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0CE54A91C3A3A5700EA0050 /* WeatherCity.swift */; };
 		E0E390471C3857620000CDFA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0E390461C3857620000CDFA /* AppDelegate.swift */; };
 		E0E390491C3857620000CDFA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E0E390481C3857620000CDFA /* Assets.xcassets */; };
 		E0E3904C1C3857620000CDFA /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = E0E3904A1C3857620000CDFA /* MainMenu.xib */; };
@@ -42,9 +46,13 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		E0AB533F1C3D5B1800E761F7 /* WeatherView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeatherView.swift; sourceTree = "<group>"; };
+		E0AB53401C3D5B1800E761F7 /* WeatherView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WeatherView.xib; sourceTree = "<group>"; };
+		E0AB53431C3D5B2B00E761F7 /* PollutionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PollutionView.swift; sourceTree = "<group>"; };
+		E0AB53441C3D5B2B00E761F7 /* PollutionView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PollutionView.xib; sourceTree = "<group>"; };
 		E0CE54A31C39A35600EA0050 /* WeatherFetcher.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeatherFetcher.swift; sourceTree = "<group>"; };
 		E0CE54A51C39A35F00EA0050 /* PollutionFetcher.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PollutionFetcher.swift; sourceTree = "<group>"; };
-		E0CE54A71C39AE0400EA0050 /* WeatherCity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeatherCity.swift; sourceTree = "<group>"; };
+		E0CE54A91C3A3A5700EA0050 /* WeatherCity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeatherCity.swift; sourceTree = "<group>"; };
 		E0E390431C3857620000CDFA /* Weather Pollution Bar.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Weather Pollution Bar.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E0E390461C3857620000CDFA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E0E390481C3857620000CDFA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -126,7 +134,11 @@
 				E0E3907B1C38F74E0000CDFA /* AppPreferences.swift */,
 				E0CE54A31C39A35600EA0050 /* WeatherFetcher.swift */,
 				E0CE54A51C39A35F00EA0050 /* PollutionFetcher.swift */,
-				E0CE54A71C39AE0400EA0050 /* WeatherCity.swift */,
+				E0CE54A91C3A3A5700EA0050 /* WeatherCity.swift */,
+				E0AB533F1C3D5B1800E761F7 /* WeatherView.swift */,
+				E0AB53401C3D5B1800E761F7 /* WeatherView.xib */,
+				E0AB53431C3D5B2B00E761F7 /* PollutionView.swift */,
+				E0AB53441C3D5B2B00E761F7 /* PollutionView.xib */,
 			);
 			path = "Weather Pollution Bar";
 			sourceTree = "<group>";
@@ -253,6 +265,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E0AB53421C3D5B1800E761F7 /* WeatherView.xib in Resources */,
+				E0AB53461C3D5B2B00E761F7 /* PollutionView.xib in Resources */,
 				E0E390491C3857620000CDFA /* Assets.xcassets in Resources */,
 				E0E390781C38CE2B0000CDFA /* AboutWindowController.xib in Resources */,
 				E0E390741C38CE180000CDFA /* SettingsWindowController.xib in Resources */,
@@ -286,9 +300,11 @@
 				E0E3907C1C38F74E0000CDFA /* AppPreferences.swift in Sources */,
 				E0E3907A1C38E6660000CDFA /* Constants.swift in Sources */,
 				E0E390701C38C61B0000CDFA /* StatusMenuController.swift in Sources */,
+				E0AB53411C3D5B1800E761F7 /* WeatherView.swift in Sources */,
 				E0E390771C38CE2B0000CDFA /* AboutWindowController.swift in Sources */,
-				E0CE54A81C39AE0400EA0050 /* WeatherCity.swift in Sources */,
+				E0CE54AA1C3A3A5700EA0050 /* WeatherCity.swift in Sources */,
 				E0E390731C38CE180000CDFA /* SettingsWindowController.swift in Sources */,
+				E0AB53451C3D5B2B00E761F7 /* PollutionView.swift in Sources */,
 				E0E390471C3857620000CDFA /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

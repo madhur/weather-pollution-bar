@@ -14,6 +14,7 @@ class AppPreferences
     
     static var CityId:Int {
         get{
+        
             return NSUserDefaults.standardUserDefaults().integerForKey(Defaults.CITY_ID)
         }
         set(value) {
@@ -22,13 +23,13 @@ class AppPreferences
         
     }
     
-    static var Units: Int{
+    static var Units: String{
         get {
-            return NSUserDefaults.standardUserDefaults().integerForKey(Defaults.UNITS)
+            return NSUserDefaults.standardUserDefaults().stringForKey(Defaults.UNITS)!
         }
         set(value)
         {
-            NSUserDefaults.standardUserDefaults().setInteger(value, forKey: Defaults.UNITS)
+            NSUserDefaults.standardUserDefaults().setValue(value, forKeyPath: Defaults.UNITS)
         }
     }
     
