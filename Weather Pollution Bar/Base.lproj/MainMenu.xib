@@ -18,9 +18,11 @@
                 <menuItem title="Update" id="vBh-XH-AH4">
                     <modifierMask key="keyEquivalentModifierMask"/>
                 </menuItem>
+                <menuItem isSeparatorItem="YES" id="52Q-v2-LGB"/>
                 <menuItem title="Weather" id="PrH-So-j1a">
                     <modifierMask key="keyEquivalentModifierMask"/>
                 </menuItem>
+                <menuItem isSeparatorItem="YES" id="qqM-0B-uro"/>
                 <menuItem title="Pollution" id="f5m-sK-aaC">
                     <modifierMask key="keyEquivalentModifierMask"/>
                 </menuItem>
@@ -48,7 +50,9 @@
         </menu>
         <customObject id="6u1-zs-h70" customClass="StatusMenuController" customModule="Weather_Pollution_Bar" customModuleProvider="target">
             <connections>
+                <outlet property="pollutionMenuItem" destination="f5m-sK-aaC" id="7HO-zn-Xff"/>
                 <outlet property="statusMenu" destination="qT2-A8-Nvy" id="PGZ-8i-Yrc"/>
+                <outlet property="weatherMenuItem" destination="PrH-So-j1a" id="gAc-4f-888"/>
             </connections>
         </customObject>
     </objects>

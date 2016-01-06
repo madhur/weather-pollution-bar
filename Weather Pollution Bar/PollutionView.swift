@@ -15,4 +15,8 @@ class PollutionView: NSViewController {
         // Do view setup here.
     }
     
+    override var nibName : String{
+        return "PollutionView"
+    }
+    
 }

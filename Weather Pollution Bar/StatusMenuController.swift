@@ -12,6 +12,12 @@ class StatusMenuController: NSObject
 {
     @IBOutlet weak var statusMenu: NSMenu!
     
+    @IBOutlet weak var weatherMenuItem: NSMenuItem!
+    @IBOutlet weak var pollutionMenuItem: NSMenuItem!
+    
+    var weatherView: WeatherView?
+    var pollutionView: PollutionView?
+    
     var settingsWindowController: SettingsWindowController?
     var aboutWindowController: AboutWindowController?
     
@@ -23,6 +29,13 @@ class StatusMenuController: NSObject
         icon?.template = true
         statusItem.image = icon
         statusItem.menu = statusMenu
+        
+        weatherView = WeatherView()
+        pollutionView = PollutionView()
+        
+        weatherMenuItem.view = weatherView?.view
+        pollutionMenuItem.view = pollutionView?.view
+        
         
     }
     
