@@ -11,16 +11,16 @@
 struct Constants
 {
     static let TWITTER_URL = "https://twitter.com/madhur25"
-    static let GIT_URL = "https://github.com/madhur"
+    static let GIT_URL = "https://github.com/madhur/weather-pollution-bar"
     static let HOME_URL = "http://madhur.co.in"
     static let VERSION = "Version: %@"
     
     static let UNITS = ["C", "F"]
     static let SYNC_INTERVAL = [5, 10, 30, 60]
     
-    static let FUTURE_WEATHER_URL="http://api.openweathermap.org/data/2.5/forecast/daily?id={0}&mode=json&appid={1}&cnt=4&units=metric"
+    static let FUTURE_WEATHER_URL="http://api.openweathermap.org/data/2.5/forecast/daily?id=%d&mode=json&appid=%@&cnt=4&units=metric"
     
-    static let CURRENT_WEATHER_URL="http://api.openweathermap.org/data/2.5/weather?id={0}&mode=json&appid={1}&units=metric"
+    static let CURRENT_WEATHER_URL="http://api.openweathermap.org/data/2.5/weather?id=%d&mode=json&appid=%@&units=metric"
     
     static let POLLUTION_URL="http://164.100.160.234:9000/metrics/station/{}?d={}&h={}"
     

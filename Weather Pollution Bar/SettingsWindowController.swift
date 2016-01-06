@@ -99,20 +99,20 @@ class SettingsWindowController: NSWindowController {
     }
     
     @IBAction func selectCity(sender: AnyObject) {
-        print((cityCombo.objectValueOfSelectedItem))
-        print(cityCombo.objectValue)
-        print(weatherCityArrayController.selectionIndex)
+        //print((cityCombo.objectValueOfSelectedItem))
+        //print(cityCombo.objectValue)
+        //print(weatherCityArrayController.selectionIndex)
     }
     
     @IBAction func selectUnit(sender: AnyObject) {
-        print(unitCombo.objectValueOfSelectedItem)
-        print(unitCombo.objectValue)
+        //print(unitCombo.objectValueOfSelectedItem)
+        //print(unitCombo.objectValue)
         
         AppPreferences.Units = unitCombo.objectValueOfSelectedItem as! String
     }
     
     @IBAction func selectSyncInterval(sender: AnyObject) {
-        print(syncCombo.objectValueOfSelectedItem)
+        //print(syncCombo.objectValueOfSelectedItem)
         //AppPreferences.SyncInterval = Constants.syncIntervalDict[syncCombo.objectValueOfSelectedItem! as! String]!
         
         AppPreferences.SyncInterval = syncCombo.objectValueOfSelectedItem as! Int
@@ -120,7 +120,7 @@ class SettingsWindowController: NSWindowController {
    
     
     @IBAction func selectShowFutureWeather(sender: AnyObject) {
-        print(showFutureWeatherCheck.objectValue)
+        //print(showFutureWeatherCheck.objectValue)
         AppPreferences.ShowFutureWeather = showFutureWeatherCheck.objectValue! as! Int
     }
     

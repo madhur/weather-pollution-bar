@@ -11,6 +11,8 @@
 		E0AB53421C3D5B1800E761F7 /* WeatherView.xib in Resources */ = {isa = PBXBuildFile; fileRef = E0AB53401C3D5B1800E761F7 /* WeatherView.xib */; };
 		E0AB53451C3D5B2B00E761F7 /* PollutionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0AB53431C3D5B2B00E761F7 /* PollutionView.swift */; };
 		E0AB53461C3D5B2B00E761F7 /* PollutionView.xib in Resources */ = {isa = PBXBuildFile; fileRef = E0AB53441C3D5B2B00E761F7 /* PollutionView.xib */; };
+		E0AB53481C3D816600E761F7 /* Weather.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0AB53471C3D816600E761F7 /* Weather.swift */; };
+		E0AB534A1C3D818900E761F7 /* Pollution.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0AB53491C3D818900E761F7 /* Pollution.swift */; };
 		E0CE54A41C39A35600EA0050 /* WeatherFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0CE54A31C39A35600EA0050 /* WeatherFetcher.swift */; };
 		E0CE54A61C39A35F00EA0050 /* PollutionFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0CE54A51C39A35F00EA0050 /* PollutionFetcher.swift */; };
 		E0CE54AA1C3A3A5700EA0050 /* WeatherCity.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0CE54A91C3A3A5700EA0050 /* WeatherCity.swift */; };
@@ -50,6 +52,8 @@
 		E0AB53401C3D5B1800E761F7 /* WeatherView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WeatherView.xib; sourceTree = "<group>"; };
 		E0AB53431C3D5B2B00E761F7 /* PollutionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PollutionView.swift; sourceTree = "<group>"; };
 		E0AB53441C3D5B2B00E761F7 /* PollutionView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PollutionView.xib; sourceTree = "<group>"; };
+		E0AB53471C3D816600E761F7 /* Weather.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Weather.swift; sourceTree = "<group>"; };
+		E0AB53491C3D818900E761F7 /* Pollution.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Pollution.swift; sourceTree = "<group>"; };
 		E0CE54A31C39A35600EA0050 /* WeatherFetcher.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeatherFetcher.swift; sourceTree = "<group>"; };
 		E0CE54A51C39A35F00EA0050 /* PollutionFetcher.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PollutionFetcher.swift; sourceTree = "<group>"; };
 		E0CE54A91C3A3A5700EA0050 /* WeatherCity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeatherCity.swift; sourceTree = "<group>"; };
@@ -139,6 +143,8 @@
 				E0AB53401C3D5B1800E761F7 /* WeatherView.xib */,
 				E0AB53431C3D5B2B00E761F7 /* PollutionView.swift */,
 				E0AB53441C3D5B2B00E761F7 /* PollutionView.xib */,
+				E0AB53471C3D816600E761F7 /* Weather.swift */,
+				E0AB53491C3D818900E761F7 /* Pollution.swift */,
 			);
 			path = "Weather Pollution Bar";
 			sourceTree = "<group>";
@@ -299,8 +305,10 @@
 				E0CE54A41C39A35600EA0050 /* WeatherFetcher.swift in Sources */,
 				E0E3907C1C38F74E0000CDFA /* AppPreferences.swift in Sources */,
 				E0E3907A1C38E6660000CDFA /* Constants.swift in Sources */,
+				E0AB53481C3D816600E761F7 /* Weather.swift in Sources */,
 				E0E390701C38C61B0000CDFA /* StatusMenuController.swift in Sources */,
 				E0AB53411C3D5B1800E761F7 /* WeatherView.swift in Sources */,
+				E0AB534A1C3D818900E761F7 /* Pollution.swift in Sources */,
 				E0E390771C38CE2B0000CDFA /* AboutWindowController.swift in Sources */,
 				E0CE54AA1C3A3A5700EA0050 /* WeatherCity.swift in Sources */,
 				E0E390731C38CE180000CDFA /* SettingsWindowController.swift in Sources */,
