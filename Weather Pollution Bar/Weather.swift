@@ -13,8 +13,10 @@ struct Weather
     var updatedTime: String
     var updatedLong: Int
     var todayWeather: TodayWeather
-    var futureWeatherList: [FutureWeather]
+    var futureWeatherList: [FutureWeather]?
     var location: String
+    
+    
 }
 
 struct FutureWeather
@@ -23,7 +25,6 @@ struct FutureWeather
     var temperature: Temperature
     var description: String
     var temperatureIcon: String
-    
 }
 
 struct TodayWeather
