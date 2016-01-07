@@ -22,7 +22,7 @@ struct Constants
     
     static let CURRENT_WEATHER_URL="http://api.openweathermap.org/data/2.5/weather?id=%d&mode=json&appid=%@&units=metric"
     
-    static let POLLUTION_URL="http://164.100.160.234:9000/metrics/station/{}?d={}&h={}"
+    static let POLLUTION_URL="http://164.100.160.234:9000/metrics/station/%d?d=%@"
     
     static let WEATHER_API_KEY="fd8e51a8a23d22e2f1fb6733ff473fcd"
     

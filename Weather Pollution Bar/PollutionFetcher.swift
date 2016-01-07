@@ -15,9 +15,13 @@ class PollutionFetcher
     
     static func fetch()
     {
-        let stationId = 798
+        let stationId = 808
+        let date = NSDate()
+        let dateFormatter = NSDateFormatter()
+        dateFormatter.dateFormat = "dd/MM/yyyy"
+        let dateStr = dateFormatter.stringFromDate(date)
         
-        let url = String(format: Constants.POLLUTION_URL, stationId)
+        let url = String(format: Constants.POLLUTION_URL, stationId, dateStr)
         let request = NSURL(string: url)
         let urlRequest = NSURLRequest(URL: request!)
         
@@ -32,7 +36,7 @@ class PollutionFetcher
                 {
                     let pollution = getPollutionFromJSON(data!)
                     self.pollution = pollution
-                    print(self.pollution)
+                    print(self.pollution!)
                 }
                 
         })

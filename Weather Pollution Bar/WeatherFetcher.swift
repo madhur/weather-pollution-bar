@@ -12,11 +12,12 @@ import Cocoa
 class WeatherFetcher
 {
     static var weather:Weather?
+    static var futureWeather: [FutureWeather]?
     
     static func fetchCurrent()
     {
         
-        let weatherUrlRequest = String(format: Constants.CURRENT_WEATHER_URL, 524901 , Constants.WEATHER_API_KEY)
+        let weatherUrlRequest = String(format: Constants.CURRENT_WEATHER_URL, 1277333 , Constants.WEATHER_API_KEY)
         let weatherUrl = NSURL(string: weatherUrlRequest)
         let request = NSURLRequest(URL: weatherUrl!)
         
@@ -32,8 +33,9 @@ class WeatherFetcher
                     }
                     else if data != nil
                     {
-                        let weather = currentWeatherFromJSON(data)
-                        WeatherFetcher.weather = weather
+                         let weather = currentWeatherFromJSON(data)
+                         WeatherFetcher.weather = weather
+                         print(WeatherFetcher.weather!)
                         
                     }
             
@@ -46,7 +48,7 @@ class WeatherFetcher
     static func fetchFuture()
     {
         
-        let weatherUrlRequest = String(format: Constants.FUTURE_WEATHER_URL, 524901 , Constants.WEATHER_API_KEY)
+        let weatherUrlRequest = String(format: Constants.FUTURE_WEATHER_URL, 1277333 , Constants.WEATHER_API_KEY)
         let weatherUrl = NSURL(string: weatherUrlRequest)
         let request = NSURLRequest(URL: weatherUrl!)
         
@@ -64,7 +66,8 @@ class WeatherFetcher
                 {
                     let futureWeatherList = futureWeatherFromJSON(data)
                    
-                    WeatherFetcher.weather?.futureWeatherList = futureWeatherList
+                    WeatherFetcher.futureWeather = futureWeatherList
+                    print(WeatherFetcher.futureWeather!)
                     
                 }
                 
@@ -94,13 +97,13 @@ class WeatherFetcher
         
         for futureDict in weatherList
         {
-            let mainDict = futureDict["main"] as! NSDictionary
+            let mainDict = futureDict["temp"] as! NSDictionary
             let weatherDict = futureDict["weather"] as! [NSDictionary]
             
             let temperature = Temperature(
-                min: mainDict["temp_min"] as! Double,
-                max: mainDict["temp_max"] as! Double,
-                current: mainDict["temp"] as! Double,
+                min: mainDict["min"] as! Double,
+                max: mainDict["max"] as! Double,
+                current: mainDict["day"] as! Double,
                 degree: "C"
             )
             
@@ -161,7 +164,7 @@ class WeatherFetcher
             updatedTime:"",
             updatedLong: dict!["dt"] as! Int,
             todayWeather: todayWeather,
-            futureWeatherList: nil,
+           // futureWeatherList: nil,
             location: dict!["name"] as! String
         )
         
