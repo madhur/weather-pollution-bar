@@ -11,10 +11,9 @@ import Cocoa
 
 class WeatherFetcher
 {
-    static var weather:Weather?
-    static var futureWeather: [FutureWeather]?
     
-    static func fetchCurrent()
+    
+    static func fetchCurrent(currentWeatherCallback : (Weather?)-> Void)
     {
         
         let weatherUrlRequest = String(format: Constants.CURRENT_WEATHER_URL, 1277333 , Constants.WEATHER_API_KEY)
@@ -33,9 +32,10 @@ class WeatherFetcher
                     }
                     else if data != nil
                     {
-                         let weather = currentWeatherFromJSON(data)
-                         WeatherFetcher.weather = weather
-                         print(WeatherFetcher.weather!)
+                         let weatherObj = currentWeatherFromJSON(data)
+                         //weather = weatherObj!
+                         //print(weather)
+                        currentWeatherCallback(weatherObj)
                         
                     }
             
@@ -45,7 +45,7 @@ class WeatherFetcher
         weatherTask.resume()
     }
     
-    static func fetchFuture()
+    static func fetchFuture(futureWeatherCallback: ([FutureWeather]?) -> Void)
     {
         
         let weatherUrlRequest = String(format: Constants.FUTURE_WEATHER_URL, 1277333 , Constants.WEATHER_API_KEY)
@@ -65,9 +65,9 @@ class WeatherFetcher
                 else if data != nil
                 {
                     let futureWeatherList = futureWeatherFromJSON(data)
-                   
-                    WeatherFetcher.futureWeather = futureWeatherList
-                    print(WeatherFetcher.futureWeather!)
+                    futureWeatherCallback(futureWeatherList)
+                    //futureWeather = futureWeatherList!
+                    //print(futureWeather)
                     
                 }
                 
@@ -161,12 +161,20 @@ class WeatherFetcher
         )
 
         let weather : Weather = Weather(
-            updatedTime:"",
+            updatedTime: "",
             updatedLong: dict!["dt"] as! Int,
-            todayWeather: todayWeather,
-           // futureWeatherList: nil,
+            todayWeather:todayWeather,
             location: dict!["name"] as! String
         )
+        
+//            weather.updatedTime = ""
+//            weather.updatedLong = dict!["dt"] as! Int
+//            weather.todayWeather = todayWeather
+//           // futureWeatherList: nil,
+//            weather.location = dict!["name"] as! String
+//        
+//        weather.willChangeValueForKey("location")
+//        weather.didChangeValueForKey("location")
         
         return weather
         

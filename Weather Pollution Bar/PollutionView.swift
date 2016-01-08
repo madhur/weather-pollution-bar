@@ -9,14 +9,27 @@
 import Cocoa
 
 class PollutionView: NSViewController {
+    
+    //static var pollution: Pollution?
+
 
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do view setup here.
+        
+        PollutionFetcher.fetch(pollutionCallback)
     }
     
     override var nibName : String{
         return "PollutionView"
+    }
+    
+    
+    var pollutionCallback =
+    {
+        (pollution: Pollution?) in
+        
+        print(pollution)
     }
     
 }

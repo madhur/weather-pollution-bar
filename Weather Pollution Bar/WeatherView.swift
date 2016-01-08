@@ -9,14 +9,38 @@
 import Cocoa
 
 class WeatherView: NSViewController {
+    
+    var weather:Weather?
+    let test:String? = "test77789"
+    var futureWeather: [FutureWeather]?
 
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do view setup here.
+        //self.willChangeValueForKey("weather")
+        WeatherFetcher.fetchCurrent(currentWeatherCallback)
+        WeatherFetcher.fetchFuture(futureWeatherCallback)
+        //self.didChangeValueForKey("weather")
     }
     
     override var nibName : String{
         return "WeatherView"
+    }
+    
+    var currentWeatherCallback =
+    {
+        (weather: Weather?) in
+        
+        print(weather)
+        
+    }
+    
+    var futureWeatherCallback =
+    {
+        (futureWeather: [FutureWeather]?) in
+        
+        print(futureWeather)
+        
     }
     
 }

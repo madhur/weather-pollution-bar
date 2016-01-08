@@ -11,9 +11,8 @@ import Cocoa
 
 class PollutionFetcher
 {
-    static var pollution: Pollution?
-    
-    static func fetch()
+       
+    static func fetch(pollutionCallback: (Pollution?) -> Void)
     {
         let stationId = 808
         let date = NSDate()
@@ -35,8 +34,9 @@ class PollutionFetcher
                 else if(data != nil)
                 {
                     let pollution = getPollutionFromJSON(data!)
-                    self.pollution = pollution
-                    print(self.pollution!)
+                    //PollutionView.pollution = pollution
+                    //print(PollutionView.pollution!)
+                    pollutionCallback(pollution)
                 }
                 
         })
