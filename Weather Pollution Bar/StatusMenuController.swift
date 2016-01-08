@@ -46,7 +46,8 @@ class StatusMenuController: NSObject
     
     @IBAction func update(sender: NSMenuItem)
     {
-        
+        weatherView?.updateWeather()
+        pollutionView?.updatePollution()
         
     }
     

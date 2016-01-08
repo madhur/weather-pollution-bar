@@ -17,11 +17,17 @@ class PollutionView: NSViewController {
         super.viewDidLoad()
         // Do view setup here.
         
-        PollutionFetcher.fetch(pollutionCallback)
+        updatePollution()
+        
     }
     
     override var nibName : String{
         return "PollutionView"
+    }
+    
+    func updatePollution()
+    {
+        PollutionFetcher.fetch(pollutionCallback)
     }
     
     

@@ -35,8 +35,10 @@ class WeatherFetcher
                          let weatherObj = currentWeatherFromJSON(data)
                          //weather = weatherObj!
                          //print(weather)
-                        currentWeatherCallback(weatherObj)
-                        
+                        NSOperationQueue.mainQueue().addOperationWithBlock({
+                            currentWeatherCallback(weatherObj)
+                        })
+                                                
                     }
             
             })
@@ -111,7 +113,8 @@ class WeatherFetcher
                 title: weatherDict[0]["main"] as! String,
                 temperature: temperature,
                 description: weatherDict[0]["description"] as! String,
-                temperatureIcon: weatherDict[0]["icon"] as! String
+                temperatureIcon: weatherDict[0]["icon"] as! String,
+                updatedLong: futureDict["dt"] as! Int
                 
             )
             

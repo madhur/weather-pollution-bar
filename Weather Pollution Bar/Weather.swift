@@ -29,6 +29,7 @@ struct FutureWeather
     var temperature: Temperature
     var description: String
     var temperatureIcon: String
+    var updatedLong: Int
 }
 
 struct TodayWeather

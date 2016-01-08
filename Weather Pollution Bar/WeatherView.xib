@@ -6,6 +6,22 @@
     <objects>
         <customObject id="-2" userLabel="File's Owner" customClass="WeatherView" customModule="Weather_Pollution_Bar" customModuleProvider="target">
             <connections>
+                <outlet property="currentDescription" destination="gSX-Td-hVW" id="Crj-st-zVR"/>
+                <outlet property="currentIcon" destination="Evp-1y-y89" id="x3z-1r-vi8"/>
+                <outlet property="currentTemp" destination="UB2-0O-1H4" id="eSm-6A-wm3"/>
+                <outlet property="currentUnit" destination="AhP-0O-UBP" id="EbN-Q8-pAX"/>
+                <outlet property="dayIcon1" destination="oWx-8l-LKs" id="mNC-h7-h6M"/>
+                <outlet property="dayIcon2" destination="12O-GW-hHa" id="ulM-qK-P88"/>
+                <outlet property="dayIcon3" destination="HN0-YV-W9P" id="b7y-V0-BuB"/>
+                <outlet property="dayLabel1" destination="ZZh-9v-a53" id="a4Q-dm-gHG"/>
+                <outlet property="dayLabel2" destination="hN0-Gb-9TJ" id="3yW-Uq-uLP"/>
+                <outlet property="dayLabel3" destination="IkH-iM-ylX" id="TrN-ye-ofJ"/>
+                <outlet property="dayMaxTemp1" destination="Wmm-xW-9bz" id="z7w-tc-vcq"/>
+                <outlet property="dayMaxTemp2" destination="TMu-K5-J8K" id="G4U-fQ-tMH"/>
+                <outlet property="dayMaxTemp3" destination="4a8-1h-lCB" id="SRO-WT-Zc0"/>
+                <outlet property="dayMinTemp1" destination="pmk-Uv-cV7" id="DLw-F5-dkU"/>
+                <outlet property="dayMinTemp2" destination="Bun-T5-xQ3" id="RGy-ZO-ddh"/>
+                <outlet property="dayMinTemp3" destination="CyP-ex-3Y6" id="YSQ-bj-c5N"/>
                 <outlet property="view" destination="Hz6-mo-xeY" id="0bl-1N-x8E"/>
             </connections>
         </customObject>
@@ -16,22 +32,18 @@
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
             <subviews>
                 <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="UB2-0O-1H4">
-                    <rect key="frame" x="11" y="86" width="129" height="32"/>
-                    <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="center" title="27 C" id="XWM-Q8-0Lv">
+                    <rect key="frame" x="11" y="86" width="57" height="32"/>
+                    <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="center" title="27" id="XWM-Q8-0Lv">
                         <font key="font" size="24" name=".HelveticaNeueDeskInterface-Regular"/>
                         <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                         <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                     </textFieldCell>
                 </textField>
-                <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Evp-1y-y89">
-                    <rect key="frame" x="0.0" y="30" width="48" height="48"/>
-                    <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" id="WmM-Ep-lfJ"/>
-                </imageView>
                 <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="gSX-Td-hVW">
                     <rect key="frame" x="56" y="50" width="75" height="17"/>
                     <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Sky is clear" id="OnK-Hp-ti1">
                         <font key="font" metaFont="system"/>
-                        <color key="textColor" name="selectedTextBackgroundColor" catalog="System" colorSpace="catalog"/>
+                        <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                         <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                     </textFieldCell>
                 </textField>
@@ -124,6 +136,18 @@
                 <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="12O-GW-hHa">
                     <rect key="frame" x="196" y="12" width="41" height="31"/>
                     <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" id="fdK-Jm-oud"/>
+                </imageView>
+                <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="AhP-0O-UBP">
+                    <rect key="frame" x="74" y="86" width="38" height="32"/>
+                    <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="C" id="QRl-TB-NGN">
+                        <font key="font" size="24" name=".HelveticaNeueDeskInterface-Regular"/>
+                        <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                        <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                    </textFieldCell>
+                </textField>
+                <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Evp-1y-y89">
+                    <rect key="frame" x="8" y="30" width="48" height="48"/>
+                    <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" id="WmM-Ep-lfJ"/>
                 </imageView>
             </subviews>
             <point key="canvasLocation" x="330" y="323"/>

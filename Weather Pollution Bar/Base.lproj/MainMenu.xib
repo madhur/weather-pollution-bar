@@ -17,6 +17,9 @@
             <items>
                 <menuItem title="Update" id="vBh-XH-AH4">
                     <modifierMask key="keyEquivalentModifierMask"/>
+                    <connections>
+                        <action selector="update:" target="6u1-zs-h70" id="FHS-ej-tVk"/>
+                    </connections>
                 </menuItem>
                 <menuItem isSeparatorItem="YES" id="52Q-v2-LGB"/>
                 <menuItem title="Weather" id="PrH-So-j1a">
