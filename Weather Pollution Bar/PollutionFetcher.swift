@@ -61,9 +61,15 @@ class PollutionFetcher
         
         let aqiDict = pollutionDict["aqi"] as! NSDictionary
         
+        let dateStr = pollutionDict["date"] as! String
+        let dateFormatter = NSDateFormatter()
+        dateFormatter.dateFormat = "EEEE, dd MMM yyyy hh:mm a"
+        
+        let pollutionDate = dateFormatter.dateFromString(dateStr)
+        
         let pollution: Pollution = Pollution(
             updatedTime: pollutionDict["date"] as! String,
-            updatedLong: Int(NSDate().timeIntervalSince1970),
+            updatedLong: Int((pollutionDate?.timeIntervalSince1970)!),
             qualityIndex:  aqiDict["value"] as! Double,
             suggestion: "",
             pollutionColor: NSColor.blackColor()

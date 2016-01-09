@@ -59,6 +59,7 @@ func getReadableTime(updatedTime: Int) -> String
     let updatedDate = NSDate(timeIntervalSince1970: NSTimeInterval(updatedTime))
     
     let components = NSCalendar.currentCalendar().components([.Day, .Hour, .Minute, .Second], fromDate: updatedDate, toDate: currentDate, options: [])
+    print(components)
     
     let strFormat = "Updated: %@"
     var strVal = ""

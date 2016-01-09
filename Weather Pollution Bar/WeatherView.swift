@@ -134,8 +134,6 @@ class WeatherView: NSViewController {
         let currentDay = NSCalendar.currentCalendar().components([.Day, .Month, .Year], fromDate: NSDate())
         let weatherday = NSCalendar.currentCalendar().components([.Day, .Month, .Year], fromDate: NSDate(timeIntervalSince1970: Double(dt)))
         
-        print(currentDay.day)
-        print(weatherday.day)
         if currentDay.day - weatherday.day == 0
         {
             
