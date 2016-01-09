@@ -14,7 +14,7 @@ class PollutionFetcher
        
     static func fetch(pollutionCallback: (Pollution?) -> Void)
     {
-        let stationId = 808
+        let stationId = 798
         let date = NSDate()
         let dateFormatter = NSDateFormatter()
         dateFormatter.dateFormat = "dd/MM/yyyy"

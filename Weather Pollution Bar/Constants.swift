@@ -32,6 +32,16 @@ struct Constants
     "10n": "rainy", "11d": "thunderstorm", "11n":"thunderstorm", "13d":"snow" ,"13n": "snow", "50d": "mist", "50n":"mist"
     ]
     
+    static let ADVISORY = [
+        "Minimal impact",
+        "Minor breathing discomfort to sensitive people",
+        "Breathing discomfort to the people with lungs, asthma and heart diseases",
+        "Breathing discomfort to most people on prolonged exposure",
+        "Respiratory illness on prolonged exposure",
+        "Affects healthy people and seriously impacts those with existing diseases"
+    ]
+    
+    
 }
 
 struct Defaults

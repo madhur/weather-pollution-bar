@@ -6,6 +6,8 @@
     <objects>
         <customObject id="-2" userLabel="File's Owner" customClass="PollutionView" customModule="Weather_Pollution_Bar" customModuleProvider="target">
             <connections>
+                <outlet property="advisoryLabel" destination="OAg-2Z-O7A" id="aHf-yM-3ve"/>
+                <outlet property="pollutionColorView" destination="k5g-Bc-IiV" id="EcT-EH-rbl"/>
                 <outlet property="view" destination="Hz6-mo-xeY" id="0bl-1N-x8E"/>
             </connections>
         </customObject>

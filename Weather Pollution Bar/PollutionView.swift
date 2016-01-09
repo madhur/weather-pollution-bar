@@ -10,9 +10,9 @@ import Cocoa
 
 class PollutionView: NSViewController {
     
-    //static var pollution: Pollution?
-
-
+    @IBOutlet weak var advisoryLabel: NSTextField!
+    @IBOutlet weak var pollutionColorView: PollutionColorView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do view setup here.
@@ -31,11 +31,34 @@ class PollutionView: NSViewController {
     }
     
     
-    var pollutionCallback =
-    {
-        (pollution: Pollution?) in
-        
-        print(pollution)
+    var pollutionCallback: (pollution: Pollution?) -> Void { return
+        {
+            (pollution: Pollution?) in
+            
+            switch((pollution?.qualityIndex)!)
+            {
+               
+                case 0...50:
+                    self.advisoryLabel.stringValue = Constants.ADVISORY[0]
+                case 51...100:
+                    self.advisoryLabel.stringValue = Constants.ADVISORY[1]
+                case 101...200:
+                    self.advisoryLabel.stringValue = Constants.ADVISORY[2]
+                case 201...300:
+                    self.advisoryLabel.stringValue = Constants.ADVISORY[3]
+                case 301...400:
+                    self.advisoryLabel.stringValue = Constants.ADVISORY[4]
+                case 401...500:
+                    self.advisoryLabel.stringValue = Constants.ADVISORY[5]
+                
+                default: break
+
+            }
+            
+            self.pollutionColorView.setPollutionValue((pollution?.qualityIndex)!)
+            
+            print(pollution)
+        }
     }
     
 }

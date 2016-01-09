@@ -11,7 +11,7 @@ import Cocoa
 
 class PollutionColorView: NSView
 {
-    var drawText: String = ""
+    var aqi: Double?
     
     let rectHeight:Int = 50
     
@@ -30,18 +30,70 @@ class PollutionColorView: NSView
     
     ]
     
+    var rectArray: [NSRect] = []
     
     override func drawRect(dirtyRect: NSRect) {
         
         let rectWidth = Int(bounds.width.native / 6)
+        
+        
         
         for index in 0...5
         {
             colors[index].set()
             let rect = NSRect.init(origin: CGPoint.init(x: index*rectWidth, y: 0), size: CGSize.init(width: rectWidth, height: rectHeight))
             NSBezierPath.fillRect(rect)
+            rectArray.append(rect)
         }
         
+        if let aqiValue = aqi
+        {
+            NSColor.whiteColor().set()
+            
+            let aqiText = NSMutableAttributedString(string: Int(aqiValue).description)
+            aqiText.addAttribute(NSForegroundColorAttributeName, value: NSColor.whiteColor(), range: NSRange.init(location: 0, length: aqiText.length))
+            aqiText.addAttribute(NSFontAttributeName, value: NSFont.boldSystemFontOfSize(20), range: NSRange.init(location: 0, length: aqiText.length))
+            
+            let paraStyle = NSParagraphStyle.defaultParagraphStyle().mutableCopy() as! NSMutableParagraphStyle
+            paraStyle.alignment = .Center
+            aqiText.addAttribute(NSParagraphStyleAttributeName, value: paraStyle, range: NSRange.init(location: 0, length: aqiText.length))
+            
+            
+            switch(aqiValue)
+            {
+            case 0...50:
+               // aqiText.drawInRect(rectArray[0])
+                aqiText.drawAtPoint(NSPoint.init(x: 10, y: 0))
+                //aqiText.drawInRect(bounds)
+              //  aqiText.drawWithRect(rectArray[0], options: NSStringDrawingOptions.)
+                
+            case 51...100:
+                //aqiText.drawInRect(rectArray[1])
+                aqiText.drawAtPoint(NSPoint.init(x: 10 + rectWidth, y: 0))
+            case 101...200:
+                //aqiText.drawInRect(rectArray[2])
+                aqiText.drawAtPoint(NSPoint.init(x: 10 + rectWidth*2, y: 0))
+            case 201...300:
+                //aqiText.drawInRect(rectArray[3])
+                aqiText.drawAtPoint(NSPoint.init(x: 10 + rectWidth*3, y: 0))
+            case 301...400:
+  //              aqiText.drawInRect(rectArray[4])
+                aqiText.drawAtPoint(NSPoint.init(x: 10 + rectWidth*4, y: 0))
+            case 401...500:
+//                aqiText.drawInRect(rectArray[5])
+                aqiText.drawAtPoint(NSPoint.init(x: 10 + rectWidth*5, y: 0))
+                
+            default: break
+                
+            }
+        }
+        
+    }
+    
+    func setPollutionValue(aqi: Double)
+    {
+        self.aqi = aqi
+        needsDisplay = true
     }
     
   
