@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E04B039F1C40B25A00DF988D /* PollutionColorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E04B039E1C40B25A00DF988D /* PollutionColorView.swift */; };
 		E0AB53411C3D5B1800E761F7 /* WeatherView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0AB533F1C3D5B1800E761F7 /* WeatherView.swift */; };
 		E0AB53421C3D5B1800E761F7 /* WeatherView.xib in Resources */ = {isa = PBXBuildFile; fileRef = E0AB53401C3D5B1800E761F7 /* WeatherView.xib */; };
 		E0AB53451C3D5B2B00E761F7 /* PollutionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0AB53431C3D5B2B00E761F7 /* PollutionView.swift */; };
@@ -48,6 +49,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		E04B039E1C40B25A00DF988D /* PollutionColorView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PollutionColorView.swift; sourceTree = "<group>"; };
 		E0AB533F1C3D5B1800E761F7 /* WeatherView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeatherView.swift; sourceTree = "<group>"; };
 		E0AB53401C3D5B1800E761F7 /* WeatherView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WeatherView.xib; sourceTree = "<group>"; };
 		E0AB53431C3D5B2B00E761F7 /* PollutionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PollutionView.swift; sourceTree = "<group>"; };
@@ -145,6 +147,7 @@
 				E0AB53441C3D5B2B00E761F7 /* PollutionView.xib */,
 				E0AB53471C3D816600E761F7 /* Weather.swift */,
 				E0AB53491C3D818900E761F7 /* Pollution.swift */,
+				E04B039E1C40B25A00DF988D /* PollutionColorView.swift */,
 			);
 			path = "Weather Pollution Bar";
 			sourceTree = "<group>";
@@ -314,6 +317,7 @@
 				E0E390731C38CE180000CDFA /* SettingsWindowController.swift in Sources */,
 				E0AB53451C3D5B2B00E761F7 /* PollutionView.swift in Sources */,
 				E0E390471C3857620000CDFA /* AppDelegate.swift in Sources */,
+				E04B039F1C40B25A00DF988D /* PollutionColorView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
