@@ -40,6 +40,7 @@ class WeatherView: NSViewController {
     @IBOutlet weak var dayIcon2: NSImageView!
     @IBOutlet weak var dayIcon3: NSImageView!
     
+    @IBOutlet weak var updatedLabel: NSTextField!
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do view setup here.
@@ -73,7 +74,7 @@ class WeatherView: NSViewController {
             self.currentUnit.stringValue = AppPreferences.Units
             self.currentDescription.stringValue = (weather?.todayWeather?.title)!
             self.currentIcon.image = NSImage(named: Constants.WEATHER_MAPPING[(weather?.todayWeather?.temperatureIcon)!]!)
-            
+            self.updatedLabel.stringValue = getReadableTime((weather?.updatedLong)!)
             
         }
     }

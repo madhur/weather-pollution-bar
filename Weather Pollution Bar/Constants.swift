@@ -7,6 +7,7 @@
 //
 
 //import Foundation
+import Cocoa
 
 struct Constants
 {
@@ -24,7 +25,7 @@ struct Constants
     
     static let POLLUTION_URL="http://164.100.160.234:9000/metrics/station/%d?d=%@"
     
-    static let WEATHER_API_KEY="fd8e51a8a23d22e2f1fb6733ff473fcd"
+    static let WEATHER_API_KEY="370d27da629713125df5d1e53a937e67"
     
     
     static let WEATHER_MAPPING =  [
@@ -50,5 +51,53 @@ struct Defaults
     static let CITY_ID = "city_id"
     static let SHOW_FUTURE_WEATHER = "show_future_weather"
     static let SYNC_INTERVAL = "sync_interval"
+}
+
+func getReadableTime(updatedTime: Int) -> String
+{
+    let currentDate = NSDate()
+    let updatedDate = NSDate(timeIntervalSince1970: NSTimeInterval(updatedTime))
+    
+    let components = NSCalendar.currentCalendar().components([.Day, .Hour, .Minute], fromDate: updatedDate, toDate: currentDate, options: [])
+    
+    let strFormat = "Updated: %@"
+    var strVal = ""
+    //print(components)
+    if components.day > 0
+    {
+        if components.day == 1
+        {
+            strVal = String(components.day) + " day ago"
+        }
+        else
+        {
+            strVal = String(components.day) + " days ago"
+        }
+    }
+    else if components.hour > 0
+    {
+        if components.hour == 1
+        {
+            strVal = String(components.hour) + " hour ago"
+        }
+        else
+        {
+            strVal = String(components.hour) + " hours ago"
+        }
+    }
+    else if components.minute > 0
+    {
+        if components.minute == 1
+        {
+            strVal = String(components.minute) + " minute ago"
+        }
+        else
+        {
+            strVal = String(components.minute) + " minutes ago"
+        }
+    }
+    
+    return String(format: strFormat, strVal)
+    
 }
 

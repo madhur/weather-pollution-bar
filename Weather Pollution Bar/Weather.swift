@@ -13,13 +13,7 @@ struct Weather
     var updatedTime: String
     var updatedLong: Int
     var todayWeather: TodayWeather?
-    //var futureWeatherList: [FutureWeather]?
     var location: String
-    
-//    override var description : String
-//        {
-//            return String(format: "updatedTime: %@ , updatedLong: %d, todayWeather: , location: %@", updatedTime, updatedLong,  location)
-//    }
     
 }
 

@@ -62,26 +62,24 @@ class PollutionColorView: NSView
             switch(aqiValue)
             {
             case 0...50:
-               // aqiText.drawInRect(rectArray[0])
+               
                 aqiText.drawAtPoint(NSPoint.init(x: 10, y: 0))
-                //aqiText.drawInRect(bounds)
-              //  aqiText.drawWithRect(rectArray[0], options: NSStringDrawingOptions.)
-                
+            
             case 51...100:
-                //aqiText.drawInRect(rectArray[1])
+                
                 aqiText.drawAtPoint(NSPoint.init(x: 10 + rectWidth, y: 0))
             case 101...200:
-                //aqiText.drawInRect(rectArray[2])
-                aqiText.drawAtPoint(NSPoint.init(x: 10 + rectWidth*2, y: 0))
+                
+                aqiText.drawAtPoint(NSPoint.init(x: 5 + rectWidth*2, y: 0))
             case 201...300:
-                //aqiText.drawInRect(rectArray[3])
-                aqiText.drawAtPoint(NSPoint.init(x: 10 + rectWidth*3, y: 0))
+            
+                aqiText.drawAtPoint(NSPoint.init(x: 5 + rectWidth*3, y: 0))
             case 301...400:
-  //              aqiText.drawInRect(rectArray[4])
-                aqiText.drawAtPoint(NSPoint.init(x: 10 + rectWidth*4, y: 0))
+  
+                aqiText.drawAtPoint(NSPoint.init(x: 5 + rectWidth*4, y: 0))
             case 401...500:
-//                aqiText.drawInRect(rectArray[5])
-                aqiText.drawAtPoint(NSPoint.init(x: 10 + rectWidth*5, y: 0))
+
+                aqiText.drawAtPoint(NSPoint.init(x: 5 + rectWidth*5, y: 0))
                 
             default: break
                 
@@ -95,6 +93,7 @@ class PollutionColorView: NSView
         self.aqi = aqi
         needsDisplay = true
     }
+    
     
   
     

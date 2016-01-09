@@ -62,13 +62,15 @@ class SettingsWindowController: NSWindowController {
             
         }
       
-            self.showFutureWeatherCheck.objectValue = AppPreferences.ShowFutureWeather
+          //  self.showFutureWeatherCheck.objectValue = AppPreferences.ShowFutureWeather
 //            self.cityCombo.objectValue = AppPreferences.
             //self.unitCombo.selectItemWithObjectValue("F")
         self.syncCombo.objectValue = AppPreferences.SyncInterval
         self.unitCombo.objectValue = AppPreferences.Units
         
-        
+        self.window?.center()
+        self.window?.makeKeyAndOrderFront(nil)
+        NSApp.activateIgnoringOtherApps(true)
         
     }
     

@@ -22,6 +22,7 @@
                 <outlet property="dayMinTemp1" destination="pmk-Uv-cV7" id="DLw-F5-dkU"/>
                 <outlet property="dayMinTemp2" destination="Bun-T5-xQ3" id="RGy-ZO-ddh"/>
                 <outlet property="dayMinTemp3" destination="CyP-ex-3Y6" id="YSQ-bj-c5N"/>
+                <outlet property="updatedLabel" destination="4pv-Wi-Bp6" id="XOs-9i-Rwb"/>
                 <outlet property="view" destination="Hz6-mo-xeY" id="0bl-1N-x8E"/>
             </connections>
         </customObject>
@@ -52,19 +53,11 @@
                     </textFieldCell>
                 </textField>
                 <box horizontalHuggingPriority="750" fixedFrame="YES" title="Box" boxType="separator" titlePosition="noTitle" translatesAutoresizingMaskIntoConstraints="NO" id="jm5-1b-Fxp">
-                    <rect key="frame" x="107" y="0.0" width="5" height="143"/>
+                    <rect key="frame" x="107" y="14" width="5" height="129"/>
                     <color key="borderColor" white="0.0" alpha="0.41999999999999998" colorSpace="calibratedWhite"/>
                     <color key="fillColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     <font key="titleFont" metaFont="system"/>
                 </box>
-                <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="AhP-0O-UBP">
-                    <rect key="frame" x="74" y="86" width="38" height="32"/>
-                    <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="C" id="QRl-TB-NGN">
-                        <font key="font" size="24" name=".HelveticaNeueDeskInterface-Regular"/>
-                        <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
-                        <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
-                    </textFieldCell>
-                </textField>
                 <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ZZh-9v-a53">
                     <rect key="frame" x="135" y="101" width="38" height="17"/>
                     <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Today" id="2BK-zr-C8G">
@@ -149,6 +142,22 @@
                     <rect key="frame" x="185" y="12" width="41" height="31"/>
                     <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" id="fdK-Jm-oud"/>
                 </imageView>
+                <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="AhP-0O-UBP">
+                    <rect key="frame" x="74" y="86" width="38" height="32"/>
+                    <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="C" id="QRl-TB-NGN">
+                        <font key="font" size="24" name=".HelveticaNeueDeskInterface-Regular"/>
+                        <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                        <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                    </textFieldCell>
+                </textField>
+                <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="4pv-Wi-Bp6">
+                    <rect key="frame" x="6" y="-6" width="260" height="17"/>
+                    <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="left" title="Label" id="3DL-ZX-szq">
+                        <font key="font" metaFont="miniSystem"/>
+                        <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                        <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                    </textFieldCell>
+                </textField>
             </subviews>
             <point key="canvasLocation" x="327.5" y="323"/>
         </customView>
