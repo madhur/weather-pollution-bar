@@ -13,10 +13,10 @@ class WeatherFetcher
 {
     
     
-    static func fetchCurrent(currentWeatherCallback : (Weather?)-> Void)
+    static func fetchCurrent(currentWeatherCallback : (Weather?)-> Void, units: String)
     {
         
-        let weatherUrlRequest = String(format: Constants.CURRENT_WEATHER_URL, 1277333 , Constants.WEATHER_API_KEY)
+        let weatherUrlRequest = String(format: Constants.CURRENT_WEATHER_URL, 1277333 , Constants.WEATHER_API_KEY, getUrlParam(units))
         let weatherUrl = NSURL(string: weatherUrlRequest)
         let request = NSURLRequest(URL: weatherUrl!)
         
@@ -33,8 +33,7 @@ class WeatherFetcher
                     else if data != nil
                     {
                          let weatherObj = currentWeatherFromJSON(data)
-                         //weather = weatherObj!
-                         //print(weather)
+                        
                         NSOperationQueue.mainQueue().addOperationWithBlock({
                             currentWeatherCallback(weatherObj)
                         })
@@ -47,10 +46,10 @@ class WeatherFetcher
         weatherTask.resume()
     }
     
-    static func fetchFuture(futureWeatherCallback: ([FutureWeather]?) -> Void)
+    static func fetchFuture(futureWeatherCallback: ([FutureWeather]?) -> Void, units: String)
     {
         
-        let weatherUrlRequest = String(format: Constants.FUTURE_WEATHER_URL, 1277333 , Constants.WEATHER_API_KEY)
+        let weatherUrlRequest = String(format: Constants.FUTURE_WEATHER_URL, 1277333 , Constants.WEATHER_API_KEY, getUrlParam(units))
         let weatherUrl = NSURL(string: weatherUrlRequest)
         let request = NSURLRequest(URL: weatherUrl!)
         
@@ -67,9 +66,10 @@ class WeatherFetcher
                 else if data != nil
                 {
                     let futureWeatherList = futureWeatherFromJSON(data)
-                    futureWeatherCallback(futureWeatherList)
-                    //futureWeather = futureWeatherList!
-                    //print(futureWeather)
+                    
+                     NSOperationQueue.mainQueue().addOperationWithBlock({
+                        futureWeatherCallback(futureWeatherList)
+                        })
                     
                 }
                 
@@ -127,6 +127,20 @@ class WeatherFetcher
         
     }
     
+    static func getUrlParam(units: String) -> String
+    {
+        if units == "C"
+        {
+            return "metric"
+        }
+        else if units == "F"
+        {
+            return "imperial"
+        }
+        
+        return "metric"
+    }
+    
     
     static func currentWeatherFromJSON(data: NSData?) -> Weather?
     {
@@ -169,15 +183,6 @@ class WeatherFetcher
             todayWeather:todayWeather,
             location: dict!["name"] as! String
         )
-        
-//            weather.updatedTime = ""
-//            weather.updatedLong = dict!["dt"] as! Int
-//            weather.todayWeather = todayWeather
-//           // futureWeatherList: nil,
-//            weather.location = dict!["name"] as! String
-//        
-//        weather.willChangeValueForKey("location")
-//        weather.didChangeValueForKey("location")
         
         return weather
         

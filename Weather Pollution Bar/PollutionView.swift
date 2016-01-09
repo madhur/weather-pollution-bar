@@ -12,6 +12,9 @@ class PollutionView: NSViewController {
     
     @IBOutlet weak var advisoryLabel: NSTextField!
     @IBOutlet weak var pollutionColorView: PollutionColorView!
+    var statusMenuViewController: StatusMenuController?
+    
+    @IBOutlet weak var updatedLabel: NSTextField!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -35,6 +38,8 @@ class PollutionView: NSViewController {
         {
             (pollution: Pollution?) in
             
+            self.statusMenuViewController?.showPollution()
+            
             switch((pollution?.qualityIndex)!)
             {
                
@@ -56,6 +61,8 @@ class PollutionView: NSViewController {
             }
             
             self.pollutionColorView.setPollutionValue((pollution?.qualityIndex)!)
+            
+            self.updatedLabel.stringValue = getReadableTime((pollution?.updatedLong)!)
             
             print(pollution)
         }

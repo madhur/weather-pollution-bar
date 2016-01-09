@@ -62,7 +62,7 @@ class PollutionFetcher
         let aqiDict = pollutionDict["aqi"] as! NSDictionary
         
         let pollution: Pollution = Pollution(
-            updatedTime: "",
+            updatedTime: pollutionDict["date"] as! String,
             updatedLong: Int(NSDate().timeIntervalSince1970),
             qualityIndex:  aqiDict["value"] as! Double,
             suggestion: "",

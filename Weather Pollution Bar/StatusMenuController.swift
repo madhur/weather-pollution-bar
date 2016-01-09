@@ -36,6 +36,34 @@ class StatusMenuController: NSObject
         weatherMenuItem.view = weatherView?.view
         pollutionMenuItem.view = pollutionView?.view
         
+       weatherView?.statusMenuViewController = self
+       pollutionView?.statusMenuViewController = self
+        
+  
+        
+    }
+    
+    func hideViews()
+    {
+        statusMenu.removeItemAtIndex(2)
+        statusMenu.removeItemAtIndex(4)
+    }
+    
+    func showWeather()
+    {
+        if weatherMenuItem.menu == nil
+        {
+            statusMenu.insertItem(weatherMenuItem, atIndex: 2)
+        }
+        
+    }
+    
+    func showPollution()
+    {
+        if pollutionMenuItem.menu == nil
+        {
+            statusMenu.insertItem(pollutionMenuItem, atIndex: 4)
+        }
         
     }
     

@@ -8,17 +8,18 @@
             <connections>
                 <outlet property="advisoryLabel" destination="OAg-2Z-O7A" id="aHf-yM-3ve"/>
                 <outlet property="pollutionColorView" destination="k5g-Bc-IiV" id="EcT-EH-rbl"/>
+                <outlet property="updatedLabel" destination="Tcr-Un-xz1" id="E3C-fO-S7q"/>
                 <outlet property="view" destination="Hz6-mo-xeY" id="0bl-1N-x8E"/>
             </connections>
         </customObject>
         <customObject id="-1" userLabel="First Responder" customClass="FirstResponder"/>
         <customObject id="-3" userLabel="Application" customClass="NSObject"/>
         <customView wantsLayer="YES" id="Hz6-mo-xeY">
-            <rect key="frame" x="0.0" y="0.0" width="300" height="100"/>
+            <rect key="frame" x="0.0" y="0.0" width="300" height="112"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
             <subviews>
                 <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="OAg-2Z-O7A">
-                    <rect key="frame" x="9" y="20" width="285" height="17"/>
+                    <rect key="frame" x="9" y="12" width="285" height="41"/>
                     <textFieldCell key="cell" controlSize="mini" sendsActionOnEndEditing="YES" title="Multiline Label" id="DJL-bX-xdk">
                         <font key="font" metaFont="system"/>
                         <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
@@ -26,18 +27,26 @@
                     </textFieldCell>
                 </textField>
                 <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="oJU-oZ-FmE">
-                    <rect key="frame" x="11" y="84" width="181" height="11"/>
+                    <rect key="frame" x="11" y="96" width="181" height="11"/>
                     <textFieldCell key="cell" controlSize="mini" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Air Quality Index (AQI)" id="XG7-Ul-sD0">
                         <font key="font" metaFont="miniSystem"/>
                         <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                         <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                     </textFieldCell>
                 </textField>
+                <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Tcr-Un-xz1">
+                    <rect key="frame" x="11" y="1" width="271" height="11"/>
+                    <textFieldCell key="cell" controlSize="mini" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Label" id="P7q-Ao-KKD">
+                        <font key="font" metaFont="miniSystem"/>
+                        <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                        <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                    </textFieldCell>
+                </textField>
                 <customView fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="k5g-Bc-IiV" customClass="PollutionColorView" customModule="Weather_Pollution_Bar" customModuleProvider="target">
-                    <rect key="frame" x="11" y="45" width="281" height="31"/>
+                    <rect key="frame" x="11" y="57" width="281" height="31"/>
                 </customView>
             </subviews>
-            <point key="canvasLocation" x="240" y="280"/>
+            <point key="canvasLocation" x="240" y="286"/>
         </customView>
     </objects>
 </document>

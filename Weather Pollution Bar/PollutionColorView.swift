@@ -36,8 +36,6 @@ class PollutionColorView: NSView
         
         let rectWidth = Int(bounds.width.native / 6)
         
-        
-        
         for index in 0...5
         {
             colors[index].set()
@@ -93,9 +91,5 @@ class PollutionColorView: NSView
         self.aqi = aqi
         needsDisplay = true
     }
-    
-    
-  
-    
     
 }

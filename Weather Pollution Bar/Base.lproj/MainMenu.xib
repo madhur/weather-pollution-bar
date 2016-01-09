@@ -22,13 +22,7 @@
                     </connections>
                 </menuItem>
                 <menuItem isSeparatorItem="YES" id="52Q-v2-LGB"/>
-                <menuItem title="Weather" id="PrH-So-j1a">
-                    <modifierMask key="keyEquivalentModifierMask"/>
-                </menuItem>
                 <menuItem isSeparatorItem="YES" id="qqM-0B-uro"/>
-                <menuItem title="Pollution" id="f5m-sK-aaC">
-                    <modifierMask key="keyEquivalentModifierMask"/>
-                </menuItem>
                 <menuItem isSeparatorItem="YES" id="FNt-XP-74n"/>
                 <menuItem title="Settings" id="yxd-zn-Soz">
                     <modifierMask key="keyEquivalentModifierMask"/>
@@ -58,5 +52,11 @@
                 <outlet property="weatherMenuItem" destination="PrH-So-j1a" id="gAc-4f-888"/>
             </connections>
         </customObject>
+        <menuItem title="Weather" id="PrH-So-j1a">
+            <modifierMask key="keyEquivalentModifierMask"/>
+        </menuItem>
+        <menuItem title="Pollution" id="f5m-sK-aaC">
+            <modifierMask key="keyEquivalentModifierMask"/>
+        </menuItem>
     </objects>
 </document>

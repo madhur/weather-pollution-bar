@@ -12,6 +12,7 @@ class WeatherView: NSViewController {
     
     var weather:Weather?
     var futureWeather: [FutureWeather]?
+    var statusMenuViewController: StatusMenuController?
 
     @IBOutlet weak var currentTemp: NSTextField!
     @IBOutlet weak var currentUnit: NSTextField!
@@ -41,6 +42,15 @@ class WeatherView: NSViewController {
     @IBOutlet weak var dayIcon3: NSImageView!
     
     @IBOutlet weak var updatedLabel: NSTextField!
+    
+    var StatusView: StatusMenuController? {
+        get {
+            return statusMenuViewController
+        }
+        set(view) {
+            statusMenuViewController = view
+        }
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do view setup here.
@@ -60,8 +70,10 @@ class WeatherView: NSViewController {
     
     func updateWeather()
     {
-        WeatherFetcher.fetchCurrent(currentWeatherCallback)
-        WeatherFetcher.fetchFuture(futureWeatherCallback)
+        let units  = AppPreferences.Units
+        
+        WeatherFetcher.fetchCurrent(currentWeatherCallback, units: units)
+        WeatherFetcher.fetchFuture(futureWeatherCallback, units: units)
 
     }
     
@@ -69,6 +81,9 @@ class WeatherView: NSViewController {
     var currentWeatherCallback: Weather? -> Void { return
         {
             (weather: Weather?) in
+            
+            self.statusMenuViewController?.showWeather()
+            
             print(weather)
             self.currentTemp.stringValue = Int((weather?.todayWeather?.temperature.current)!).description
             self.currentUnit.stringValue = AppPreferences.Units
@@ -85,6 +100,8 @@ class WeatherView: NSViewController {
             {
     
                 (futureWeather: [FutureWeather]?) in
+                
+              // self.statusMenuViewController?.showWeather()
                 
                var i = 0
                for (index, weather) in (futureWeather?.enumerate())!

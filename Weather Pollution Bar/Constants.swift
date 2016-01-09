@@ -19,9 +19,9 @@ struct Constants
     static let UNITS = ["C", "F"]
     static let SYNC_INTERVAL = [5, 10, 30, 60]
     
-    static let FUTURE_WEATHER_URL="http://api.openweathermap.org/data/2.5/forecast/daily?id=%d&mode=json&appid=%@&cnt=4&units=metric"
+    static let FUTURE_WEATHER_URL="http://api.openweathermap.org/data/2.5/forecast/daily?id=%d&mode=json&appid=%@&cnt=4&units=%@"
     
-    static let CURRENT_WEATHER_URL="http://api.openweathermap.org/data/2.5/weather?id=%d&mode=json&appid=%@&units=metric"
+    static let CURRENT_WEATHER_URL="http://api.openweathermap.org/data/2.5/weather?id=%d&mode=json&appid=%@&units=%@"
     
     static let POLLUTION_URL="http://164.100.160.234:9000/metrics/station/%d?d=%@"
     
@@ -58,11 +58,11 @@ func getReadableTime(updatedTime: Int) -> String
     let currentDate = NSDate()
     let updatedDate = NSDate(timeIntervalSince1970: NSTimeInterval(updatedTime))
     
-    let components = NSCalendar.currentCalendar().components([.Day, .Hour, .Minute], fromDate: updatedDate, toDate: currentDate, options: [])
+    let components = NSCalendar.currentCalendar().components([.Day, .Hour, .Minute, .Second], fromDate: updatedDate, toDate: currentDate, options: [])
     
     let strFormat = "Updated: %@"
     var strVal = ""
-    //print(components)
+    
     if components.day > 0
     {
         if components.day == 1
@@ -94,6 +94,17 @@ func getReadableTime(updatedTime: Int) -> String
         else
         {
             strVal = String(components.minute) + " minutes ago"
+        }
+    }
+    else if components.second > 0
+    {
+        if components.second == 1
+        {
+            strVal = String(components.second) + " second ago"
+        }
+        else
+        {
+            strVal = String(components.second) + " seconds ago"
         }
     }
     
