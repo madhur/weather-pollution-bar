@@ -18,6 +18,7 @@ struct Constants
     
     static let UNITS = ["C", "F"]
     static let SYNC_INTERVAL = [5, 10, 30, 60]
+    static let ICON_TYPE = ["Static", "Temperature Value", "Dynamic icon"]
     
     static let FUTURE_WEATHER_URL="http://api.openweathermap.org/data/2.5/forecast/daily?id=%d&mode=json&appid=%@&cnt=4&units=%@"
     
@@ -51,7 +52,7 @@ struct Defaults
 {
     static let UNITS = "units"
     static let CITY_ID = "city_id"
-    static let SHOW_FUTURE_WEATHER = "show_future_weather"
+    static let ICON_TYPE = "icon_type"
     static let SYNC_INTERVAL = "sync_interval"
 }
 

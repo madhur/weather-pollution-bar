@@ -26,6 +26,8 @@ class StatusMenuController: NSObject
     override func awakeFromNib() {
         
         let icon = NSImage(named: "statusIcon")
+        icon?.size = NSSize.init(width: 18, height: 18)
+        
         icon?.template = true
         statusItem.image = icon
         statusItem.menu = statusMenu
@@ -40,11 +42,21 @@ class StatusMenuController: NSObject
        pollutionView?.statusMenuViewController = self
         
        NSNotificationCenter.defaultCenter().addObserver(self, selector: "updateNotification:", name: Constants.UPDATE_NOTIFICATION, object: nil)
+        
+        let defaultsDict = NSMutableDictionary()
+
+        defaultsDict.setValue(1277333, forKey: Defaults.CITY_ID)
+        defaultsDict.setValue(Constants.ICON_TYPE[1], forKey: Defaults.ICON_TYPE)
+        defaultsDict.setValue(Constants.SYNC_INTERVAL[0], forKey: Defaults.SYNC_INTERVAL)
+        defaultsDict.setValue(Constants.UNITS[0], forKey: Defaults.UNITS)
+        
+        NSUserDefaults.standardUserDefaults().registerDefaults(defaultsDict as! [String : AnyObject])
+
     }
     
     func updateNotification(notification: NSNotification)
     {
-        print("recieved notificaiton to update")
+        
         update(weatherMenuItem)
     }
     

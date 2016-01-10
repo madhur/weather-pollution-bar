@@ -16,6 +16,7 @@ class SettingsWindowController: NSWindowController, NSComboBoxDataSource, NSComb
     
     @IBOutlet weak var syncCombo: NSComboBox!
     
+    @IBOutlet weak var iconCombo: NSComboBox!
     var weatherCitiesArray: [WeatherCity] = []
     
     override func windowDidLoad() {
@@ -25,6 +26,7 @@ class SettingsWindowController: NSWindowController, NSComboBoxDataSource, NSComb
         
         unitCombo.addItemsWithObjectValues(Constants.UNITS)
         syncCombo.addItemsWithObjectValues(Constants.SYNC_INTERVAL)
+        iconCombo.addItemsWithObjectValues(Constants.ICON_TYPE)
         
         let cities = NSBundle.mainBundle().pathForResource("cities", ofType: "json")
         if let citiesFile = cities
@@ -54,6 +56,7 @@ class SettingsWindowController: NSWindowController, NSComboBoxDataSource, NSComb
       
         self.syncCombo.objectValue = AppPreferences.SyncInterval
         self.unitCombo.objectValue = AppPreferences.Units
+        self.iconCombo.objectValue = AppPreferences.IconType
         let cityIndex = getCityIndexById(AppPreferences.CityId)
         
         if let cityIndexVal = cityIndex
@@ -142,6 +145,10 @@ class SettingsWindowController: NSWindowController, NSComboBoxDataSource, NSComb
     
     @IBAction func selectSyncInterval(sender: AnyObject) {
         AppPreferences.SyncInterval = syncCombo.objectValueOfSelectedItem as! Int
+    }
+    
+    @IBAction func selectIcon(sender: NSComboBox) {
+        AppPreferences.IconType = iconCombo.objectValueOfSelectedItem as! String
     }
     
     func numberOfItemsInComboBox(aComboBox: NSComboBox) -> Int {

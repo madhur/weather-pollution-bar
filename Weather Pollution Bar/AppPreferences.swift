@@ -46,6 +46,18 @@ class AppPreferences
         }
     }
     
+    static var IconType: String {
+        get {
+        return NSUserDefaults.standardUserDefaults().stringForKey(Defaults.ICON_TYPE)!
+        }
+        set(value)
+        {
+            NSUserDefaults.standardUserDefaults().setValue(value, forKey: Defaults.ICON_TYPE)
+            update()
+        }
+    }
+
+    
     
     static func update()
     {

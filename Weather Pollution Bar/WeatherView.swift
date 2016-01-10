@@ -92,6 +92,33 @@ class WeatherView: NSViewController {
            // self.updatedLabel.stringValue = getReadableTime((weather?.updatedLong)!)
             
             
+           
+            
+            if AppPreferences.IconType == Constants.ICON_TYPE[0]
+            {
+                let icon = NSImage(named: "statusIcon")
+                icon!.size = NSSize.init(width: 18, height: 18)
+                icon?.template = true
+                self.statusMenuViewController?.statusItem.image = icon
+                self.statusMenuViewController?.statusItem.title = nil
+                
+            }
+            else if AppPreferences.IconType == Constants.ICON_TYPE[1]
+            {
+                self.statusMenuViewController?.statusItem.title = Int((weather?.todayWeather?.temperature.current)!).description
+                self.statusMenuViewController?.statusItem.image = nil
+            }
+            else if AppPreferences.IconType == Constants.ICON_TYPE[2]
+            {
+                self.statusMenuViewController?.statusItem.title = nil
+                
+                let icon = NSImage(named: Constants.WEATHER_MAPPING[(weather?.todayWeather?.temperatureIcon)!]!)
+                icon!.size = NSSize.init(width: 18, height: 18)
+                icon?.template = true
+                icon?.cacheMode = NSImageCacheMode.Never
+                self.statusMenuViewController?.statusItem.image = icon
+            }
+                        
             self.statusMenuViewController?.weatherMenuItem.toolTip = getReadableTime((weather?.updatedLong)!)
             
         }
