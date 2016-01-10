@@ -19,7 +19,7 @@ class AppPreferences
         }
         set(value) {
             NSUserDefaults.standardUserDefaults().setInteger(value, forKey: Defaults.CITY_ID)
-            update()
+           // update()
         }
         
     }

@@ -38,6 +38,13 @@ class PollutionView: NSViewController {
         {
             (pollution: Pollution?) in
             
+            if pollution == nil
+            {
+                self.statusMenuViewController?.hidePollution()
+                return
+                
+            }
+            
             self.statusMenuViewController?.showPollution()
             
             switch((pollution?.qualityIndex)!)

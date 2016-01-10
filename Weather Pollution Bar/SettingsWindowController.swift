@@ -122,6 +122,8 @@ class SettingsWindowController: NSWindowController, NSComboBoxDataSource, NSComb
             print("selected" + String(selectedIndex))
             AppPreferences.CityId = (selectedIndex?.values.first?.id)!
             selectPollution((selectedIndex?.values.first)!)
+            
+            AppPreferences.update()
         }
         
     }
@@ -254,6 +256,7 @@ class SettingsWindowController: NSWindowController, NSComboBoxDataSource, NSComb
         else
         {
             print("No nearest pollution center found")
+            AppPreferences.PollutionId = 0
         }
         
     }

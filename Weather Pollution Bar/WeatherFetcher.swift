@@ -92,7 +92,7 @@ class WeatherFetcher
         }
         catch
         {
-            print("Error while decoding json")
+            print("Error while decoding json for future weather")
             return nil
         }
 
@@ -154,7 +154,7 @@ class WeatherFetcher
         }
         catch
         {
-            print("Error while decoding json")
+            print("Error while decoding json for current weather")
             return nil
         }
         

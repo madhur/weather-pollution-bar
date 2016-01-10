@@ -62,10 +62,21 @@ class StatusMenuController: NSObject
     
     func hideViews()
     {
-        statusMenu.removeItemAtIndex(2)
-        statusMenu.removeItemAtIndex(4)
+        hideWeather()
+        hidePollution()
     }
     
+    func hideWeather()
+    {
+        statusMenu.removeItemAtIndex(2)
+
+    }
+    
+    func hidePollution()
+    {
+        statusMenu.removeItemAtIndex(4)
+
+    }
     func showWeather()
     {
         if weatherMenuItem.menu == nil

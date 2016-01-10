@@ -18,6 +18,7 @@ class PollutionFetcher
         if stationId  == 0
         {
             print("not fetching pollution for default")
+            pollutionCallback(nil)
             return
         }
         
@@ -61,7 +62,7 @@ class PollutionFetcher
         }
         catch
         {
-            print("error while decoding json")
+            print("error while decoding json for pollution")
             return nil
         }
         
