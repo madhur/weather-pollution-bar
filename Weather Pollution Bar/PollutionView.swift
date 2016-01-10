@@ -64,6 +64,8 @@ class PollutionView: NSViewController {
             
             self.updatedLabel.stringValue = getReadableTime((pollution?.updatedLong)!)
             
+            self.statusMenuViewController?.pollutionMenuItem.toolTip = getReadableTime((pollution?.updatedLong)!)
+            
             print(pollution)
         }
     }

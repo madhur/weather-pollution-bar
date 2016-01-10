@@ -9,7 +9,6 @@
                 <outlet property="cityCombo" destination="oem-rV-fez" id="7gB-4o-KaZ"/>
                 <outlet property="syncCombo" destination="OIy-1z-SCV" id="fC4-IN-DRS"/>
                 <outlet property="unitCombo" destination="G82-H9-c7g" id="Fpq-ck-aT8"/>
-                <outlet property="weatherCityArrayController" destination="qPs-lG-fjs" id="ycr-Jr-0Qf"/>
                 <outlet property="window" destination="F0z-JX-Cv5" id="gIp-Ho-8D9"/>
             </connections>
         </customObject>
@@ -34,22 +33,15 @@
                     </textField>
                     <comboBox verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="oem-rV-fez">
                         <rect key="frame" x="202" y="130" width="170" height="26"/>
-                        <comboBoxCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" borderStyle="bezel" drawsBackground="YES" numberOfVisibleItems="5" id="LbD-te-s0l">
+                        <comboBoxCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" borderStyle="bezel" drawsBackground="YES" usesDataSource="YES" numberOfVisibleItems="5" id="LbD-te-s0l">
                             <font key="font" metaFont="system"/>
                             <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
                             <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
-                            <objectValues>
-                                <string>Item 1</string>
-                                <string>Item 2</string>
-                                <string>Item 3</string>
-                            </objectValues>
-                            <connections>
-                                <binding destination="qPs-lG-fjs" name="contentValues" keyPath="arrangedObjects.name" id="TqH-PQ-aa3"/>
-                            </connections>
                         </comboBoxCell>
                         <connections>
-                            <action selector="selectCity:" target="-2" id="8G6-tY-F1a"/>
-                            <binding destination="qPs-lG-fjs" name="contentValues" keyPath="arrangedObjects.name" id="hmI-3L-2Fs"/>
+                            <action selector="selectCity:" target="-2" id="mfP-qx-gIU"/>
+                            <outlet property="dataSource" destination="-2" id="h2h-jp-3bC"/>
+                            <outlet property="delegate" destination="-2" id="nPo-UY-uak"/>
                         </connections>
                     </comboBox>
                     <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="wSe-s3-Ph4">
@@ -98,10 +90,5 @@
             <point key="canvasLocation" x="288" y="317"/>
         </window>
         <userDefaultsController representsSharedInstance="YES" id="2vr-Mg-PE4"/>
-        <arrayController objectClassName="Weather_Pollution_Bar.WeatherCity" id="qPs-lG-fjs" userLabel="WeatherCities">
-            <connections>
-                <binding destination="-2" name="contentArray" keyPath="weatherCitiesArray" id="M5D-yV-wVn"/>
-            </connections>
-        </arrayController>
     </objects>
 </document>

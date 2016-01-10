@@ -91,6 +91,9 @@ class WeatherView: NSViewController {
             self.currentIcon.image = NSImage(named: Constants.WEATHER_MAPPING[(weather?.todayWeather?.temperatureIcon)!]!)
             self.updatedLabel.stringValue = getReadableTime((weather?.updatedLong)!)
             
+            
+            self.statusMenuViewController?.weatherMenuItem.toolTip = getReadableTime((weather?.updatedLong)!)
+            
         }
     }
     
@@ -119,6 +122,7 @@ class WeatherView: NSViewController {
                     self.dayMin?[i].stringValue = Int(weather.temperature.min).description
                     self.dayIcon?[i].image = NSImage(named: Constants.WEATHER_MAPPING[weather.temperatureIcon]!)
                     self.dayLabel?[i].stringValue = WeatherView.getWeekString(weather.updatedLong)
+                
                 
                     i = i + 1
                 }
