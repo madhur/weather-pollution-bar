@@ -54,7 +54,13 @@ class SettingsWindowController: NSWindowController, NSComboBoxDataSource, NSComb
       
         self.syncCombo.objectValue = AppPreferences.SyncInterval
         self.unitCombo.objectValue = AppPreferences.Units
-        //self.cityCombo.dataSource = self
+        let cityIndex = getCityIndexById(AppPreferences.CityId)
+        
+        if let cityIndexVal = cityIndex
+        {
+            //self.cityCombo.selectItemAtIndex(cityIndexVal.keys.first!)
+            self.cityCombo.stringValue = (cityIndexVal.values.first?.name!)!
+        }
         
         self.window?.center()
         self.window?.makeKeyAndOrderFront(nil)
@@ -89,22 +95,52 @@ class SettingsWindowController: NSWindowController, NSComboBoxDataSource, NSComb
     }
     
     @IBAction func selectCity(sender: AnyObject) {
-        //print((cityCombo.objectValueOfSelectedItem))
-       // print(cityCombo.objectValue)
-        //print(weatherCityArrayController.selectionIndex)
+        //if(cityCombo.indexOfSelectedItem == -1)
+        //{
+            let typedCity = cityCombo.stringValue
+            let selectedIndex = getCityIndex(typedCity)
+            if selectedIndex != nil
+            {
+                cityCombo.selectItemAtIndex((selectedIndex?.keys.first!)!)
+                print("selected" + String(selectedIndex))
+                AppPreferences.CityId = (selectedIndex?.values.first?.id)!
+                
+            }
+        //}
+    }
+    
+    func getCityIndex(typedCity : String) -> [Int: WeatherCity]?
+    {
+        
+        for (index, city) in weatherCitiesArray.enumerate()
+        {
+            if(city.name == typedCity)
+            {
+                return [index: city]
+            }
+        }
+        
+        return nil
+    }
+    
+    func getCityIndexById(cityId: Int) -> [Int: WeatherCity]?
+    {
+        for (index, city) in weatherCitiesArray.enumerate()
+        {
+            if(city.id == cityId)
+            {
+                return [index: city]
+            }
+        }
+        
+        return nil
     }
     
     @IBAction func selectUnit(sender: AnyObject) {
-        //print(unitCombo.objectValueOfSelectedItem)
-        //print(unitCombo.objectValue)
-        
         AppPreferences.Units = unitCombo.objectValueOfSelectedItem as! String
     }
     
     @IBAction func selectSyncInterval(sender: AnyObject) {
-        //print(syncCombo.objectValueOfSelectedItem)
-        //AppPreferences.SyncInterval = Constants.syncIntervalDict[syncCombo.objectValueOfSelectedItem! as! String]!
-        
         AppPreferences.SyncInterval = syncCombo.objectValueOfSelectedItem as! Int
     }
     
@@ -113,13 +149,35 @@ class SettingsWindowController: NSWindowController, NSComboBoxDataSource, NSComb
     }
     
     func comboBox(aComboBox: NSComboBox, objectValueForItemAtIndex index: Int) -> AnyObject {
+        
+        if index == -1
+        {
+            print("recieved -1")
+            return weatherCitiesArray[0]
+        }
+        
         return weatherCitiesArray[index].name!
+        
     }
     
     func comboBoxSelectionDidChange(notification: NSNotification) {
-        print(notification.userInfo)
-        print(weatherCitiesArray[cityCombo.indexOfSelectedItem].name!)
         
+        print(weatherCitiesArray[cityCombo.indexOfSelectedItem].name!)
+        AppPreferences.CityId = weatherCitiesArray[cityCombo.indexOfSelectedItem].id!
         
     }
+    
+//    func comboBox(aComboBox: NSComboBox, indexOfItemWithStringValue string: String) -> Int {
+//       // print(string)
+//        let index =  getCityIndex(string)
+//        if let indexVal = index
+//        {
+//            return indexVal.keys.first!
+//        }
+//        
+//        print("returning zero for" + string)
+//        return 0
+//        
+//    }
+    
 }

@@ -27,6 +27,8 @@ struct Constants
     
     static let WEATHER_API_KEY="370d27da629713125df5d1e53a937e67"
     
+    static let UPDATE_NOTIFICATION = "in.co.madhur.update_notification"
+    
     
     static let WEATHER_MAPPING =  [
     "01d": "clear_sky", "01n": "clear_sky_night" , "02d": "few_clouds", "02n": "few_clouds_night", "03d": "scattered_clouds", "03n": "scattered_clouds", "04d": "broken_clouds", "04n": "broken_clouds", "09d": "shower rain", "09n": "shower rain", "10d": "rainy",
@@ -59,7 +61,7 @@ func getReadableTime(updatedTime: Int) -> String
     let updatedDate = NSDate(timeIntervalSince1970: NSTimeInterval(updatedTime))
     
     let components = NSCalendar.currentCalendar().components([.Day, .Hour, .Minute, .Second], fromDate: updatedDate, toDate: currentDate, options: [])
-    print(components)
+    
     
     let strFormat = "Updated: %@"
     var strVal = ""

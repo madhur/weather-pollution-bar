@@ -15,8 +15,10 @@ class WeatherFetcher
     
     static func fetchCurrent(currentWeatherCallback : (Weather?)-> Void, units: String)
     {
-        
-        let weatherUrlRequest = String(format: Constants.CURRENT_WEATHER_URL, 1277333 , Constants.WEATHER_API_KEY, getUrlParam(units))
+        let cityId = AppPreferences.CityId
+//        let cityIdBlr = 1277333
+  
+        let weatherUrlRequest = String(format: Constants.CURRENT_WEATHER_URL, cityId , Constants.WEATHER_API_KEY, getUrlParam(units))
         let weatherUrl = NSURL(string: weatherUrlRequest)
         let request = NSURLRequest(URL: weatherUrl!)
         
@@ -48,8 +50,9 @@ class WeatherFetcher
     
     static func fetchFuture(futureWeatherCallback: ([FutureWeather]?) -> Void, units: String)
     {
+        let cityId = AppPreferences.CityId
         
-        let weatherUrlRequest = String(format: Constants.FUTURE_WEATHER_URL, 1277333 , Constants.WEATHER_API_KEY, getUrlParam(units))
+        let weatherUrlRequest = String(format: Constants.FUTURE_WEATHER_URL, cityId , Constants.WEATHER_API_KEY, getUrlParam(units))
         let weatherUrl = NSURL(string: weatherUrlRequest)
         let request = NSURLRequest(URL: weatherUrl!)
         

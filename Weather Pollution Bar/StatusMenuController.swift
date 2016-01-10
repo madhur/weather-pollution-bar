@@ -39,8 +39,13 @@ class StatusMenuController: NSObject
        weatherView?.statusMenuViewController = self
        pollutionView?.statusMenuViewController = self
         
-  
-        
+       NSNotificationCenter.defaultCenter().addObserver(self, selector: "updateNotification:", name: Constants.UPDATE_NOTIFICATION, object: nil)
+    }
+    
+    func updateNotification(notification: NSNotification)
+    {
+        print("recieved notificaiton to update")
+        update(weatherMenuItem)
     }
     
     func hideViews()
