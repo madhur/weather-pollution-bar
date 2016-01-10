@@ -84,7 +84,8 @@ class WeatherView: NSViewController {
             
             self.statusMenuViewController?.showWeather()
             
-            print(weather)
+            //print(weather)
+            print("got current weather")
             self.currentTemp.stringValue = Int((weather?.todayWeather?.temperature.current)!).description
             self.currentUnit.stringValue = AppPreferences.Units
             self.currentDescription.stringValue = (weather?.todayWeather?.title)!

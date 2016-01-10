@@ -24,6 +24,17 @@ class AppPreferences
         
     }
     
+    static var PollutionId:Int {
+        get{
+        
+        return NSUserDefaults.standardUserDefaults().integerForKey(Defaults.POLLUTION_ID)
+        }
+        set(value) {
+            NSUserDefaults.standardUserDefaults().setInteger(value, forKey: Defaults.POLLUTION_ID)
+        }
+        
+    }
+    
     static var Units: String{
         get {
             return NSUserDefaults.standardUserDefaults().stringForKey(Defaults.UNITS)!

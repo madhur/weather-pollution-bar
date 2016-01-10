@@ -49,7 +49,7 @@ class StatusMenuController: NSObject
         defaultsDict.setValue(Constants.ICON_TYPE[1], forKey: Defaults.ICON_TYPE)
         defaultsDict.setValue(Constants.SYNC_INTERVAL[0], forKey: Defaults.SYNC_INTERVAL)
         defaultsDict.setValue(Constants.UNITS[0], forKey: Defaults.UNITS)
-        
+        defaultsDict.setValue(0, forKey: Defaults.POLLUTION_ID)
         NSUserDefaults.standardUserDefaults().registerDefaults(defaultsDict as! [String : AnyObject])
 
     }

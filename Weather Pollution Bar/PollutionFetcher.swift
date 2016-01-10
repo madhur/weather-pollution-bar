@@ -14,7 +14,13 @@ class PollutionFetcher
        
     static func fetch(pollutionCallback: (Pollution?) -> Void)
     {
-        let stationId = 798
+        let stationId = AppPreferences.PollutionId
+        if stationId  == 0
+        {
+            print("not fetching pollution for default")
+            return
+        }
+        
         let date = NSDate()
         let dateFormatter = NSDateFormatter()
         dateFormatter.dateFormat = "dd/MM/yyyy"

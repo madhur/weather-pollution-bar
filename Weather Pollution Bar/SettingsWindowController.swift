@@ -7,9 +7,10 @@
 //
 
 import Cocoa
+import CoreLocation
 
 class SettingsWindowController: NSWindowController, NSComboBoxDataSource, NSComboBoxDelegate {
-
+    
     @IBOutlet weak var cityCombo: NSComboBox!
     
     @IBOutlet weak var unitCombo: NSComboBox!
@@ -21,7 +22,7 @@ class SettingsWindowController: NSWindowController, NSComboBoxDataSource, NSComb
     
     override func windowDidLoad() {
         super.windowDidLoad()
-
+        
         // Implement this method to handle any initialization after your window controller's window has been loaded from its nib file.
         
         unitCombo.addItemsWithObjectValues(Constants.UNITS)
@@ -34,13 +35,13 @@ class SettingsWindowController: NSWindowController, NSComboBoxDataSource, NSComb
             let data = NSData.dataWithContentsOfMappedFile(citiesFile)
             
             do {
-            
+                
                 let citiesArray = try NSJSONSerialization.JSONObjectWithData(data as! NSData, options: NSJSONReadingOptions.AllowFragments)
                 
                 for city: NSDictionary in citiesArray as! [NSDictionary]
                 {
                     let weatherCity = getCity(city)
-                   
+                    
                     weatherCitiesArray.insert(weatherCity, atIndex: weatherCitiesArray.count)
                     
                 }
@@ -51,9 +52,11 @@ class SettingsWindowController: NSWindowController, NSComboBoxDataSource, NSComb
                 print("Error occurred")
             }
             
-            
         }
-      
+        
+        
+        
+        
         self.syncCombo.objectValue = AppPreferences.SyncInterval
         self.unitCombo.objectValue = AppPreferences.Units
         self.iconCombo.objectValue = AppPreferences.IconType
@@ -72,8 +75,8 @@ class SettingsWindowController: NSWindowController, NSComboBoxDataSource, NSComb
     }
     
     override var windowNibName: String
-    {
-        return "SettingsWindowController"
+        {
+            return "SettingsWindowController"
     }
     
     @IBAction func settingsClose(sender: NSButton)
@@ -97,19 +100,30 @@ class SettingsWindowController: NSWindowController, NSComboBoxDataSource, NSComb
         
     }
     
+    func getPollutionCity(data: NSDictionary) -> PollutionCity
+    {
+        
+        let city: PollutionCity = PollutionCity()
+        city.id = data["id"] as? Int
+        city.name = data["name"] as? String
+        city.latitude = Double((data["lat"] as? String)!)
+        city.longitude = Double((data["long"] as? String)!)
+        
+        return city
+    }
+    
     @IBAction func selectCity(sender: AnyObject) {
-        //if(cityCombo.indexOfSelectedItem == -1)
-        //{
-            let typedCity = cityCombo.stringValue
-            let selectedIndex = getCityIndex(typedCity)
-            if selectedIndex != nil
-            {
-                cityCombo.selectItemAtIndex((selectedIndex?.keys.first!)!)
-                print("selected" + String(selectedIndex))
-                AppPreferences.CityId = (selectedIndex?.values.first?.id)!
-                
-            }
-        //}
+       
+        let typedCity = cityCombo.stringValue
+        let selectedIndex = getCityIndex(typedCity)
+        if selectedIndex != nil
+        {
+            cityCombo.selectItemAtIndex((selectedIndex?.keys.first!)!)
+            print("selected" + String(selectedIndex))
+            AppPreferences.CityId = (selectedIndex?.values.first?.id)!
+            selectPollution((selectedIndex?.values.first)!)
+        }
+        
     }
     
     func getCityIndex(typedCity : String) -> [Int: WeatherCity]?
@@ -169,22 +183,92 @@ class SettingsWindowController: NSWindowController, NSComboBoxDataSource, NSComb
     
     func comboBoxSelectionDidChange(notification: NSNotification) {
         
-        print(weatherCitiesArray[cityCombo.indexOfSelectedItem].name!)
-        AppPreferences.CityId = weatherCitiesArray[cityCombo.indexOfSelectedItem].id!
+//        print(weatherCitiesArray[cityCombo.indexOfSelectedItem].name!)
+//        let cityId = weatherCitiesArray[cityCombo.indexOfSelectedItem].id!
+//        AppPreferences.CityId = cityId
+//        
+//        let CityIdDict = getCityIndexById(cityId)
+//        
+//        selectPollution((CityIdDict?.values.first)!)
         
     }
     
-//    func comboBox(aComboBox: NSComboBox, indexOfItemWithStringValue string: String) -> Int {
-//       // print(string)
-//        let index =  getCityIndex(string)
-//        if let indexVal = index
-//        {
-//            return indexVal.keys.first!
-//        }
-//        
-//        print("returning zero for" + string)
-//        return 0
-//        
-//    }
+    func selectPollution(selectedWeathercity: WeatherCity)
+    {
+        var pollutionCitiesArray: [PollutionCity] = []
+        //let coreLocation: CLLocationManager = CLLocationManager()
+        var nearestCenterId: Int? = nil
+        
+        let weatherLocation: CLLocation = CLLocation(
+            latitude: CLLocationDegrees.abs(selectedWeathercity.latitude!),
+            longitude: CLLocationDegrees.abs(selectedWeathercity.longitude!))
+        
+        let pollutionCities = NSBundle.mainBundle().pathForResource("pollution_cities", ofType: "json")
+        if let pollutionFile = pollutionCities
+        {
+            let data = NSData.dataWithContentsOfMappedFile(pollutionFile)
+            
+            do {
+                
+                let citiesArray = try NSJSONSerialization.JSONObjectWithData(data as! NSData, options: NSJSONReadingOptions.AllowFragments)
+                
+                let minDistance: CLLocationDistance = 30000
+                //var actualDistance: CLLocationDistance? = nil
+                
+                for city: NSDictionary in citiesArray as! [NSDictionary]
+                {
+                    let pollutionCity = getPollutionCity(city)
+                    
+                    let pollutionLocation: CLLocation = CLLocation(
+                        latitude: CLLocationDegrees.abs(pollutionCity.latitude!),
+                        longitude: CLLocationDegrees.abs(pollutionCity.longitude!))
+                    
+                    
+                    let distance = weatherLocation.distanceFromLocation(pollutionLocation)
+                    
+                    if distance < minDistance
+                    {
+                        //actualDistance = distance
+                        nearestCenterId = pollutionCity.id
+                        
+                    }
+                    
+                    
+                    //pollutionCitiesArray.insert(pollutionCity)
+                    pollutionCitiesArray.insert(pollutionCity, atIndex: pollutionCitiesArray.count)
+                    
+                }
+                
+            }
+            catch
+            {
+                print("Error occurred")
+            }
+        }
+        
+        if let pollutionId = nearestCenterId
+        {
+            AppPreferences.PollutionId = pollutionId
+            print("setting nearest pollution id" + String(pollutionId))
+        }
+        else
+        {
+            print("No nearest pollution center found")
+        }
+        
+    }
+    
+    //    func comboBox(aComboBox: NSComboBox, indexOfItemWithStringValue string: String) -> Int {
+    //       // print(string)
+    //        let index =  getCityIndex(string)
+    //        if let indexVal = index
+    //        {
+    //            return indexVal.keys.first!
+    //        }
+    //        
+    //        print("returning zero for" + string)
+    //        return 0
+    //        
+    //    }
     
 }

@@ -52,6 +52,7 @@ struct Defaults
 {
     static let UNITS = "units"
     static let CITY_ID = "city_id"
+    static let POLLUTION_ID = "pollution_id"
     static let ICON_TYPE = "icon_type"
     static let SYNC_INTERVAL = "sync_interval"
 }
