@@ -68,6 +68,12 @@ class PollutionFetcher
         
         let aqiDict = pollutionDict["aqi"] as! NSDictionary
         
+        if aqiDict["param"] as! String == "N/A"
+        {
+            print("n/a found for param")
+            return nil
+        }
+        
         let dateStr = pollutionDict["date"] as! String
         let dateFormatter = NSDateFormatter()
         dateFormatter.dateFormat = "EEEE, dd MMM yyyy hh:mm a"

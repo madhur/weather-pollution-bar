@@ -17,6 +17,7 @@ class StatusMenuController: NSObject
     
     var weatherView: WeatherView?
     var pollutionView: PollutionView?
+    var timer: NSTimer?
     
     var settingsWindowController: SettingsWindowController?
     var aboutWindowController: AboutWindowController?
@@ -51,6 +52,12 @@ class StatusMenuController: NSObject
         defaultsDict.setValue(Constants.UNITS[0], forKey: Defaults.UNITS)
         defaultsDict.setValue(0, forKey: Defaults.POLLUTION_ID)
         NSUserDefaults.standardUserDefaults().registerDefaults(defaultsDict as! [String : AnyObject])
+        
+       let timer = NSTimer.scheduledTimerWithTimeInterval(Double(Constants.SYNC_INTERVAL[0]*60), target: self, selector: Selector("update"), userInfo: nil, repeats: true)
+        
+        self.timer = timer
+        
+        print(statusMenu.itemArray.count)
 
     }
     
@@ -60,21 +67,24 @@ class StatusMenuController: NSObject
         update(weatherMenuItem)
     }
     
-    func hideViews()
-    {
-        hideWeather()
-        hidePollution()
-    }
-    
-    func hideWeather()
-    {
-        statusMenu.removeItemAtIndex(2)
-
-    }
-    
+//    func hideViews()
+//    {
+//        hideWeather()
+//        hidePollution()
+//    }
+//
+//    func hideWeather()
+//    {
+//        statusMenu.removeItemAtIndex(2)
+//
+//    }
+//    
     func hidePollution()
     {
-        statusMenu.removeItemAtIndex(4)
+        if statusMenu.itemArray.count >= 7
+        {
+            statusMenu.removeItemAtIndex(4)
+        }
 
     }
     func showWeather()

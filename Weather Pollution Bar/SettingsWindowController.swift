@@ -23,41 +23,45 @@ class SettingsWindowController: NSWindowController, NSComboBoxDataSource, NSComb
     override func windowDidLoad() {
         super.windowDidLoad()
         
+        self.window?.center()
+        self.window?.makeKeyAndOrderFront(nil)
+        NSApp.activateIgnoringOtherApps(true)
+        
         // Implement this method to handle any initialization after your window controller's window has been loaded from its nib file.
         
         unitCombo.addItemsWithObjectValues(Constants.UNITS)
         syncCombo.addItemsWithObjectValues(Constants.SYNC_INTERVAL)
         iconCombo.addItemsWithObjectValues(Constants.ICON_TYPE)
         
-        let cities = NSBundle.mainBundle().pathForResource("cities", ofType: "json")
-        if let citiesFile = cities
-        {
-            let data = NSData.dataWithContentsOfMappedFile(citiesFile)
+        NSOperationQueue().addOperationWithBlock({
             
-            do {
+            let cities = NSBundle.mainBundle().pathForResource("cities", ofType: "json")
+            if let citiesFile = cities
+            {
+                let data = NSData.dataWithContentsOfMappedFile(citiesFile)
                 
-                let citiesArray = try NSJSONSerialization.JSONObjectWithData(data as! NSData, options: NSJSONReadingOptions.AllowFragments)
-                
-                for city: NSDictionary in citiesArray as! [NSDictionary]
+                do {
+                    
+                    let citiesArray = try NSJSONSerialization.JSONObjectWithData(data as! NSData, options: NSJSONReadingOptions.AllowFragments)
+                    
+                    for city: NSDictionary in citiesArray as! [NSDictionary]
+                    {
+                        let weatherCity = self.getCity(city)
+                        
+                        self.weatherCitiesArray.insert(weatherCity, atIndex: self.weatherCitiesArray.count)
+                        
+                    }
+                    
+                }
+                catch
                 {
-                    let weatherCity = getCity(city)
-                    
-                    weatherCitiesArray.insert(weatherCity, atIndex: weatherCitiesArray.count)
-                    
+                    print("Error occurred")
                 }
                 
             }
-            catch
-            {
-                print("Error occurred")
-            }
-            
-        }
         
-        
-        
-        
-        self.syncCombo.objectValue = AppPreferences.SyncInterval
+        })
+               self.syncCombo.objectValue = AppPreferences.SyncInterval
         self.unitCombo.objectValue = AppPreferences.Units
         self.iconCombo.objectValue = AppPreferences.IconType
         let cityIndex = getCityIndexById(AppPreferences.CityId)
@@ -68,9 +72,7 @@ class SettingsWindowController: NSWindowController, NSComboBoxDataSource, NSComb
             self.cityCombo.stringValue = (cityIndexVal.values.first?.name!)!
         }
         
-        self.window?.center()
-        self.window?.makeKeyAndOrderFront(nil)
-        NSApp.activateIgnoringOtherApps(true)
+       
         
     }
     

@@ -13,6 +13,8 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 
     func applicationDidFinishLaunching(aNotification: NSNotification) {
         // Insert code here to initialize your application
+        
+        NSApp.setActivationPolicy(NSApplicationActivationPolicy.Accessory)
     
            }
 
