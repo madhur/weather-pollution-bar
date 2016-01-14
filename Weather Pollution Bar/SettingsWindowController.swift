@@ -59,21 +59,21 @@ class SettingsWindowController: NSWindowController, NSComboBoxDataSource, NSComb
                 }
                 
             }
+            
+            let cityIndex = self.getCityIndexById(AppPreferences.CityId)
+            
+            if let cityIndexVal = cityIndex
+            {
+                //self.cityCombo.selectItemAtIndex(cityIndexVal.keys.first!)
+                self.cityCombo.stringValue = (cityIndexVal.values.first?.name!)!
+            }
+
         
         })
-               self.syncCombo.objectValue = AppPreferences.SyncInterval
+        
+        self.syncCombo.objectValue = AppPreferences.SyncInterval
         self.unitCombo.objectValue = AppPreferences.Units
         self.iconCombo.objectValue = AppPreferences.IconType
-        let cityIndex = getCityIndexById(AppPreferences.CityId)
-        
-        if let cityIndexVal = cityIndex
-        {
-            //self.cityCombo.selectItemAtIndex(cityIndexVal.keys.first!)
-            self.cityCombo.stringValue = (cityIndexVal.values.first?.name!)!
-        }
-        
-       
-        
     }
     
     override var windowNibName: String

@@ -53,17 +53,26 @@ class StatusMenuController: NSObject
         defaultsDict.setValue(0, forKey: Defaults.POLLUTION_ID)
         NSUserDefaults.standardUserDefaults().registerDefaults(defaultsDict as! [String : AnyObject])
         
-       let timer = NSTimer.scheduledTimerWithTimeInterval(Double(Constants.SYNC_INTERVAL[0]*60), target: self, selector: Selector("update"), userInfo: nil, repeats: true)
+        let timer = NSTimer.scheduledTimerWithTimeInterval(Double(Constants.SYNC_INTERVAL[0]*60), target: self, selector: Selector("update"), userInfo: nil, repeats: true)
         
+        //let timer = NSTimer.scheduledTimerWithTimeInterval(5, target: self, selector: Selector("update"), userInfo: nil, repeats: true)
         self.timer = timer
         
         print(statusMenu.itemArray.count)
+        
+        
 
     }
     
     func updateNotification(notification: NSNotification)
     {
         
+        update(weatherMenuItem)
+        
+    }
+    
+    func update()
+    {
         update(weatherMenuItem)
     }
     
@@ -115,6 +124,8 @@ class StatusMenuController: NSObject
         weatherView?.updateWeather()
         pollutionView?.updatePollution()
         
+        showNotification()
+        
     }
     
     @IBAction func settingsClicked(sender: NSMenuItem)
@@ -130,6 +141,20 @@ class StatusMenuController: NSObject
         self.aboutWindowController = AboutWindowController()
         aboutWindowController?.showWindow(self)
         
+    }
+    
+    
+    func showNotification()
+    {
+        #if DEBUG
+            let notification  = NSUserNotification.init()
+            notification.title = "Updating Weather"
+            notification.soundName = NSUserNotificationDefaultSoundName
+            let center = NSUserNotificationCenter.defaultUserNotificationCenter()
+            center.deliverNotification(notification)
+        #endif
+        
+
     }
     
     
