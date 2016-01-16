@@ -15,7 +15,7 @@ class PollutionFetcher
     static func fetch(pollutionCallback: (Pollution?) -> Void)
     {
         let stationId = AppPreferences.PollutionId
-        if stationId  == 0
+        if stationId == nil || stationId?.count == 0
         {
             print("not fetching pollution for default")
             pollutionCallback(nil)
@@ -27,7 +27,7 @@ class PollutionFetcher
         dateFormatter.dateFormat = "dd/MM/yyyy"
         let dateStr = dateFormatter.stringFromDate(date)
         
-        let url = String(format: Constants.POLLUTION_URL, stationId, dateStr)
+        let url = String(format: Constants.POLLUTION_URL, stationId![0] as! Int, dateStr)
         let request = NSURL(string: url)
         let urlRequest = NSURLRequest(URL: request!)
         

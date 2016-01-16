@@ -24,13 +24,13 @@ class AppPreferences
         
     }
     
-    static var PollutionId:Int {
+    static var PollutionId: [AnyObject]? {
         get{
         
-        return NSUserDefaults.standardUserDefaults().integerForKey(Defaults.POLLUTION_ID)
+        return NSUserDefaults.standardUserDefaults().arrayForKey(Defaults.POLLUTION_ID)
         }
         set(value) {
-            NSUserDefaults.standardUserDefaults().setInteger(value, forKey: Defaults.POLLUTION_ID)
+            NSUserDefaults.standardUserDefaults().setObject(value, forKey: Defaults.POLLUTION_ID)
         }
         
     }

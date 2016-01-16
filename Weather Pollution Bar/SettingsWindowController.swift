@@ -201,11 +201,13 @@ class SettingsWindowController: NSWindowController, NSComboBoxDataSource, NSComb
     {
         var pollutionCitiesArray: [PollutionCity] = []
         //let coreLocation: CLLocationManager = CLLocationManager()
-        var nearestCenterId: Int? = nil
+//        var nearestCenterId: Int? = nil
         
         let weatherLocation: CLLocation = CLLocation(
             latitude: CLLocationDegrees.abs(selectedWeathercity.latitude!),
             longitude: CLLocationDegrees.abs(selectedWeathercity.longitude!))
+        
+         var pollutionIds : [Int]? = []
         
         let pollutionCities = NSBundle.mainBundle().pathForResource("pollution_cities", ofType: "json")
         if let pollutionFile = pollutionCities
@@ -217,7 +219,7 @@ class SettingsWindowController: NSWindowController, NSComboBoxDataSource, NSComb
                 let citiesArray = try NSJSONSerialization.JSONObjectWithData(data as! NSData, options: NSJSONReadingOptions.AllowFragments)
                 
                 let minDistance: CLLocationDistance = 30000
-                //var actualDistance: CLLocationDistance? = nil
+               
                 
                 for city: NSDictionary in citiesArray as! [NSDictionary]
                 {
@@ -232,13 +234,12 @@ class SettingsWindowController: NSWindowController, NSComboBoxDataSource, NSComb
                     
                     if distance < minDistance
                     {
-                        //actualDistance = distance
-                        nearestCenterId = pollutionCity.id
+                        
+                        let nearestCenterId = pollutionCity.id
+                        pollutionIds?.append(nearestCenterId!)
                         
                     }
                     
-                    
-                    //pollutionCitiesArray.insert(pollutionCity)
                     pollutionCitiesArray.insert(pollutionCity, atIndex: pollutionCitiesArray.count)
                     
                 }
@@ -250,15 +251,15 @@ class SettingsWindowController: NSWindowController, NSComboBoxDataSource, NSComb
             }
         }
         
-        if let pollutionId = nearestCenterId
+        if pollutionIds?.count > 0
         {
-            AppPreferences.PollutionId = pollutionId
-            print("setting nearest pollution id" + String(pollutionId))
+            AppPreferences.PollutionId = pollutionIds
+            print("setting nearest pollution id" + String(pollutionIds))
         }
         else
         {
             print("No nearest pollution center found")
-            AppPreferences.PollutionId = 0
+            AppPreferences.PollutionId = [0]
         }
         
     }

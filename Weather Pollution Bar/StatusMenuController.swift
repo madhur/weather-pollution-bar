@@ -28,8 +28,9 @@ class StatusMenuController: NSObject
         
         let icon = NSImage(named: "statusIcon")
         icon?.size = NSSize.init(width: 18, height: 18)
-        
+        icon?.cacheMode = NSImageCacheMode.Never
         icon?.template = true
+        
         statusItem.image = icon
         statusItem.menu = statusMenu
         
@@ -50,7 +51,7 @@ class StatusMenuController: NSObject
         defaultsDict.setValue(Constants.ICON_TYPE[1], forKey: Defaults.ICON_TYPE)
         defaultsDict.setValue(Constants.SYNC_INTERVAL[0], forKey: Defaults.SYNC_INTERVAL)
         defaultsDict.setValue(Constants.UNITS[0], forKey: Defaults.UNITS)
-        defaultsDict.setValue(0, forKey: Defaults.POLLUTION_ID)
+        defaultsDict.setValue([0], forKey: Defaults.POLLUTION_ID)
         NSUserDefaults.standardUserDefaults().registerDefaults(defaultsDict as! [String : AnyObject])
         
         let timer = NSTimer.scheduledTimerWithTimeInterval(Double(Constants.SYNC_INTERVAL[0]*60), target: self, selector: Selector("update"), userInfo: nil, repeats: true)
@@ -76,18 +77,7 @@ class StatusMenuController: NSObject
         update(weatherMenuItem)
     }
     
-//    func hideViews()
-//    {
-//        hideWeather()
-//        hidePollution()
-//    }
-//
-//    func hideWeather()
-//    {
-//        statusMenu.removeItemAtIndex(2)
-//
-//    }
-//    
+
     func hidePollution()
     {
         if statusMenu.itemArray.count >= 7

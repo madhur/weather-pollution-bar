@@ -89,11 +89,11 @@ class WeatherView: NSViewController {
             self.currentTemp.stringValue = Int((weather?.todayWeather?.temperature.current)!).description
             self.currentUnit.stringValue = AppPreferences.Units
             self.currentDescription.stringValue = (weather?.todayWeather?.title)!
-            self.currentIcon.image = NSImage(named: Constants.WEATHER_MAPPING[(weather?.todayWeather?.temperatureIcon)!]!)
-           // self.updatedLabel.stringValue = getReadableTime((weather?.updatedLong)!)
             
+            let image = NSImage(named: Constants.WEATHER_MAPPING[(weather?.todayWeather?.temperatureIcon)!]!)
+            image?.cacheMode = NSImageCacheMode.Never
             
-           
+            self.currentIcon.image = image
             
             if AppPreferences.IconType == Constants.ICON_TYPE[0]
             {
@@ -132,8 +132,6 @@ class WeatherView: NSViewController {
     
                 (futureWeather: [FutureWeather]?) in
                 
-              // self.statusMenuViewController?.showWeather()
-                
                var i = 0
                for (index, weather) in (futureWeather?.enumerate())!
                {
@@ -148,14 +146,17 @@ class WeatherView: NSViewController {
                 
                     self.dayMax?[i].stringValue = Int(weather.temperature.max).description
                     self.dayMin?[i].stringValue = Int(weather.temperature.min).description
-                    self.dayIcon?[i].image = NSImage(named: Constants.WEATHER_MAPPING[weather.temperatureIcon]!)
+                
+                    let image = NSImage(named: Constants.WEATHER_MAPPING[weather.temperatureIcon]!)
+                    image?.cacheMode = NSImageCacheMode.Never
+                    self.dayIcon?[i].image = image
                     self.dayLabel?[i].stringValue = WeatherView.getWeekString(weather.updatedLong)
                 
                 
                     i = i + 1
                 }
         
-                //print(futureWeather)
+                
             }
         
         }
