@@ -14,26 +14,34 @@ class PollutionFetcher
        
     static func fetch(pollutionCallback: (Pollution?) -> Void)
     {
-        let stationId = AppPreferences.PollutionId
-        if stationId == nil || stationId?.count == 0
+        let stationIds = AppPreferences.PollutionId
+        if stationIds == nil || stationIds?.count == 0
         {
             print("not fetching pollution for default")
             pollutionCallback(nil)
             return
         }
+        print(stationIds)
+        fetchPollution(0, stationIds: stationIds as! [Int]?, pollutionCallback: pollutionCallback)
+        
+    }
+    
+    static func fetchPollution(var index: Int, stationIds: [Int]?, pollutionCallback: (Pollution?) -> Void)
+    {
+        print("fetcing pollution for" + String(stationIds![index]))
         
         let date = NSDate()
         let dateFormatter = NSDateFormatter()
         dateFormatter.dateFormat = "dd/MM/yyyy"
         let dateStr = dateFormatter.stringFromDate(date)
         
-        let url = String(format: Constants.POLLUTION_URL, stationId![0] as! Int, dateStr)
+        let url = String(format: Constants.POLLUTION_URL, stationIds![index], dateStr)
         let request = NSURL(string: url)
         let urlRequest = NSURLRequest(URL: request!)
         
         let task = NSURLSession.sharedSession().dataTaskWithRequest(urlRequest,
             completionHandler: { (data, response, error) -> Void in
-            
+                
                 if error != nil
                 {
                     print(error)
@@ -41,15 +49,23 @@ class PollutionFetcher
                 else if(data != nil)
                 {
                     let pollution = getPollutionFromJSON(data!)
-                    //PollutionView.pollution = pollution
-                    //print(PollutionView.pollution!)
+                    if pollution == nil
+                    {
+                        index = index + 1
+                        if stationIds?.count > index
+                        {
+                            fetchPollution(index, stationIds: stationIds, pollutionCallback: pollutionCallback)
+                        }
+                    }
+                    
                     pollutionCallback(pollution)
                 }
                 
         })
         
         task.resume()
-    
+        
+        
     }
     
     static func getPollutionFromJSON(data: NSData) -> Pollution?

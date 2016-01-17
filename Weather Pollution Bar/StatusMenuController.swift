@@ -54,7 +54,7 @@ class StatusMenuController: NSObject
         defaultsDict.setValue([0], forKey: Defaults.POLLUTION_ID)
         NSUserDefaults.standardUserDefaults().registerDefaults(defaultsDict as! [String : AnyObject])
         
-        let timer = NSTimer.scheduledTimerWithTimeInterval(Double(Constants.SYNC_INTERVAL[0]*60), target: self, selector: Selector("update"), userInfo: nil, repeats: true)
+        let timer = NSTimer.scheduledTimerWithTimeInterval(Double((defaultsDict[Defaults.SYNC_INTERVAL] as! Int)*60), target: self, selector: Selector("update"), userInfo: nil, repeats: true)
         
         //let timer = NSTimer.scheduledTimerWithTimeInterval(5, target: self, selector: Selector("update"), userInfo: nil, repeats: true)
         self.timer = timer
@@ -80,7 +80,7 @@ class StatusMenuController: NSObject
 
     func hidePollution()
     {
-        if statusMenu.itemArray.count >= 7
+        if statusMenu.itemArray.count >= 8
         {
             statusMenu.removeItemAtIndex(4)
         }
@@ -122,7 +122,7 @@ class StatusMenuController: NSObject
     {
         self.settingsWindowController = SettingsWindowController()
         settingsWindowController?.showWindow(self)
-        
+        settingsWindowController?.statusMenuController = self
     }
     
     

@@ -26,15 +26,15 @@
                 <subviews>
                     <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="lBS-2I-nIv">
                         <rect key="frame" x="18" y="81" width="409" height="39"/>
-                        <textFieldCell key="cell" sendsActionOnEndEditing="YES" alignment="left" title="Weather Pollution Bar - A simple weather shortcut menu for OSX" id="VJO-kh-gSB">
+                        <textFieldCell key="cell" sendsActionOnEndEditing="YES" alignment="left" title="Weather Pollution Bar - A simple weather shortcut menu for OSX." id="VJO-kh-gSB">
                             <font key="font" metaFont="titleBar"/>
                             <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                             <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                         </textFieldCell>
                     </textField>
-                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="gCw-Gf-Ycd">
-                        <rect key="frame" x="18" y="56" width="96" height="17"/>
-                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Version: " id="RPn-lc-mSS">
+                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="TSV-w1-M1z">
+                        <rect key="frame" x="18" y="56" width="401" height="17"/>
+                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="*Pollution is currently available in India only" id="CQr-29-YKc">
                             <font key="font" metaFont="label"/>
                             <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                             <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
@@ -70,6 +70,14 @@
                             <action selector="openHomepage:" target="-2" id="AAs-51-BeH"/>
                         </connections>
                     </button>
+                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="gCw-Gf-Ycd">
+                        <rect key="frame" x="18" y="75" width="96" height="17"/>
+                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Version: " id="RPn-lc-mSS">
+                            <font key="font" metaFont="label"/>
+                            <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                            <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                        </textFieldCell>
+                    </textField>
                 </subviews>
             </view>
             <connections>

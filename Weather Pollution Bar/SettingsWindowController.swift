@@ -20,6 +20,10 @@ class SettingsWindowController: NSWindowController, NSComboBoxDataSource, NSComb
     @IBOutlet weak var iconCombo: NSComboBox!
     var weatherCitiesArray: [WeatherCity] = []
     
+    var statusMenuController: StatusMenuController!
+    
+    @IBOutlet weak var pollutionLabel: NSTextField!
+    
     override func windowDidLoad() {
         super.windowDidLoad()
         
@@ -64,7 +68,7 @@ class SettingsWindowController: NSWindowController, NSComboBoxDataSource, NSComb
             
             if let cityIndexVal = cityIndex
             {
-                //self.cityCombo.selectItemAtIndex(cityIndexVal.keys.first!)
+                
                 self.cityCombo.stringValue = (cityIndexVal.values.first?.name!)!
             }
 
@@ -74,12 +78,15 @@ class SettingsWindowController: NSWindowController, NSComboBoxDataSource, NSComb
         self.syncCombo.objectValue = AppPreferences.SyncInterval
         self.unitCombo.objectValue = AppPreferences.Units
         self.iconCombo.objectValue = AppPreferences.IconType
+        
+        pollutionLabel.stringValue = "Nearest pollution center is: " + (getPollutionById(AppPreferences.PollutionId![0] as! Int)?.name)!
     }
     
     override var windowNibName: String
         {
             return "SettingsWindowController"
     }
+   
     
     @IBAction func settingsClose(sender: NSButton)
     {
@@ -162,7 +169,16 @@ class SettingsWindowController: NSWindowController, NSComboBoxDataSource, NSComb
     }
     
     @IBAction func selectSyncInterval(sender: AnyObject) {
+        
         AppPreferences.SyncInterval = syncCombo.objectValueOfSelectedItem as! Int
+        
+        statusMenuController.timer?.invalidate()
+        statusMenuController.timer = nil
+        
+        print("setting refresh interval to" + String(AppPreferences.SyncInterval))
+        
+        statusMenuController.timer = NSTimer.scheduledTimerWithTimeInterval(Double(AppPreferences.SyncInterval*60), target: statusMenuController, selector: Selector("update"), userInfo: nil, repeats: true)
+        
     }
     
     @IBAction func selectIcon(sender: NSComboBox) {
@@ -199,15 +215,35 @@ class SettingsWindowController: NSWindowController, NSComboBoxDataSource, NSComb
     
     func selectPollution(selectedWeathercity: WeatherCity)
     {
+        
+        let pollutionData = getPollutionById(selectedWeathercity.latitude!, longitude: selectedWeathercity.longitude!)
+        
+        let pollutionIds = pollutionData.pollutionIds
+        
+        if pollutionIds.count > 0
+        {
+            AppPreferences.PollutionId = pollutionIds
+            print("setting nearest pollution id" + String(pollutionIds))
+            pollutionLabel.stringValue = "Nearest pollution center is: " + String(pollutionData.pollutionCitiesArray[0].name!)
+        }
+        else
+        {
+            print("No nearest pollution center found")
+            AppPreferences.PollutionId = [0]
+            pollutionLabel.stringValue = "No nearest pollution center found"
+        }
+        
+    }
+    
+    func getPollutionById(latitude: Double, longitude: Double) -> PollutionData
+    {
         var pollutionCitiesArray: [PollutionCity] = []
-        //let coreLocation: CLLocationManager = CLLocationManager()
-//        var nearestCenterId: Int? = nil
-        
+
         let weatherLocation: CLLocation = CLLocation(
-            latitude: CLLocationDegrees.abs(selectedWeathercity.latitude!),
-            longitude: CLLocationDegrees.abs(selectedWeathercity.longitude!))
+            latitude: CLLocationDegrees.abs(latitude),
+            longitude: CLLocationDegrees.abs(longitude))
         
-         var pollutionIds : [Int]? = []
+        var pollutionIds : [Int]? = []
         
         let pollutionCities = NSBundle.mainBundle().pathForResource("pollution_cities", ofType: "json")
         if let pollutionFile = pollutionCities
@@ -219,7 +255,7 @@ class SettingsWindowController: NSWindowController, NSComboBoxDataSource, NSComb
                 let citiesArray = try NSJSONSerialization.JSONObjectWithData(data as! NSData, options: NSJSONReadingOptions.AllowFragments)
                 
                 let minDistance: CLLocationDistance = 30000
-               
+                
                 
                 for city: NSDictionary in citiesArray as! [NSDictionary]
                 {
@@ -237,10 +273,9 @@ class SettingsWindowController: NSWindowController, NSComboBoxDataSource, NSComb
                         
                         let nearestCenterId = pollutionCity.id
                         pollutionIds?.append(nearestCenterId!)
+                        pollutionCitiesArray.append(pollutionCity)
                         
                     }
-                    
-                    pollutionCitiesArray.insert(pollutionCity, atIndex: pollutionCitiesArray.count)
                     
                 }
                 
@@ -250,17 +285,48 @@ class SettingsWindowController: NSWindowController, NSComboBoxDataSource, NSComb
                 print("Error occurred")
             }
         }
+
+        return PollutionData(pollutionCitiesArray: pollutionCitiesArray, pollutionIds: pollutionIds!)
         
-        if pollutionIds?.count > 0
+    }
+    
+    func getPollutionById(pollutionId: Int) -> PollutionCity?
+    {
+        
+        let pollutionCities = NSBundle.mainBundle().pathForResource("pollution_cities", ofType: "json")
+        if let pollutionFile = pollutionCities
         {
-            AppPreferences.PollutionId = pollutionIds
-            print("setting nearest pollution id" + String(pollutionIds))
+            let data = NSData.dataWithContentsOfMappedFile(pollutionFile)
+            
+            do {
+                
+                let citiesArray = try NSJSONSerialization.JSONObjectWithData(data as! NSData, options: NSJSONReadingOptions.AllowFragments)
+                
+                for city: NSDictionary in citiesArray as! [NSDictionary]
+                {
+                    let pollutionCity = getPollutionCity(city)
+                    
+                    if pollutionCity.id == pollutionId
+                    {
+                        return pollutionCity
+                    }
+                }
+                
+            }
+            catch
+            {
+                print("Error occurred")
+            }
         }
-        else
-        {
-            print("No nearest pollution center found")
-            AppPreferences.PollutionId = [0]
-        }
+        
+        return nil
+        
+    }
+    
+    struct PollutionData
+    {
+        var pollutionCitiesArray: [PollutionCity]
+        var pollutionIds: [Int]
         
     }
     
