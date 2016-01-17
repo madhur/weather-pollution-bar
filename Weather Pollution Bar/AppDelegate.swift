@@ -16,7 +16,8 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         
         // Do not display on dock
         NSApp.setActivationPolicy(NSApplicationActivationPolicy.Accessory)
-    
+        
+            
     }
 
     func applicationWillTerminate(aNotification: NSNotification) {

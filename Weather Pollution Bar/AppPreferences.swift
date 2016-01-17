@@ -35,9 +35,9 @@ class AppPreferences
         
     }
     
-    static var Units: String{
+    static var Units: String?{
         get {
-            return NSUserDefaults.standardUserDefaults().stringForKey(Defaults.UNITS)!
+            return NSUserDefaults.standardUserDefaults().stringForKey(Defaults.UNITS)
         }
         set(value)
         {

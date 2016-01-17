@@ -79,7 +79,10 @@ class SettingsWindowController: NSWindowController, NSComboBoxDataSource, NSComb
         self.unitCombo.objectValue = AppPreferences.Units
         self.iconCombo.objectValue = AppPreferences.IconType
         
-        pollutionLabel.stringValue = "Nearest pollution center is: " + (getPollutionById(AppPreferences.PollutionId![0] as! Int)?.name)!
+        if AppPreferences.PollutionId![0] as! Int != 0
+        {
+            pollutionLabel.stringValue = "Nearest pollution center is: " + (getPollutionById(AppPreferences.PollutionId![0] as! Int)?.name)!
+        }
     }
     
     override var windowNibName: String

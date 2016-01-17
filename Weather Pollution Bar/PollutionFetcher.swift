@@ -21,6 +21,14 @@ class PollutionFetcher
             pollutionCallback(nil)
             return
         }
+        else if stationIds![0] as! Int == 0
+        {
+    
+            print("not fetching pollution for default")
+            pollutionCallback(nil)
+            return
+
+        }
         print(stationIds)
         fetchPollution(0, stationIds: stationIds as! [Int]?, pollutionCallback: pollutionCallback)
         

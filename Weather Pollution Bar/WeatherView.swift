@@ -72,8 +72,8 @@ class WeatherView: NSViewController {
     {
         let units  = AppPreferences.Units
         
-        WeatherFetcher.fetchCurrent(currentWeatherCallback, units: units)
-        WeatherFetcher.fetchFuture(futureWeatherCallback, units: units)
+        WeatherFetcher.fetchCurrent(currentWeatherCallback, units: units!)
+        WeatherFetcher.fetchFuture(futureWeatherCallback, units: units!)
 
     }
     
@@ -87,7 +87,8 @@ class WeatherView: NSViewController {
             //print(weather)
             print("got current weather")
             self.currentTemp.stringValue = Int((weather?.todayWeather?.temperature.current)!).description
-            self.currentUnit.stringValue = AppPreferences.Units
+            self.currentUnit.stringValue = AppPreferences.Units!
+            print(self.currentUnit.stringValue)
             self.currentDescription.stringValue = (weather?.todayWeather?.title)!
             
             let image = NSImage(named: Constants.WEATHER_MAPPING[(weather?.todayWeather?.temperatureIcon)!]!)

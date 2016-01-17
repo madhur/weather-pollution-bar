@@ -26,6 +26,18 @@ class StatusMenuController: NSObject
     
     override func awakeFromNib() {
         
+        var defaultsDict = [String: AnyObject]()
+        
+        
+        defaultsDict[Defaults.CITY_ID]=1277333
+        defaultsDict[Defaults.ICON_TYPE] = Constants.ICON_TYPE[1]
+        defaultsDict[Defaults.UNITS] = Constants.UNITS[0]
+        defaultsDict[Defaults.SYNC_INTERVAL] = Constants.SYNC_INTERVAL[0]
+        defaultsDict[Defaults.POLLUTION_ID] = [0]
+        
+        NSUserDefaults.standardUserDefaults().registerDefaults(defaultsDict)
+
+        
         let icon = NSImage(named: "statusIcon")
         icon?.size = NSSize.init(width: 18, height: 18)
         icon?.cacheMode = NSImageCacheMode.Never
@@ -45,16 +57,8 @@ class StatusMenuController: NSObject
         
        NSNotificationCenter.defaultCenter().addObserver(self, selector: "updateNotification:", name: Constants.UPDATE_NOTIFICATION, object: nil)
         
-        let defaultsDict = NSMutableDictionary()
-
-        defaultsDict.setValue(1277333, forKey: Defaults.CITY_ID)
-        defaultsDict.setValue(Constants.ICON_TYPE[1], forKey: Defaults.ICON_TYPE)
-        defaultsDict.setValue(Constants.SYNC_INTERVAL[0], forKey: Defaults.SYNC_INTERVAL)
-        defaultsDict.setValue(Constants.UNITS[0], forKey: Defaults.UNITS)
-        defaultsDict.setValue([0], forKey: Defaults.POLLUTION_ID)
-        NSUserDefaults.standardUserDefaults().registerDefaults(defaultsDict as! [String : AnyObject])
         
-        let timer = NSTimer.scheduledTimerWithTimeInterval(Double((defaultsDict[Defaults.SYNC_INTERVAL] as! Int)*60), target: self, selector: Selector("update"), userInfo: nil, repeats: true)
+        let timer = NSTimer.scheduledTimerWithTimeInterval(Double(Constants.SYNC_INTERVAL[0]*60), target: self, selector: Selector("update"), userInfo: nil, repeats: true)
         
         //let timer = NSTimer.scheduledTimerWithTimeInterval(5, target: self, selector: Selector("update"), userInfo: nil, repeats: true)
         self.timer = timer
