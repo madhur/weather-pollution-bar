@@ -30,6 +30,8 @@ struct Constants
     
     static let UPDATE_NOTIFICATION = "in.co.madhur.update_notification"
     
+    static let DEG_SYMBOL="°"
+    
     
     static let WEATHER_MAPPING =  [
     "01d": "clear_sky", "01n": "clear_sky_night" , "02d": "few_clouds", "02n": "few_clouds_night", "03d": "scattered_clouds", "03n": "scattered_clouds", "04d": "broken_clouds", "04n": "broken_clouds", "09d": "shower rain", "09n": "shower rain", "10d": "rainy",

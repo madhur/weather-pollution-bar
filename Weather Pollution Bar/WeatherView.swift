@@ -86,12 +86,13 @@ class WeatherView: NSViewController {
             
             //print(weather)
             print("got current weather")
-            self.currentTemp.stringValue = Int((weather?.todayWeather?.temperature.current)!).description
+            self.currentTemp.stringValue = Int((weather?.todayWeather?.temperature.current)!).description + Constants.DEG_SYMBOL
             self.currentUnit.stringValue = AppPreferences.Units!
             print(self.currentUnit.stringValue)
             self.currentDescription.stringValue = (weather?.todayWeather?.title)!
             
             let image = NSImage(named: Constants.WEATHER_MAPPING[(weather?.todayWeather?.temperatureIcon)!]!)
+            //let image  = NSImage(named: (weather?.todayWeather?.temperatureIcon)!)
             image?.cacheMode = NSImageCacheMode.Never
             
             self.currentIcon.image = image
@@ -145,10 +146,11 @@ class WeatherView: NSViewController {
                         break
                     }
                 
-                    self.dayMax?[i].stringValue = Int(weather.temperature.max).description
-                    self.dayMin?[i].stringValue = Int(weather.temperature.min).description
+                    self.dayMax?[i].stringValue = Int(weather.temperature.max).description + Constants.DEG_SYMBOL
+                    self.dayMin?[i].stringValue = Int(weather.temperature.min).description + Constants.DEG_SYMBOL
                 
                     let image = NSImage(named: Constants.WEATHER_MAPPING[weather.temperatureIcon]!)?.copy() as! NSImage
+                    //let image = NSImage(named: weather.temperatureIcon)!
                     image.cacheMode = NSImageCacheMode.Never
                     self.dayIcon?[i].image = image
                     self.dayLabel?[i].stringValue = WeatherView.getWeekString(weather.updatedLong)
