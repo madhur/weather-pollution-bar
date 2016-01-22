@@ -114,10 +114,10 @@ class WeatherView: NSViewController {
             {
                 self.statusMenuViewController?.statusItem.title = nil
                 
-                let icon = NSImage(named: Constants.WEATHER_MAPPING[(weather?.todayWeather?.temperatureIcon)!]!)
-                icon!.size = NSSize.init(width: 18, height: 18)
-                icon?.template = true
-                icon?.cacheMode = NSImageCacheMode.Never
+                let icon = NSImage(named: Constants.WEATHER_MAPPING[(weather?.todayWeather?.temperatureIcon)!]!)?.copy() as! NSImage
+                icon.size = NSSize.init(width: 18, height: 18)
+                icon.template = true
+                icon.cacheMode = NSImageCacheMode.Never
                 self.statusMenuViewController?.statusItem.image = icon
             }
                         
@@ -148,8 +148,8 @@ class WeatherView: NSViewController {
                     self.dayMax?[i].stringValue = Int(weather.temperature.max).description
                     self.dayMin?[i].stringValue = Int(weather.temperature.min).description
                 
-                    let image = NSImage(named: Constants.WEATHER_MAPPING[weather.temperatureIcon]!)
-                    image?.cacheMode = NSImageCacheMode.Never
+                    let image = NSImage(named: Constants.WEATHER_MAPPING[weather.temperatureIcon]!)?.copy() as! NSImage
+                    image.cacheMode = NSImageCacheMode.Never
                     self.dayIcon?[i].image = image
                     self.dayLabel?[i].stringValue = WeatherView.getWeekString(weather.updatedLong)
                 
