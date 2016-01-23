@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		E04B039F1C40B25A00DF988D /* PollutionColorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E04B039E1C40B25A00DF988D /* PollutionColorView.swift */; };
+		E04B33F01C5346F400D5AE3A /* icons.icns in Resources */ = {isa = PBXBuildFile; fileRef = E04B33EF1C5346F400D5AE3A /* icons.icns */; };
 		E0AB53411C3D5B1800E761F7 /* WeatherView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0AB533F1C3D5B1800E761F7 /* WeatherView.swift */; };
 		E0AB53421C3D5B1800E761F7 /* WeatherView.xib in Resources */ = {isa = PBXBuildFile; fileRef = E0AB53401C3D5B1800E761F7 /* WeatherView.xib */; };
 		E0AB53451C3D5B2B00E761F7 /* PollutionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0AB53431C3D5B2B00E761F7 /* PollutionView.swift */; };
@@ -54,6 +55,8 @@
 		A46C67BC4B2DBD433F5C3518 /* libPods-Weather Pollution Bar.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Weather Pollution Bar.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A804B54DE41AFCBDB2911852 /* Pods-Weather Pollution Bar.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Weather Pollution Bar.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Weather Pollution Bar/Pods-Weather Pollution Bar.debug.xcconfig"; sourceTree = "<group>"; };
 		E04B039E1C40B25A00DF988D /* PollutionColorView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PollutionColorView.swift; sourceTree = "<group>"; };
+		E04B33EF1C5346F400D5AE3A /* icons.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = icons.icns; sourceTree = "<group>"; };
+		E05A09B51C5342C4001624EB /* Weather Pollution Bar.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = "Weather Pollution Bar.entitlements"; sourceTree = "<group>"; };
 		E0AB533F1C3D5B1800E761F7 /* WeatherView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeatherView.swift; sourceTree = "<group>"; };
 		E0AB53401C3D5B1800E761F7 /* WeatherView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WeatherView.xib; sourceTree = "<group>"; };
 		E0AB53431C3D5B2B00E761F7 /* PollutionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PollutionView.swift; sourceTree = "<group>"; };
@@ -143,6 +146,8 @@
 		E0E390451C3857620000CDFA /* Weather Pollution Bar */ = {
 			isa = PBXGroup;
 			children = (
+				E04B33EF1C5346F400D5AE3A /* icons.icns */,
+				E05A09B51C5342C4001624EB /* Weather Pollution Bar.entitlements */,
 				E0E390461C3857620000CDFA /* AppDelegate.swift */,
 				E0E390481C3857620000CDFA /* Assets.xcassets */,
 				E0E3904A1C3857620000CDFA /* MainMenu.xib */,
@@ -265,6 +270,12 @@
 				TargetAttributes = {
 					E0E390421C3857620000CDFA = {
 						CreatedOnToolsVersion = 7.2;
+						DevelopmentTeam = W94CM56NYX;
+						SystemCapabilities = {
+							com.apple.Sandbox = {
+								enabled = 1;
+							};
+						};
 					};
 					E0E390511C3857620000CDFA = {
 						CreatedOnToolsVersion = 7.2;
@@ -306,6 +317,7 @@
 				E0E390491C3857620000CDFA /* Assets.xcassets in Resources */,
 				E0E390781C38CE2B0000CDFA /* AboutWindowController.xib in Resources */,
 				E0E390741C38CE180000CDFA /* SettingsWindowController.xib in Resources */,
+				E04B33F01C5346F400D5AE3A /* icons.icns in Resources */,
 				E0E3904C1C3857620000CDFA /* MainMenu.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -526,6 +538,8 @@
 			baseConfigurationReference = A804B54DE41AFCBDB2911852 /* Pods-Weather Pollution Bar.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = "Weather Pollution Bar/Weather Pollution Bar.entitlements";
+				CODE_SIGN_IDENTITY = "Mac Developer";
 				COMBINE_HIDPI_IMAGES = YES;
 				INFOPLIST_FILE = "Weather Pollution Bar/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
@@ -539,6 +553,8 @@
 			baseConfigurationReference = 9077DC01E49A5EC3932A69E4 /* Pods-Weather Pollution Bar.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = "Weather Pollution Bar/Weather Pollution Bar.entitlements";
+				CODE_SIGN_IDENTITY = "Mac Developer";
 				COMBINE_HIDPI_IMAGES = YES;
 				INFOPLIST_FILE = "Weather Pollution Bar/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
