@@ -4,6 +4,8 @@ A simple weather and pollution shortcut menu for OS X, written purely in [Apple 
 
 <sup>*Pollution is currently available in India only in select cities.</sup>
 
+[![](http://www.madhur.co.in/images/appstorebadge.svg)](https://itunes.apple.com/us/app/weather-pollution-bar/id1077958272?ls=1&mt=12)
+
 [http://madhur.co.in/projects/weatherpollutionbar](http://madhur.co.in/projects/weatherpollutionbar)
 
 
