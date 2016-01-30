@@ -6,7 +6,7 @@ A simple weather and pollution shortcut menu for OS X, written purely in [Apple 
 
 [![](http://www.madhur.co.in/images/appstorebadge.svg)](https://itunes.apple.com/us/app/weather-pollution-bar/id1077958272?ls=1&mt=12)
 
-[http://madhur.co.in/projects/weatherpollutionbar](http://madhur.co.in/projects/weatherpollutionbar)
+[http://madhur.co.in/projects/weatherpollutionbar](http://www.madhur.co.in/projects/Weather%20Pollution%20Bar.html)
 
 
 ![](https://raw.githubusercontent.com/madhur/weather-pollution-bar/master/screenshot.png?token=AAfF92ea4Kk0uXupybHN8iyGpdFjHU72ks5WrtMZwA%3D%3D)
