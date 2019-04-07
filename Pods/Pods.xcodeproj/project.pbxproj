@@ -7,200 +7,267 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		0F95527EAEFAB0C2AB7755746AD4EA17 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 00E4E7F15E9307D6E48F3A63EB1D6CA7 /* SystemConfiguration.framework */; };
-		37CFFAC09E94822CFC032A5383E2707B /* CoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D4559132770DF0CB3A0F065CE7CEEE33 /* CoreServices.framework */; };
-		4124474F4D3B094C7532722BB31EF987 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AE81FEE163595BAFC6A9F463B8C59F66 /* CFNetwork.framework */; };
-		516D8D380BB153F8F4BEA2D431382C3A /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7B9FFAF8CFABE930F6F2989F7DC1D2BD /* Cocoa.framework */; };
-		90B3E7BE61D3358DCDD4656069820F5B /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7B9FFAF8CFABE930F6F2989F7DC1D2BD /* Cocoa.framework */; };
-		A6FE3A0A526EB7C28CA7B3054763AA5C /* NSLogger-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = E987F034FA7917A65A8F06D21563BFFA /* NSLogger-dummy.m */; };
-		C2D732EB0C534404C4D6D5C6228A253A /* LoggerClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 131F03E78E5EEB7C907277055B6719F7 /* LoggerClient.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
-		CB9F39BBC5305DFD4B6DF249769B12AA /* NSLogger.h in Headers */ = {isa = PBXBuildFile; fileRef = C0D4E5F638C740C8558E9740B72DE36C /* NSLogger.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		DE657FA219B420D0A46A1F91B96115B4 /* LoggerCommon.h in Headers */ = {isa = PBXBuildFile; fileRef = 8F5A992D8E21D2041EFC7C867E5C2FFF /* LoggerCommon.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		E2C07606158CCBBB01963AAC3685107E /* LoggerClient.h in Headers */ = {isa = PBXBuildFile; fileRef = ECCCA7B08402C29DC2BFBBC7B52C9263 /* LoggerClient.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		F65A36A114E941853CE1E7864427A58E /* Pods-Weather Pollution Bar-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 468D9A6534E25C37BAA6D4730504D049 /* Pods-Weather Pollution Bar-dummy.m */; };
+		00F8E30A0A215823365FC879EB2A502C /* NSLogger-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = D08D6DDFDEBF81B0774BD6057EA1CEED /* NSLogger-dummy.m */; };
+		2EC8C25E2599FCF2173419069EF4E6B5 /* Pods-Weather Pollution BarUITests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = ACBE78FABD0942E4114FE8DD70E8A319 /* Pods-Weather Pollution BarUITests-dummy.m */; };
+		8F77CBFDDD05C4873490F06561702CFF /* Pods-Weather Pollution BarTests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 0AA2E067371CE5CB81705C2310BE9997 /* Pods-Weather Pollution BarTests-dummy.m */; };
+		9C50DF2FB1EDA48D3E7FBCB11881C5C7 /* LoggerCommon.h in Headers */ = {isa = PBXBuildFile; fileRef = E89F93D3AB2F781C233A5AE595504869 /* LoggerCommon.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		A7675733C49F30031A317F3DD95ACE36 /* LoggerClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A877B2F5C00A0E748E93665EB1E5673 /* LoggerClient.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
+		A92CACDFDE440F94496B28ABE8A7D1C5 /* LoggerClient.h in Headers */ = {isa = PBXBuildFile; fileRef = 73D5585551EDB2DEE2AE2FE5BA88B119 /* LoggerClient.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		C2155261C0C867A3E659BBA799F62789 /* Pods-Weather Pollution Bar-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 42951D77A484A6603AE5487E017D7CDD /* Pods-Weather Pollution Bar-dummy.m */; };
+		F1126A23AFB6BF54EF13EB2177B198B1 /* NSLogger.h in Headers */ = {isa = PBXBuildFile; fileRef = 30FDDAE4F2542B45E7CA4CAC1FC80F8B /* NSLogger.h */; settings = {ATTRIBUTES = (Project, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		CC673E808E9A6C59C995FF882CDC3E5E /* PBXContainerItemProxy */ = {
+		7C18415111966D17ACBAD973B2086943 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = 807D97FE95D5377DB9107EE23BA36965;
+			remoteGlobalIDString = 7A99B0DFA216539A2383960888997C19;
 			remoteInfo = NSLogger;
 		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		00E4E7F15E9307D6E48F3A63EB1D6CA7 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.11.sdk/System/Library/Frameworks/SystemConfiguration.framework; sourceTree = DEVELOPER_DIR; };
-		131F03E78E5EEB7C907277055B6719F7 /* LoggerClient.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = LoggerClient.m; path = "Client Logger/iOS/LoggerClient.m"; sourceTree = "<group>"; };
-		145DCEDC556CD6D29134B9ADD4CD38BB /* Pods-Weather Pollution Bar.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Weather Pollution Bar.release.xcconfig"; sourceTree = "<group>"; };
-		2333CF97B1BDC577FED9485143A9DCE7 /* NSLogger-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "NSLogger-prefix.pch"; sourceTree = "<group>"; };
-		30E6A06E972CEB9D8C25BD3F7E1EA94E /* Pods-Weather Pollution Bar-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-Weather Pollution Bar-frameworks.sh"; sourceTree = "<group>"; };
-		468D9A6534E25C37BAA6D4730504D049 /* Pods-Weather Pollution Bar-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-Weather Pollution Bar-dummy.m"; sourceTree = "<group>"; };
-		51C63A6874727EADF7B6CC6EA2CC928E /* Pods-Weather Pollution Bar-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-Weather Pollution Bar-acknowledgements.plist"; sourceTree = "<group>"; };
-		56C47D9B867BDD8AFD6E36FEC9836996 /* Pods-Weather Pollution Bar-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-Weather Pollution Bar-acknowledgements.markdown"; sourceTree = "<group>"; };
-		69742236A2AE8C7BBD9A29F2668DA44D /* libNSLogger.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libNSLogger.a; sourceTree = BUILT_PRODUCTS_DIR; };
-		76814B141BFB94B3AAB4C54EE54E3449 /* NSLogger.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = NSLogger.xcconfig; sourceTree = "<group>"; };
-		7B9FFAF8CFABE930F6F2989F7DC1D2BD /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.11.sdk/System/Library/Frameworks/Cocoa.framework; sourceTree = DEVELOPER_DIR; };
-		8DA4858D832113F7AA356E4A5CE3B626 /* Pods-Weather Pollution Bar-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-Weather Pollution Bar-resources.sh"; sourceTree = "<group>"; };
-		8F5A992D8E21D2041EFC7C867E5C2FFF /* LoggerCommon.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = LoggerCommon.h; path = "Client Logger/iOS/LoggerCommon.h"; sourceTree = "<group>"; };
-		AE81FEE163595BAFC6A9F463B8C59F66 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.11.sdk/System/Library/Frameworks/CFNetwork.framework; sourceTree = DEVELOPER_DIR; };
-		BA440693E33FB8C37789A58D2B3330A1 /* Pods-Weather Pollution Bar.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Weather Pollution Bar.debug.xcconfig"; sourceTree = "<group>"; };
-		BA6428E9F66FD5A23C0A2E06ED26CD2F /* Podfile */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
-		C0D4E5F638C740C8558E9740B72DE36C /* NSLogger.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = NSLogger.h; path = "Client Logger/iOS/NSLogger.h"; sourceTree = "<group>"; };
-		CD2E5B3F8049612A1A49411BC005137B /* libPods-Weather Pollution Bar.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Weather Pollution Bar.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		D4559132770DF0CB3A0F065CE7CEEE33 /* CoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreServices.framework; path = Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.11.sdk/System/Library/Frameworks/CoreServices.framework; sourceTree = DEVELOPER_DIR; };
-		E987F034FA7917A65A8F06D21563BFFA /* NSLogger-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "NSLogger-dummy.m"; sourceTree = "<group>"; };
-		ECCCA7B08402C29DC2BFBBC7B52C9263 /* LoggerClient.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = LoggerClient.h; path = "Client Logger/iOS/LoggerClient.h"; sourceTree = "<group>"; };
+		0AA2E067371CE5CB81705C2310BE9997 /* Pods-Weather Pollution BarTests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-Weather Pollution BarTests-dummy.m"; sourceTree = "<group>"; };
+		2F08338203D080D8E9E52B118D727581 /* Pods-Weather Pollution BarUITests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-Weather Pollution BarUITests-acknowledgements.plist"; sourceTree = "<group>"; };
+		30FDDAE4F2542B45E7CA4CAC1FC80F8B /* NSLogger.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = NSLogger.h; path = "Client Logger/iOS/NSLogger.h"; sourceTree = "<group>"; };
+		42951D77A484A6603AE5487E017D7CDD /* Pods-Weather Pollution Bar-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-Weather Pollution Bar-dummy.m"; sourceTree = "<group>"; };
+		5051C72B9128617B79CEB521B62FAA56 /* NSLogger.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = NSLogger.xcconfig; sourceTree = "<group>"; };
+		5A877B2F5C00A0E748E93665EB1E5673 /* LoggerClient.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = LoggerClient.m; path = "Client Logger/iOS/LoggerClient.m"; sourceTree = "<group>"; };
+		5A877BFE8BADD0DEE29F143DFAD7453C /* Pods-Weather Pollution BarTests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-Weather Pollution BarTests-acknowledgements.markdown"; sourceTree = "<group>"; };
+		63272E57696CAD0296F1E20C21C1A790 /* Pods-Weather Pollution BarUITests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-Weather Pollution BarUITests-acknowledgements.markdown"; sourceTree = "<group>"; };
+		6DA9516EBB5CE841BE132DD54397CEC7 /* NSLogger-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "NSLogger-prefix.pch"; sourceTree = "<group>"; };
+		72EFABAFB2078786F965B2C0A4DD9B59 /* Pods-Weather Pollution BarUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Weather Pollution BarUITests.release.xcconfig"; sourceTree = "<group>"; };
+		73D5585551EDB2DEE2AE2FE5BA88B119 /* LoggerClient.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = LoggerClient.h; path = "Client Logger/iOS/LoggerClient.h"; sourceTree = "<group>"; };
+		89DB08E4D92936DA060643A0F7662178 /* Pods-Weather Pollution BarUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Weather Pollution BarUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		9D174A0F5188C60CC14DF01BC720A9CA /* Pods-Weather Pollution Bar-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-Weather Pollution Bar-acknowledgements.plist"; sourceTree = "<group>"; };
+		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		9F12614234781CB75DA04D2632F5BAAB /* Pods-Weather Pollution BarTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Weather Pollution BarTests.release.xcconfig"; sourceTree = "<group>"; };
+		A1465CD747789319F8E455DC8F3636C2 /* libPods-Weather Pollution BarTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; name = "libPods-Weather Pollution BarTests.a"; path = "libPods-Weather Pollution BarTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		A49B3AD184B8202F4233B319F92C8228 /* Pods-Weather Pollution Bar.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Weather Pollution Bar.debug.xcconfig"; sourceTree = "<group>"; };
+		ACBE78FABD0942E4114FE8DD70E8A319 /* Pods-Weather Pollution BarUITests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-Weather Pollution BarUITests-dummy.m"; sourceTree = "<group>"; };
+		AE31D1FA20F17C3293A90E385D31F0D7 /* Pods-Weather Pollution BarTests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-Weather Pollution BarTests-acknowledgements.plist"; sourceTree = "<group>"; };
+		BCBE819D7350A43CA74F86A3B22D8AEE /* Pods-Weather Pollution BarTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Weather Pollution BarTests.debug.xcconfig"; sourceTree = "<group>"; };
+		D08D6DDFDEBF81B0774BD6057EA1CEED /* NSLogger-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "NSLogger-dummy.m"; sourceTree = "<group>"; };
+		D3785DF0D41F108F6EE65C1BADFA5A1A /* Pods-Weather Pollution Bar-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-Weather Pollution Bar-acknowledgements.markdown"; sourceTree = "<group>"; };
+		D412191D82D76B8CBE09F344E605300E /* Pods-Weather Pollution Bar.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Weather Pollution Bar.release.xcconfig"; sourceTree = "<group>"; };
+		E0C975227F7DA50645A25D5BF4E83E33 /* libPods-Weather Pollution Bar.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; name = "libPods-Weather Pollution Bar.a"; path = "libPods-Weather Pollution Bar.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		E89F93D3AB2F781C233A5AE595504869 /* LoggerCommon.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = LoggerCommon.h; path = "Client Logger/iOS/LoggerCommon.h"; sourceTree = "<group>"; };
+		ED4231886C57DCE91D793405AD8863DE /* libNSLogger.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; name = libNSLogger.a; path = libNSLogger.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		FCF226F6CB304F826AC379599F3D90EF /* libPods-Weather Pollution BarUITests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; name = "libPods-Weather Pollution BarUITests.a"; path = "libPods-Weather Pollution BarUITests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		6E991E0ED345CAAA1F9CCB9A2B15110B /* Frameworks */ = {
+		579572B43B63FF55C848763D7534A964 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				516D8D380BB153F8F4BEA2D431382C3A /* Cocoa.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		AFBEA0CDA4031FA4C36A3828E1D79359 /* Frameworks */ = {
+		BAEC6773989C645FD9A44BBFBEBDA60A /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4124474F4D3B094C7532722BB31EF987 /* CFNetwork.framework in Frameworks */,
-				90B3E7BE61D3358DCDD4656069820F5B /* Cocoa.framework in Frameworks */,
-				37CFFAC09E94822CFC032A5383E2707B /* CoreServices.framework in Frameworks */,
-				0F95527EAEFAB0C2AB7755746AD4EA17 /* SystemConfiguration.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DE2DE9D0C5FE6FD6658696B36E8D6069 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FD9FEE239C80AF6067761C8BAFE8AD4E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		5D26CB3E20D6901776EEFDE8DAAB09E7 /* Targets Support Files */ = {
+		39C74BC75C1734E77A09C4C8841EFE25 /* Pods-Weather Pollution Bar */ = {
 			isa = PBXGroup;
 			children = (
-				96E31B11843FE7364FC370254AC745CB /* Pods-Weather Pollution Bar */,
-			);
-			name = "Targets Support Files";
-			sourceTree = "<group>";
-		};
-		7DB346D0F39D3F0E887471402A8071AB = {
-			isa = PBXGroup;
-			children = (
-				BA6428E9F66FD5A23C0A2E06ED26CD2F /* Podfile */,
-				CD75D5B60FCA72FBF7F9C770460B2C26 /* Frameworks */,
-				9F5208F1E5613BDFA67AAE07CD8DC066 /* Pods */,
-				EC1BDD175843E14D1733F7EDE7C6C999 /* Products */,
-				5D26CB3E20D6901776EEFDE8DAAB09E7 /* Targets Support Files */,
-			);
-			sourceTree = "<group>";
-		};
-		867985E1B458BC6FFD4619BB26BE1306 /* Standard */ = {
-			isa = PBXGroup;
-			children = (
-				ECCCA7B08402C29DC2BFBBC7B52C9263 /* LoggerClient.h */,
-				131F03E78E5EEB7C907277055B6719F7 /* LoggerClient.m */,
-				8F5A992D8E21D2041EFC7C867E5C2FFF /* LoggerCommon.h */,
-				C0D4E5F638C740C8558E9740B72DE36C /* NSLogger.h */,
-			);
-			name = Standard;
-			sourceTree = "<group>";
-		};
-		96E31B11843FE7364FC370254AC745CB /* Pods-Weather Pollution Bar */ = {
-			isa = PBXGroup;
-			children = (
-				56C47D9B867BDD8AFD6E36FEC9836996 /* Pods-Weather Pollution Bar-acknowledgements.markdown */,
-				51C63A6874727EADF7B6CC6EA2CC928E /* Pods-Weather Pollution Bar-acknowledgements.plist */,
-				468D9A6534E25C37BAA6D4730504D049 /* Pods-Weather Pollution Bar-dummy.m */,
-				30E6A06E972CEB9D8C25BD3F7E1EA94E /* Pods-Weather Pollution Bar-frameworks.sh */,
-				8DA4858D832113F7AA356E4A5CE3B626 /* Pods-Weather Pollution Bar-resources.sh */,
-				BA440693E33FB8C37789A58D2B3330A1 /* Pods-Weather Pollution Bar.debug.xcconfig */,
-				145DCEDC556CD6D29134B9ADD4CD38BB /* Pods-Weather Pollution Bar.release.xcconfig */,
+				D3785DF0D41F108F6EE65C1BADFA5A1A /* Pods-Weather Pollution Bar-acknowledgements.markdown */,
+				9D174A0F5188C60CC14DF01BC720A9CA /* Pods-Weather Pollution Bar-acknowledgements.plist */,
+				42951D77A484A6603AE5487E017D7CDD /* Pods-Weather Pollution Bar-dummy.m */,
+				A49B3AD184B8202F4233B319F92C8228 /* Pods-Weather Pollution Bar.debug.xcconfig */,
+				D412191D82D76B8CBE09F344E605300E /* Pods-Weather Pollution Bar.release.xcconfig */,
 			);
 			name = "Pods-Weather Pollution Bar";
 			path = "Target Support Files/Pods-Weather Pollution Bar";
 			sourceTree = "<group>";
 		};
-		9F5208F1E5613BDFA67AAE07CD8DC066 /* Pods */ = {
+		50272F2FAED4CE85251CBBE8343E3B77 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				DBC09904E651891257FD642A7BDED77E /* NSLogger */,
+				52E896172CE87F1D44D4D6B02657C3A0 /* NSLogger */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
 		};
-		AA75E4CDDD6804D64FB3609D2F4699DC /* OS X */ = {
+		52E896172CE87F1D44D4D6B02657C3A0 /* NSLogger */ = {
 			isa = PBXGroup;
 			children = (
-				AE81FEE163595BAFC6A9F463B8C59F66 /* CFNetwork.framework */,
-				7B9FFAF8CFABE930F6F2989F7DC1D2BD /* Cocoa.framework */,
-				D4559132770DF0CB3A0F065CE7CEEE33 /* CoreServices.framework */,
-				00E4E7F15E9307D6E48F3A63EB1D6CA7 /* SystemConfiguration.framework */,
+				EFDDA9DDE1F22C8C7A1F5FE423D312CB /* Standard */,
+				840F20EB2A3771AA5E8B89F118111E2D /* Support Files */,
 			);
-			name = "OS X";
-			sourceTree = "<group>";
-		};
-		CD75D5B60FCA72FBF7F9C770460B2C26 /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				AA75E4CDDD6804D64FB3609D2F4699DC /* OS X */,
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		DBC09904E651891257FD642A7BDED77E /* NSLogger */ = {
-			isa = PBXGroup;
-			children = (
-				867985E1B458BC6FFD4619BB26BE1306 /* Standard */,
-				F0C5CAC184EEB9819B266EE5178B67F7 /* Support Files */,
-			);
+			name = NSLogger;
 			path = NSLogger;
 			sourceTree = "<group>";
 		};
-		EC1BDD175843E14D1733F7EDE7C6C999 /* Products */ = {
+		840F20EB2A3771AA5E8B89F118111E2D /* Support Files */ = {
 			isa = PBXGroup;
 			children = (
-				69742236A2AE8C7BBD9A29F2668DA44D /* libNSLogger.a */,
-				CD2E5B3F8049612A1A49411BC005137B /* libPods-Weather Pollution Bar.a */,
-			);
-			name = Products;
-			sourceTree = "<group>";
-		};
-		F0C5CAC184EEB9819B266EE5178B67F7 /* Support Files */ = {
-			isa = PBXGroup;
-			children = (
-				76814B141BFB94B3AAB4C54EE54E3449 /* NSLogger.xcconfig */,
-				E987F034FA7917A65A8F06D21563BFFA /* NSLogger-dummy.m */,
-				2333CF97B1BDC577FED9485143A9DCE7 /* NSLogger-prefix.pch */,
+				5051C72B9128617B79CEB521B62FAA56 /* NSLogger.xcconfig */,
+				D08D6DDFDEBF81B0774BD6057EA1CEED /* NSLogger-dummy.m */,
+				6DA9516EBB5CE841BE132DD54397CEC7 /* NSLogger-prefix.pch */,
 			);
 			name = "Support Files";
 			path = "../Target Support Files/NSLogger";
 			sourceTree = "<group>";
 		};
+		95D58BAF3916AA6626D4D4723E792264 /* Targets Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				39C74BC75C1734E77A09C4C8841EFE25 /* Pods-Weather Pollution Bar */,
+				C0CBEC5346429CC45571CEE46399D774 /* Pods-Weather Pollution BarTests */,
+				B9B975F90B445E57619DCC440AB26430 /* Pods-Weather Pollution BarUITests */,
+			);
+			name = "Targets Support Files";
+			sourceTree = "<group>";
+		};
+		B9B975F90B445E57619DCC440AB26430 /* Pods-Weather Pollution BarUITests */ = {
+			isa = PBXGroup;
+			children = (
+				63272E57696CAD0296F1E20C21C1A790 /* Pods-Weather Pollution BarUITests-acknowledgements.markdown */,
+				2F08338203D080D8E9E52B118D727581 /* Pods-Weather Pollution BarUITests-acknowledgements.plist */,
+				ACBE78FABD0942E4114FE8DD70E8A319 /* Pods-Weather Pollution BarUITests-dummy.m */,
+				89DB08E4D92936DA060643A0F7662178 /* Pods-Weather Pollution BarUITests.debug.xcconfig */,
+				72EFABAFB2078786F965B2C0A4DD9B59 /* Pods-Weather Pollution BarUITests.release.xcconfig */,
+			);
+			name = "Pods-Weather Pollution BarUITests";
+			path = "Target Support Files/Pods-Weather Pollution BarUITests";
+			sourceTree = "<group>";
+		};
+		C0CBEC5346429CC45571CEE46399D774 /* Pods-Weather Pollution BarTests */ = {
+			isa = PBXGroup;
+			children = (
+				5A877BFE8BADD0DEE29F143DFAD7453C /* Pods-Weather Pollution BarTests-acknowledgements.markdown */,
+				AE31D1FA20F17C3293A90E385D31F0D7 /* Pods-Weather Pollution BarTests-acknowledgements.plist */,
+				0AA2E067371CE5CB81705C2310BE9997 /* Pods-Weather Pollution BarTests-dummy.m */,
+				BCBE819D7350A43CA74F86A3B22D8AEE /* Pods-Weather Pollution BarTests.debug.xcconfig */,
+				9F12614234781CB75DA04D2632F5BAAB /* Pods-Weather Pollution BarTests.release.xcconfig */,
+			);
+			name = "Pods-Weather Pollution BarTests";
+			path = "Target Support Files/Pods-Weather Pollution BarTests";
+			sourceTree = "<group>";
+		};
+		CF1408CF629C7361332E53B88F7BD30C = {
+			isa = PBXGroup;
+			children = (
+				9D940727FF8FB9C785EB98E56350EF41 /* Podfile */,
+				D89477F20FB1DE18A04690586D7808C4 /* Frameworks */,
+				50272F2FAED4CE85251CBBE8343E3B77 /* Pods */,
+				FFE6DE9F7142B62A21BB9222A334F843 /* Products */,
+				95D58BAF3916AA6626D4D4723E792264 /* Targets Support Files */,
+			);
+			sourceTree = "<group>";
+		};
+		D89477F20FB1DE18A04690586D7808C4 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		EFDDA9DDE1F22C8C7A1F5FE423D312CB /* Standard */ = {
+			isa = PBXGroup;
+			children = (
+				73D5585551EDB2DEE2AE2FE5BA88B119 /* LoggerClient.h */,
+				5A877B2F5C00A0E748E93665EB1E5673 /* LoggerClient.m */,
+				E89F93D3AB2F781C233A5AE595504869 /* LoggerCommon.h */,
+				30FDDAE4F2542B45E7CA4CAC1FC80F8B /* NSLogger.h */,
+			);
+			name = Standard;
+			sourceTree = "<group>";
+		};
+		FFE6DE9F7142B62A21BB9222A334F843 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				ED4231886C57DCE91D793405AD8863DE /* libNSLogger.a */,
+				E0C975227F7DA50645A25D5BF4E83E33 /* libPods-Weather Pollution Bar.a */,
+				A1465CD747789319F8E455DC8F3636C2 /* libPods-Weather Pollution BarTests.a */,
+				FCF226F6CB304F826AC379599F3D90EF /* libPods-Weather Pollution BarUITests.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
-		1A2CC5B37CC845F2D4D8A9B1B098D1C3 /* Headers */ = {
+		3D3C09FA131050977DC8C18760751AF5 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E2C07606158CCBBB01963AAC3685107E /* LoggerClient.h in Headers */,
-				DE657FA219B420D0A46A1F91B96115B4 /* LoggerCommon.h in Headers */,
-				CB9F39BBC5305DFD4B6DF249769B12AA /* NSLogger.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6BB879DEC43261C590004FEC1C3A1A29 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DB02E6926DB13DB7312FDA8640E5B145 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FF7A6DF017CDF3FF1502A6193B0D4588 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A92CACDFDE440F94496B28ABE8A7D1C5 /* LoggerClient.h in Headers */,
+				9C50DF2FB1EDA48D3E7FBCB11881C5C7 /* LoggerCommon.h in Headers */,
+				F1126A23AFB6BF54EF13EB2177B198B1 /* NSLogger.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
-		807D97FE95D5377DB9107EE23BA36965 /* NSLogger */ = {
+		5DBE6FAC13B21634187A84F63CBBF780 /* Pods-Weather Pollution BarTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = F16235736C9647775488C32561FE19E9 /* Build configuration list for PBXNativeTarget "NSLogger" */;
+			buildConfigurationList = D595828C9110FBA3C9075272F21A6B7F /* Build configuration list for PBXNativeTarget "Pods-Weather Pollution BarTests" */;
 			buildPhases = (
-				481A0F4E76DBF4289604F505B0EA53F3 /* Sources */,
-				AFBEA0CDA4031FA4C36A3828E1D79359 /* Frameworks */,
-				1A2CC5B37CC845F2D4D8A9B1B098D1C3 /* Headers */,
+				DB02E6926DB13DB7312FDA8640E5B145 /* Headers */,
+				936D31E4F96BCC7E6926C89B264F063A /* Sources */,
+				FD9FEE239C80AF6067761C8BAFE8AD4E /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Pods-Weather Pollution BarTests";
+			productName = "Pods-Weather Pollution BarTests";
+			productReference = A1465CD747789319F8E455DC8F3636C2 /* libPods-Weather Pollution BarTests.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+		7A99B0DFA216539A2383960888997C19 /* NSLogger */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = EF1B2470DC8DE2941A2859CAFB2439A4 /* Build configuration list for PBXNativeTarget "NSLogger" */;
+			buildPhases = (
+				FF7A6DF017CDF3FF1502A6193B0D4588 /* Headers */,
+				8A831C296C35E9060B85C3BD65209EB9 /* Sources */,
+				579572B43B63FF55C848763D7534A964 /* Frameworks */,
 			);
 			buildRules = (
 			);
@@ -208,261 +275,482 @@
 			);
 			name = NSLogger;
 			productName = NSLogger;
-			productReference = 69742236A2AE8C7BBD9A29F2668DA44D /* libNSLogger.a */;
+			productReference = ED4231886C57DCE91D793405AD8863DE /* libNSLogger.a */;
 			productType = "com.apple.product-type.library.static";
 		};
-		E032146957AA0D34B5E126524E524FDC /* Pods-Weather Pollution Bar */ = {
+		9729654196FE0EB2790E5804A1798096 /* Pods-Weather Pollution BarUITests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = F64A2D0212683AFAE1BCDF03B9A2879C /* Build configuration list for PBXNativeTarget "Pods-Weather Pollution Bar" */;
+			buildConfigurationList = F6241787D6C7C51AABAB2B0868237298 /* Build configuration list for PBXNativeTarget "Pods-Weather Pollution BarUITests" */;
 			buildPhases = (
-				C9A478A897D3E115503739DCA422FD8A /* Sources */,
-				6E991E0ED345CAAA1F9CCB9A2B15110B /* Frameworks */,
+				3D3C09FA131050977DC8C18760751AF5 /* Headers */,
+				B0496EF4F09F89AEFEEA42E5B16FB7A2 /* Sources */,
+				DE2DE9D0C5FE6FD6658696B36E8D6069 /* Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				2FD4BB6E89A952CF85D7680E9D9761C9 /* PBXTargetDependency */,
+			);
+			name = "Pods-Weather Pollution BarUITests";
+			productName = "Pods-Weather Pollution BarUITests";
+			productReference = FCF226F6CB304F826AC379599F3D90EF /* libPods-Weather Pollution BarUITests.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+		A917E4F4BA3137DCF3E834AD6204CB22 /* Pods-Weather Pollution Bar */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 87525C29D644634C8B41652CF4472D47 /* Build configuration list for PBXNativeTarget "Pods-Weather Pollution Bar" */;
+			buildPhases = (
+				6BB879DEC43261C590004FEC1C3A1A29 /* Headers */,
+				B11D0AA37E28BF2723107851D538C458 /* Sources */,
+				BAEC6773989C645FD9A44BBFBEBDA60A /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				86D8E5DE256366D1098DB9504FD98BDC /* PBXTargetDependency */,
 			);
 			name = "Pods-Weather Pollution Bar";
 			productName = "Pods-Weather Pollution Bar";
-			productReference = CD2E5B3F8049612A1A49411BC005137B /* libPods-Weather Pollution Bar.a */;
+			productReference = E0C975227F7DA50645A25D5BF4E83E33 /* libPods-Weather Pollution Bar.a */;
 			productType = "com.apple.product-type.library.static";
 		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
-		D41D8CD98F00B204E9800998ECF8427E /* Project object */ = {
+		BFDFE7DC352907FC980B868725387E98 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 0700;
-				LastUpgradeCheck = 0700;
+				LastSwiftUpdateCheck = 0930;
+				LastUpgradeCheck = 0930;
 			};
-			buildConfigurationList = 2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */;
+			buildConfigurationList = 4821239608C13582E20E6DA73FD5F1F9 /* Build configuration list for PBXProject "Pods" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
 			);
-			mainGroup = 7DB346D0F39D3F0E887471402A8071AB;
-			productRefGroup = EC1BDD175843E14D1733F7EDE7C6C999 /* Products */;
+			mainGroup = CF1408CF629C7361332E53B88F7BD30C;
+			productRefGroup = FFE6DE9F7142B62A21BB9222A334F843 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				807D97FE95D5377DB9107EE23BA36965 /* NSLogger */,
-				E032146957AA0D34B5E126524E524FDC /* Pods-Weather Pollution Bar */,
+				7A99B0DFA216539A2383960888997C19 /* NSLogger */,
+				A917E4F4BA3137DCF3E834AD6204CB22 /* Pods-Weather Pollution Bar */,
+				5DBE6FAC13B21634187A84F63CBBF780 /* Pods-Weather Pollution BarTests */,
+				9729654196FE0EB2790E5804A1798096 /* Pods-Weather Pollution BarUITests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXSourcesBuildPhase section */
-		481A0F4E76DBF4289604F505B0EA53F3 /* Sources */ = {
+		8A831C296C35E9060B85C3BD65209EB9 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C2D732EB0C534404C4D6D5C6228A253A /* LoggerClient.m in Sources */,
-				A6FE3A0A526EB7C28CA7B3054763AA5C /* NSLogger-dummy.m in Sources */,
+				A7675733C49F30031A317F3DD95ACE36 /* LoggerClient.m in Sources */,
+				00F8E30A0A215823365FC879EB2A502C /* NSLogger-dummy.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		C9A478A897D3E115503739DCA422FD8A /* Sources */ = {
+		936D31E4F96BCC7E6926C89B264F063A /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F65A36A114E941853CE1E7864427A58E /* Pods-Weather Pollution Bar-dummy.m in Sources */,
+				8F77CBFDDD05C4873490F06561702CFF /* Pods-Weather Pollution BarTests-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B0496EF4F09F89AEFEEA42E5B16FB7A2 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2EC8C25E2599FCF2173419069EF4E6B5 /* Pods-Weather Pollution BarUITests-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B11D0AA37E28BF2723107851D538C458 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C2155261C0C867A3E659BBA799F62789 /* Pods-Weather Pollution Bar-dummy.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		2FD4BB6E89A952CF85D7680E9D9761C9 /* PBXTargetDependency */ = {
+		86D8E5DE256366D1098DB9504FD98BDC /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = NSLogger;
-			target = 807D97FE95D5377DB9107EE23BA36965 /* NSLogger */;
-			targetProxy = CC673E808E9A6C59C995FF882CDC3E5E /* PBXContainerItemProxy */;
+			target = 7A99B0DFA216539A2383960888997C19 /* NSLogger */;
+			targetProxy = 7C18415111966D17ACBAD973B2086943 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
-		105CA996DAB6418CC8DA4D409ACAA70C /* Debug */ = {
+		07CD90B4CA7D31A7BF52ADF856AF3BE4 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = BA440693E33FB8C37789A58D2B3330A1 /* Pods-Weather Pollution Bar.debug.xcconfig */;
+			baseConfigurationReference = 72EFABAFB2078786F965B2C0A4DD9B59 /* Pods-Weather Pollution BarUITests.release.xcconfig */;
 			buildSettings = {
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				CODE_SIGN_IDENTITY = "-";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
 				EXECUTABLE_PREFIX = lib;
 				MACH_O_TYPE = staticlib;
-				MACOSX_DEPLOYMENT_TARGET = 10.10;
-				MTL_ENABLE_DEBUG_INFO = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.12;
 				OTHER_LDFLAGS = "";
 				OTHER_LIBTOOLFLAGS = "";
 				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				SDKROOT = macosx;
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
+		0BD008920F7D1637021DD874EDEB92D5 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 89DB08E4D92936DA060643A0F7662178 /* Pods-Weather Pollution BarUITests.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				CODE_SIGN_IDENTITY = "-";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				EXECUTABLE_PREFIX = lib;
+				MACH_O_TYPE = staticlib;
+				MACOSX_DEPLOYMENT_TARGET = 10.12;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
 				SDKROOT = macosx;
 				SKIP_INSTALL = YES;
 			};
 			name = Debug;
 		};
-		1E621D6BF749EDCE77ACBE7C6D464E29 /* Debug */ = {
+		212EE30AA9A8FD4AFC9F41F6FCA4D6D6 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9F12614234781CB75DA04D2632F5BAAB /* Pods-Weather Pollution BarTests.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				CODE_SIGN_IDENTITY = "-";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				EXECUTABLE_PREFIX = lib;
+				MACH_O_TYPE = staticlib;
+				MACOSX_DEPLOYMENT_TARGET = 10.12;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				SDKROOT = macosx;
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
+		268070ADFDCF247E03C15D18841D4FE5 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5051C72B9128617B79CEB521B62FAA56 /* NSLogger.xcconfig */;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				CODE_SIGN_IDENTITY = "-";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				EXECUTABLE_PREFIX = lib;
+				GCC_PREFIX_HEADER = "Target Support Files/NSLogger/NSLogger-prefix.pch";
+				MACOSX_DEPLOYMENT_TARGET = 10.6;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PRIVATE_HEADERS_FOLDER_PATH = "";
+				PRODUCT_MODULE_NAME = NSLogger;
+				PRODUCT_NAME = NSLogger;
+				PUBLIC_HEADERS_FOLDER_PATH = "";
+				SDKROOT = macosx;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 4.2;
+			};
+			name = Debug;
+		};
+		35E117F4C1BCCB8FBE9954C3724AEE80 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5051C72B9128617B79CEB521B62FAA56 /* NSLogger.xcconfig */;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				CODE_SIGN_IDENTITY = "-";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				EXECUTABLE_PREFIX = lib;
+				GCC_PREFIX_HEADER = "Target Support Files/NSLogger/NSLogger-prefix.pch";
+				MACOSX_DEPLOYMENT_TARGET = 10.6;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PRIVATE_HEADERS_FOLDER_PATH = "";
+				PRODUCT_MODULE_NAME = NSLogger;
+				PRODUCT_NAME = NSLogger;
+				PUBLIC_HEADERS_FOLDER_PATH = "";
+				SDKROOT = macosx;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 4.2;
+			};
+			name = Release;
+		};
+		58928C8298AE6FC130343A17DB8BF872 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
-				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
-				CLANG_WARN_OBJC_ROOT_CLASS = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
-				GCC_C_LANGUAGE_STANDARD = gnu99;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PREPROCESSOR_DEFINITIONS = (
+					"POD_CONFIGURATION_DEBUG=1",
 					"DEBUG=1",
 					"$(inherited)",
 				);
-				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
-				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
 				GCC_WARN_UNDECLARED_SELECTOR = YES;
-				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				MACOSX_DEPLOYMENT_TARGET = 10.12;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
 				STRIP_INSTALLED_PRODUCT = NO;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 4.2;
 				SYMROOT = "${SRCROOT}/../build";
 			};
 			name = Debug;
 		};
-		2309783823FCE79149217F06C6F50F07 /* Release */ = {
+		6479FB27CC2F288E94C88E6338487201 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 145DCEDC556CD6D29134B9ADD4CD38BB /* Pods-Weather Pollution Bar.release.xcconfig */;
+			baseConfigurationReference = BCBE819D7350A43CA74F86A3B22D8AEE /* Pods-Weather Pollution BarTests.debug.xcconfig */;
 			buildSettings = {
-				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				CODE_SIGN_IDENTITY = "-";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
 				EXECUTABLE_PREFIX = lib;
 				MACH_O_TYPE = staticlib;
-				MACOSX_DEPLOYMENT_TARGET = 10.10;
-				MTL_ENABLE_DEBUG_INFO = NO;
+				MACOSX_DEPLOYMENT_TARGET = 10.12;
 				OTHER_LDFLAGS = "";
 				OTHER_LIBTOOLFLAGS = "";
 				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				SDKROOT = macosx;
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		9DFB48941B2766829148FBE14E308ECE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = A49B3AD184B8202F4233B319F92C8228 /* Pods-Weather Pollution Bar.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				CODE_SIGN_IDENTITY = "-";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				EXECUTABLE_PREFIX = lib;
+				MACH_O_TYPE = staticlib;
+				MACOSX_DEPLOYMENT_TARGET = 10.12;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				SDKROOT = macosx;
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		A9D2B3AB682A3B702D2AE321F877BA5B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"POD_CONFIGURATION_RELEASE=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.12;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRIP_INSTALLED_PRODUCT = NO;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_VERSION = 4.2;
+				SYMROOT = "${SRCROOT}/../build";
+			};
+			name = Release;
+		};
+		B6597CE0887E97AE27280AA4EFD66D2B /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = D412191D82D76B8CBE09F344E605300E /* Pods-Weather Pollution Bar.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				CODE_SIGN_IDENTITY = "-";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				EXECUTABLE_PREFIX = lib;
+				MACH_O_TYPE = staticlib;
+				MACOSX_DEPLOYMENT_TARGET = 10.12;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
 				SDKROOT = macosx;
 				SKIP_INSTALL = YES;
 			};
 			name = Release;
-		};
-		29054214125D9CB68DE10C9EF2583809 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 76814B141BFB94B3AAB4C54EE54E3449 /* NSLogger.xcconfig */;
-			buildSettings = {
-				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				EXECUTABLE_PREFIX = lib;
-				GCC_PREFIX_HEADER = "Target Support Files/NSLogger/NSLogger-prefix.pch";
-				MACOSX_DEPLOYMENT_TARGET = 10.10;
-				MTL_ENABLE_DEBUG_INFO = NO;
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PRIVATE_HEADERS_FOLDER_PATH = "";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				PUBLIC_HEADERS_FOLDER_PATH = "";
-				SDKROOT = macosx;
-			};
-			name = Release;
-		};
-		5577A3F22A37686E40DB6863D68D476C /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_SEARCH_USER_PATHS = NO;
-				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
-				CLANG_CXX_LIBRARY = "libc++";
-				CLANG_ENABLE_MODULES = YES;
-				CLANG_ENABLE_OBJC_ARC = YES;
-				CLANG_WARN_BOOL_CONVERSION = YES;
-				CLANG_WARN_CONSTANT_CONVERSION = YES;
-				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES;
-				CLANG_WARN_EMPTY_BODY = YES;
-				CLANG_WARN_ENUM_CONVERSION = YES;
-				CLANG_WARN_INT_CONVERSION = YES;
-				CLANG_WARN_OBJC_ROOT_CLASS = YES;
-				CLANG_WARN_UNREACHABLE_CODE = YES;
-				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				COPY_PHASE_STRIP = YES;
-				ENABLE_NS_ASSERTIONS = NO;
-				GCC_C_LANGUAGE_STANDARD = gnu99;
-				GCC_PREPROCESSOR_DEFINITIONS = "RELEASE=1";
-				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
-				GCC_WARN_ABOUT_RETURN_TYPE = YES;
-				GCC_WARN_UNDECLARED_SELECTOR = YES;
-				GCC_WARN_UNINITIALIZED_AUTOS = YES;
-				GCC_WARN_UNUSED_FUNCTION = YES;
-				GCC_WARN_UNUSED_VARIABLE = YES;
-				MACOSX_DEPLOYMENT_TARGET = 10.10;
-				STRIP_INSTALLED_PRODUCT = NO;
-				SYMROOT = "${SRCROOT}/../build";
-				VALIDATE_PRODUCT = YES;
-			};
-			name = Release;
-		};
-		5CB1E9C1080DFA6B6396F9EA7C85F87E /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 76814B141BFB94B3AAB4C54EE54E3449 /* NSLogger.xcconfig */;
-			buildSettings = {
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				EXECUTABLE_PREFIX = lib;
-				GCC_PREFIX_HEADER = "Target Support Files/NSLogger/NSLogger-prefix.pch";
-				MACOSX_DEPLOYMENT_TARGET = 10.10;
-				MTL_ENABLE_DEBUG_INFO = YES;
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PRIVATE_HEADERS_FOLDER_PATH = "";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				PUBLIC_HEADERS_FOLDER_PATH = "";
-				SDKROOT = macosx;
-			};
-			name = Debug;
 		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */ = {
+		4821239608C13582E20E6DA73FD5F1F9 /* Build configuration list for PBXProject "Pods" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				1E621D6BF749EDCE77ACBE7C6D464E29 /* Debug */,
-				5577A3F22A37686E40DB6863D68D476C /* Release */,
+				58928C8298AE6FC130343A17DB8BF872 /* Debug */,
+				A9D2B3AB682A3B702D2AE321F877BA5B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		F16235736C9647775488C32561FE19E9 /* Build configuration list for PBXNativeTarget "NSLogger" */ = {
+		87525C29D644634C8B41652CF4472D47 /* Build configuration list for PBXNativeTarget "Pods-Weather Pollution Bar" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				5CB1E9C1080DFA6B6396F9EA7C85F87E /* Debug */,
-				29054214125D9CB68DE10C9EF2583809 /* Release */,
+				9DFB48941B2766829148FBE14E308ECE /* Debug */,
+				B6597CE0887E97AE27280AA4EFD66D2B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		F64A2D0212683AFAE1BCDF03B9A2879C /* Build configuration list for PBXNativeTarget "Pods-Weather Pollution Bar" */ = {
+		D595828C9110FBA3C9075272F21A6B7F /* Build configuration list for PBXNativeTarget "Pods-Weather Pollution BarTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				105CA996DAB6418CC8DA4D409ACAA70C /* Debug */,
-				2309783823FCE79149217F06C6F50F07 /* Release */,
+				6479FB27CC2F288E94C88E6338487201 /* Debug */,
+				212EE30AA9A8FD4AFC9F41F6FCA4D6D6 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		EF1B2470DC8DE2941A2859CAFB2439A4 /* Build configuration list for PBXNativeTarget "NSLogger" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				268070ADFDCF247E03C15D18841D4FE5 /* Debug */,
+				35E117F4C1BCCB8FBE9954C3724AEE80 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F6241787D6C7C51AABAB2B0868237298 /* Build configuration list for PBXNativeTarget "Pods-Weather Pollution BarUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				0BD008920F7D1637021DD874EDEB92D5 /* Debug */,
+				07CD90B4CA7D31A7BF52ADF856AF3BE4 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
-	rootObject = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+	rootObject = BFDFE7DC352907FC980B868725387E98 /* Project object */;
 }

@@ -172,7 +172,7 @@ class WeatherView: NSViewController {
         
         
         
-        if currentDay.day - weatherday.day == 0 {
+        if currentDay.day! - weatherday.day! == 0 {
             
             return false
         }

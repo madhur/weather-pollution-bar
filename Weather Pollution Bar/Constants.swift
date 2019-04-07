@@ -61,57 +61,57 @@ struct Defaults
 
 func getReadableTime(updatedTime: Int) -> String
 {
-    let currentDate = NSDate()
-    let updatedDate = NSDate(timeIntervalSince1970: TimeInterval(updatedTime))
+    let currentDate = Date()
+    let updatedDate = Date(timeIntervalSince1970: TimeInterval(updatedTime))
     
-    let components = NSCalendar.currentCalendar.components([.Day, .Hour, .Minute, .Second], fromDate: updatedDate, toDate: currentDate, options: [])
+    let components = Calendar.current.dateComponents([.day, .hour, .minute, .second], from: updatedDate, to: currentDate)
     
     
     let strFormat = "Updated: %@"
     var strVal = ""
     
-    if components.day > 0
+    if components.day! > 0
     {
         if components.day == 1
         {
-            strVal = String(components.day) + " day ago"
+            strVal = String(components.day!) + " day ago"
         }
         else
         {
-            strVal = String(components.day) + " days ago"
+            strVal = String(components.day!) + " days ago"
         }
     }
-    else if components.hour > 0
+    else if components.hour! > 0
     {
         if components.hour == 1
         {
-            strVal = String(components.hour) + " hour ago"
+            strVal = String(components.hour!) + " hour ago"
         }
         else
         {
-            strVal = String(components.hour) + " hours ago"
+            strVal = String(components.hour!) + " hours ago"
         }
     }
-    else if components.minute > 0
+    else if components.minute! > 0
     {
         if components.minute == 1
         {
-            strVal = String(components.minute) + " minute ago"
+            strVal = String(components.minute!) + " minute ago"
         }
         else
         {
-            strVal = String(components.minute) + " minutes ago"
+            strVal = String(components.minute!) + " minutes ago"
         }
     }
-    else if components.second > 0
+    else if components.second! > 0
     {
         if components.second == 1
         {
-            strVal = String(components.second) + " second ago"
+            strVal = String(components.second!) + " second ago"
         }
         else
         {
-            strVal = String(components.second) + " seconds ago"
+            strVal = String(components.second!) + " seconds ago"
         }
     }
     
