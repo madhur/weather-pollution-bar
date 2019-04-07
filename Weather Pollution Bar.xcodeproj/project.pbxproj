@@ -270,7 +270,7 @@
 				TargetAttributes = {
 					E0E390421C3857620000CDFA = {
 						CreatedOnToolsVersion = 7.2;
-						DevelopmentTeam = W94CM56NYX;
+						DevelopmentTeam = P6G2L65WY6;
 						SystemCapabilities = {
 							com.apple.Sandbox = {
 								enabled = 1;
@@ -292,6 +292,7 @@
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
+				English,
 				en,
 				Base,
 			);
@@ -541,10 +542,12 @@
 				CODE_SIGN_ENTITLEMENTS = "Weather Pollution Bar/Weather Pollution Bar.entitlements";
 				CODE_SIGN_IDENTITY = "Mac Developer";
 				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = P6G2L65WY6;
 				INFOPLIST_FILE = "Weather Pollution Bar/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "in.co.madhur.Weather-Pollution-Bar";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
 			};
 			name = Debug;
 		};
@@ -556,10 +559,12 @@
 				CODE_SIGN_ENTITLEMENTS = "Weather Pollution Bar/Weather Pollution Bar.entitlements";
 				CODE_SIGN_IDENTITY = "Mac Developer";
 				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = P6G2L65WY6;
 				INFOPLIST_FILE = "Weather Pollution Bar/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "in.co.madhur.Weather-Pollution-Bar";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
 			};
 			name = Release;
 		};

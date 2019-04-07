@@ -32,7 +32,7 @@ class PollutionColorView: NSView
     
     var rectArray: [NSRect] = []
     
-    override func drawRect(dirtyRect: NSRect) {
+    override func draw(_ dirtyRect: NSRect) {
         
         let rectWidth = Int(bounds.width.native / 6)
         
@@ -40,44 +40,44 @@ class PollutionColorView: NSView
         {
             colors[index].set()
             let rect = NSRect.init(origin: CGPoint.init(x: index*rectWidth, y: 0), size: CGSize.init(width: rectWidth, height: rectHeight))
-            NSBezierPath.fillRect(rect)
+            NSBezierPath.fill(rect)
             rectArray.append(rect)
         }
         
         if let aqiValue = aqi
         {
-            NSColor.whiteColor().set()
+            NSColor.white.set()
             
             let aqiText = NSMutableAttributedString(string: Int(aqiValue).description)
-            aqiText.addAttribute(NSForegroundColorAttributeName, value: NSColor.whiteColor(), range: NSRange.init(location: 0, length: aqiText.length))
-            aqiText.addAttribute(NSFontAttributeName, value: NSFont.boldSystemFontOfSize(20), range: NSRange.init(location: 0, length: aqiText.length))
+            aqiText.addAttribute(NSAttributedString.Key.foregroundColor, value: NSColor.white, range: NSRange.init(location: 0, length: aqiText.length))
+            aqiText.addAttribute(NSAttributedString.Key.font, value: NSFont.boldSystemFont(ofSize: 20), range: NSRange.init(location: 0, length: aqiText.length))
             
-            let paraStyle = NSParagraphStyle.defaultParagraphStyle().mutableCopy() as! NSMutableParagraphStyle
-            paraStyle.alignment = .Center
-            aqiText.addAttribute(NSParagraphStyleAttributeName, value: paraStyle, range: NSRange.init(location: 0, length: aqiText.length))
+            let paraStyle = NSParagraphStyle.default.mutableCopy() as! NSMutableParagraphStyle
+            paraStyle.alignment = .center
+            aqiText.addAttribute(NSAttributedString.Key.paragraphStyle, value: paraStyle, range: NSRange.init(location: 0, length: aqiText.length))
             
             
             switch(aqiValue)
             {
             case 0...50:
                
-                aqiText.drawAtPoint(NSPoint.init(x: 10, y: 0))
+                aqiText.draw(at: NSPoint.init(x: 10, y: 0))
             
             case 51...100:
                 
-                aqiText.drawAtPoint(NSPoint.init(x: 10 + rectWidth, y: 0))
+                aqiText.draw(at: NSPoint.init(x: 10 + rectWidth, y: 0))
             case 101...200:
                 
-                aqiText.drawAtPoint(NSPoint.init(x: 5 + rectWidth*2, y: 0))
+                aqiText.draw(at: NSPoint.init(x: 5 + rectWidth*2, y: 0))
             case 201...300:
             
-                aqiText.drawAtPoint(NSPoint.init(x: 5 + rectWidth*3, y: 0))
+                aqiText.draw(at: NSPoint.init(x: 5 + rectWidth*3, y: 0))
             case 301...400:
   
-                aqiText.drawAtPoint(NSPoint.init(x: 5 + rectWidth*4, y: 0))
+                aqiText.draw(at: NSPoint.init(x: 5 + rectWidth*4, y: 0))
             case 401...500:
 
-                aqiText.drawAtPoint(NSPoint.init(x: 5 + rectWidth*5, y: 0))
+                aqiText.draw(at: NSPoint.init(x: 5 + rectWidth*5, y: 0))
                 
             default: break
                 

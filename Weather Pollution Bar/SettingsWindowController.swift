@@ -29,30 +29,30 @@ class SettingsWindowController: NSWindowController, NSComboBoxDataSource, NSComb
         
         self.window?.center()
         self.window?.makeKeyAndOrderFront(nil)
-        NSApp.activateIgnoringOtherApps(true)
+        NSApp.activate(ignoringOtherApps: true)
         
         // Implement this method to handle any initialization after your window controller's window has been loaded from its nib file.
         
-        unitCombo.addItemsWithObjectValues(Constants.UNITS)
-        syncCombo.addItemsWithObjectValues(Constants.SYNC_INTERVAL)
-        iconCombo.addItemsWithObjectValues(Constants.ICON_TYPE)
+        unitCombo.addItems(withObjectValues: Constants.UNITS)
+        syncCombo.addItems(withObjectValues: Constants.SYNC_INTERVAL)
+        iconCombo.addItems(withObjectValues: Constants.ICON_TYPE)
         
-        NSOperationQueue().addOperationWithBlock({
+        OperationQueue().addOperation({
             
-            let cities = NSBundle.mainBundle().pathForResource("cities", ofType: "json")
+            let cities = Bundle.main.path(forResource: "cities", ofType: "json")
             if let citiesFile = cities
             {
                 let data = NSData.dataWithContentsOfMappedFile(citiesFile)
                 
                 do {
                     
-                    let citiesArray = try NSJSONSerialization.JSONObjectWithData(data as! NSData, options: NSJSONReadingOptions.AllowFragments)
+                    let citiesArray = try JSONSerialization.jsonObject(with: (data as! NSData) as Data, options: JSONSerialization.ReadingOptions.allowFragments)
                     
                     for city: NSDictionary in citiesArray as! [NSDictionary]
                     {
-                        let weatherCity = self.getCity(city)
+                        let weatherCity = self.getCity(data: city)
                         
-                        self.weatherCitiesArray.insert(weatherCity, atIndex: self.weatherCitiesArray.count)
+                        self.weatherCitiesArray.insert(weatherCity, at: self.weatherCitiesArray.count)
                         
                     }
                     
@@ -64,7 +64,7 @@ class SettingsWindowController: NSWindowController, NSComboBoxDataSource, NSComb
                 
             }
             
-            let cityIndex = self.getCityIndexById(AppPreferences.CityId)
+            let cityIndex = self.getCityIndexById(cityId: AppPreferences.CityId)
             
             if let cityIndexVal = cityIndex
             {
@@ -81,7 +81,7 @@ class SettingsWindowController: NSWindowController, NSComboBoxDataSource, NSComb
         
         if AppPreferences.PollutionId![0] as! Int != 0
         {
-            pollutionLabel.stringValue = "Nearest pollution center is: " + (getPollutionById(AppPreferences.PollutionId![0] as! Int)?.name)!
+            pollutionLabel.stringValue = "Nearest pollution center is: " + (getPollutionById(pollutionId: AppPreferences.PollutionId![0] as! Int)?.name)!
         }
     }
     
@@ -127,13 +127,13 @@ class SettingsWindowController: NSWindowController, NSComboBoxDataSource, NSComb
     @IBAction func selectCity(sender: AnyObject) {
        
         let typedCity = cityCombo.stringValue
-        let selectedIndex = getCityIndex(typedCity)
+        let selectedIndex = getCityIndex(typedCity: typedCity)
         if selectedIndex != nil
         {
-            cityCombo.selectItemAtIndex((selectedIndex?.keys.first!)!)
-            print("selected" + String(selectedIndex))
+            cityCombo.selectItem(at: (selectedIndex?.keys.first!)!)
+           // print("selected" + String(selectedIndex ?? nil))
             AppPreferences.CityId = (selectedIndex?.values.first?.id)!
-            selectPollution((selectedIndex?.values.first)!)
+            selectPollution(selectedWeathercity: (selectedIndex?.values.first)!)
             
             AppPreferences.update()
         }
@@ -143,7 +143,7 @@ class SettingsWindowController: NSWindowController, NSComboBoxDataSource, NSComb
     func getCityIndex(typedCity : String) -> [Int: WeatherCity]?
     {
         
-        for (index, city) in weatherCitiesArray.enumerate()
+        for (index, city) in weatherCitiesArray.enumerated()
         {
             if(city.name == typedCity)
             {
@@ -156,7 +156,7 @@ class SettingsWindowController: NSWindowController, NSComboBoxDataSource, NSComb
     
     func getCityIndexById(cityId: Int) -> [Int: WeatherCity]?
     {
-        for (index, city) in weatherCitiesArray.enumerate()
+        for (index, city) in weatherCitiesArray.enumerated()
         {
             if(city.id == cityId)
             {
@@ -180,7 +180,7 @@ class SettingsWindowController: NSWindowController, NSComboBoxDataSource, NSComb
         
         print("setting refresh interval to" + String(AppPreferences.SyncInterval))
         
-        statusMenuController.timer = NSTimer.scheduledTimerWithTimeInterval(Double(AppPreferences.SyncInterval*60), target: statusMenuController, selector: Selector("update"), userInfo: nil, repeats: true)
+        statusMenuController.timer = Timer.scheduledTimer(timeInterval: Double(AppPreferences.SyncInterval*60), target: statusMenuController, selector: Selector("update"), userInfo: nil, repeats: true)
         
     }
     
@@ -200,7 +200,7 @@ class SettingsWindowController: NSWindowController, NSComboBoxDataSource, NSComb
             return weatherCitiesArray[0]
         }
         
-        return weatherCitiesArray[index].name!
+        return weatherCitiesArray[index].name! as AnyObject
         
     }
     
@@ -219,20 +219,20 @@ class SettingsWindowController: NSWindowController, NSComboBoxDataSource, NSComb
     func selectPollution(selectedWeathercity: WeatherCity)
     {
         
-        let pollutionData = getPollutionById(selectedWeathercity.latitude!, longitude: selectedWeathercity.longitude!)
+        let pollutionData = getPollutionById(latitude: selectedWeathercity.latitude!, longitude: selectedWeathercity.longitude!)
         
         let pollutionIds = pollutionData.pollutionIds
         
         if pollutionIds.count > 0
         {
-            AppPreferences.PollutionId = pollutionIds
-            print("setting nearest pollution id" + String(pollutionIds))
+            AppPreferences.PollutionId = pollutionIds as [AnyObject]
+           // print("setting nearest pollution id " + String(pollutionIds))
             pollutionLabel.stringValue = "Nearest pollution center is: " + String(pollutionData.pollutionCitiesArray[0].name!)
         }
         else
         {
             print("No nearest pollution center found")
-            AppPreferences.PollutionId = [0]
+            AppPreferences.PollutionId = [0] as [AnyObject]
             pollutionLabel.stringValue = "No nearest pollution center found"
         }
         
@@ -243,33 +243,33 @@ class SettingsWindowController: NSWindowController, NSComboBoxDataSource, NSComb
         var pollutionCitiesArray: [PollutionCity] = []
 
         let weatherLocation: CLLocation = CLLocation(
-            latitude: CLLocationDegrees.abs(latitude),
-            longitude: CLLocationDegrees.abs(longitude))
+            latitude: CLLocationDegrees.init(latitude),
+            longitude: CLLocationDegrees.init(longitude))
         
         var pollutionIds : [Int]? = []
         
-        let pollutionCities = NSBundle.mainBundle().pathForResource("pollution_cities", ofType: "json")
+        let pollutionCities = Bundle.main.path(forResource: "pollution_cities", ofType: "json")
         if let pollutionFile = pollutionCities
         {
             let data = NSData.dataWithContentsOfMappedFile(pollutionFile)
             
             do {
                 
-                let citiesArray = try NSJSONSerialization.JSONObjectWithData(data as! NSData, options: NSJSONReadingOptions.AllowFragments)
+                let citiesArray = try JSONSerialization.jsonObject(with: (data as! NSData) as Data, options: JSONSerialization.ReadingOptions.allowFragments)
                 
                 let minDistance: CLLocationDistance = 30000
                 
                 
                 for city: NSDictionary in citiesArray as! [NSDictionary]
                 {
-                    let pollutionCity = getPollutionCity(city)
+                    let pollutionCity = getPollutionCity(data: city)
                     
                     let pollutionLocation: CLLocation = CLLocation(
-                        latitude: CLLocationDegrees.abs(pollutionCity.latitude!),
-                        longitude: CLLocationDegrees.abs(pollutionCity.longitude!))
+                        latitude: CLLocationDegrees.init(pollutionCity.latitude!),
+                        longitude: CLLocationDegrees.init(pollutionCity.longitude!))
                     
                     
-                    let distance = weatherLocation.distanceFromLocation(pollutionLocation)
+                    let distance = weatherLocation.distance(from: pollutionLocation)
                     
                     if distance < minDistance
                     {
@@ -296,18 +296,18 @@ class SettingsWindowController: NSWindowController, NSComboBoxDataSource, NSComb
     func getPollutionById(pollutionId: Int) -> PollutionCity?
     {
         
-        let pollutionCities = NSBundle.mainBundle().pathForResource("pollution_cities", ofType: "json")
+        let pollutionCities = Bundle.main.path(forResource: "pollution_cities", ofType: "json")
         if let pollutionFile = pollutionCities
         {
             let data = NSData.dataWithContentsOfMappedFile(pollutionFile)
             
             do {
                 
-                let citiesArray = try NSJSONSerialization.JSONObjectWithData(data as! NSData, options: NSJSONReadingOptions.AllowFragments)
+                let citiesArray = try JSONSerialization.jsonObject(with: (data as! NSData) as Data, options: JSONSerialization.ReadingOptions.allowFragments)
                 
                 for city: NSDictionary in citiesArray as! [NSDictionary]
                 {
-                    let pollutionCity = getPollutionCity(city)
+                    let pollutionCity = getPollutionCity(data: city)
                     
                     if pollutionCity.id == pollutionId
                     {

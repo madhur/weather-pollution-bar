@@ -27,14 +27,14 @@ class AboutWindowController: NSWindowController {
         super.windowDidLoad()
 
         // Implement this method to handle any initialization after your window controller's window has been loaded from its nib file.
-        let version = NSBundle.mainBundle().objectForInfoDictionaryKey("CFBundleShortVersionString")
+        let version = Bundle.main.object(forInfoDictionaryKey: "CFBundleShortVersionString")
         versionText.stringValue = String(format: Constants.VERSION,  version as! NSString)
        
        // progImage.image = NSImage(named: "statusIcon")
         
         self.window?.center()
         self.window?.makeKeyAndOrderFront(nil)
-        NSApp.activateIgnoringOtherApps(true)
+        NSApp.activate(ignoringOtherApps: true)
 
     }
     
@@ -44,15 +44,15 @@ class AboutWindowController: NSWindowController {
         
         if sender as! NSObject == homeButton
         {
-            workspace.openURL(NSURL(string: Constants.HOME_URL)!)
+            workspace.open(NSURL(string: Constants.HOME_URL)! as URL)
         }
         else if sender as! NSObject == twitterButton
         {
-            workspace.openURL(NSURL(string: Constants.TWITTER_URL)!)
+            workspace.open(NSURL(string: Constants.TWITTER_URL)! as URL)
         }
         else if sender as! NSObject == gitButton
         {
-            workspace.openURL(NSURL(string: Constants.GIT_URL)!)
+            workspace.open(NSURL(string: Constants.GIT_URL)! as URL)
         }
         
     }

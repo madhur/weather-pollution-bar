@@ -72,13 +72,13 @@ class WeatherView: NSViewController {
     {
         let units  = AppPreferences.Units
         
-        WeatherFetcher.fetchCurrent(currentWeatherCallback, units: units!)
-        WeatherFetcher.fetchFuture(futureWeatherCallback, units: units!)
+        WeatherFetcher.fetchCurrent(currentWeatherCallback: currentWeatherCallback, units: units!)
+        WeatherFetcher.fetchFuture(futureWeatherCallback: futureWeatherCallback, units: units!)
 
     }
     
     
-    var currentWeatherCallback: Weather? -> Void { return
+    var currentWeatherCallback: (Weather?) -> Void { return
         {
             (weather: Weather?) in
             
@@ -93,7 +93,7 @@ class WeatherView: NSViewController {
             
             let image = NSImage(named: Constants.WEATHER_MAPPING[(weather?.todayWeather?.temperatureIcon)!]!)
             //let image  = NSImage(named: (weather?.todayWeather?.temperatureIcon)!)
-            image?.cacheMode = NSImageCacheMode.Never
+            image?.cacheMode = NSImage.CacheMode.never
             
             self.currentIcon.image = image
             
@@ -101,7 +101,7 @@ class WeatherView: NSViewController {
             {
                 let icon = NSImage(named: "statusIcon")
                 icon!.size = NSSize.init(width: 18, height: 18)
-                icon?.template = true
+                icon?.isTemplate = true
                 self.statusMenuViewController?.statusItem.image = icon
                 self.statusMenuViewController?.statusItem.title = nil
                 
@@ -117,27 +117,27 @@ class WeatherView: NSViewController {
                 
                 let icon = NSImage(named: Constants.WEATHER_MAPPING[(weather?.todayWeather?.temperatureIcon)!]!)?.copy() as! NSImage
                 icon.size = NSSize.init(width: 18, height: 18)
-                icon.template = true
-                icon.cacheMode = NSImageCacheMode.Never
+                icon.isTemplate = true
+                icon.cacheMode = NSImage.CacheMode.never
                 self.statusMenuViewController?.statusItem.image = icon
             }
                         
-            self.statusMenuViewController?.weatherMenuItem.toolTip = getReadableTime((weather?.updatedLong)!)
+            self.statusMenuViewController?.weatherMenuItem.toolTip = getReadableTime(updatedTime: (weather?.updatedLong)!)
             
         }
     }
     
     
-    var futureWeatherCallback : [FutureWeather]? -> Void
+    var futureWeatherCallback : ([FutureWeather]?) -> Void
         { return
             {
     
                 (futureWeather: [FutureWeather]?) in
                 
                var i = 0
-               for (index, weather) in (futureWeather?.enumerate())!
+                for (index, weather) in (futureWeather?.enumerated())!
                {
-                    if index==0 && WeatherView.checkPastDate(weather.updatedLong)
+                if index==0 && WeatherView.checkPastDate(dt: weather.updatedLong)
                     {
                         continue
                     }
@@ -151,9 +151,9 @@ class WeatherView: NSViewController {
                 
                     let image = NSImage(named: Constants.WEATHER_MAPPING[weather.temperatureIcon]!)?.copy() as! NSImage
                     //let image = NSImage(named: weather.temperatureIcon)!
-                    image.cacheMode = NSImageCacheMode.Never
+                image.cacheMode = NSImage.CacheMode.never
                     self.dayIcon?[i].image = image
-                    self.dayLabel?[i].stringValue = WeatherView.getWeekString(weather.updatedLong)
+                self.dayLabel?[i].stringValue = WeatherView.getWeekString(dt: weather.updatedLong)
                 
                 
                     i = i + 1
@@ -167,11 +167,12 @@ class WeatherView: NSViewController {
     static func checkPastDate(dt: Int) -> Bool
     {
        
-        let currentDay = NSCalendar.currentCalendar().components([.Day, .Month, .Year], fromDate: NSDate())
-        let weatherday = NSCalendar.currentCalendar().components([.Day, .Month, .Year], fromDate: NSDate(timeIntervalSince1970: Double(dt)))
+        let currentDay = NSCalendar.current.dateComponents([.day, .month, .year], from: NSDate() as Date)
+        let weatherday = NSCalendar.current.dateComponents([.day, .month, .year], from: NSDate(timeIntervalSince1970: Double(dt)) as Date)
         
-        if currentDay.day - weatherday.day == 0
-        {
+        
+        
+        if currentDay.day - weatherday.day == 0 {
             
             return false
         }
@@ -184,15 +185,15 @@ class WeatherView: NSViewController {
     {
         let today = NSDate()
         let weatherDate = NSDate(timeIntervalSince1970: Double(dt))
-        let dateFormatter: NSDateFormatter = NSDateFormatter()
+        let dateFormatter: DateFormatter = DateFormatter()
         dateFormatter.dateFormat = "EEE"
         
-        if(dateFormatter.stringFromDate(today) == dateFormatter.stringFromDate(weatherDate))
+        if(dateFormatter.string(from: today as Date) == dateFormatter.string(from: weatherDate as Date))
         {
             return "Today"
         }
         
-        return dateFormatter.stringFromDate(weatherDate)
+        return dateFormatter.string(from: weatherDate as Date)
     }
     
 }

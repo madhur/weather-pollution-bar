@@ -13,16 +13,16 @@ class WeatherFetcher
 {
     
     
-    static func fetchCurrent(currentWeatherCallback : (Weather?)-> Void, units: String)
+    static func fetchCurrent(currentWeatherCallback : @escaping (Weather?)-> Void, units: String)
     {
         let cityId = AppPreferences.CityId
 //        let cityIdBlr = 1277333
   
-        let weatherUrlRequest = String(format: Constants.CURRENT_WEATHER_URL, cityId , Constants.WEATHER_API_KEY, getUrlParam(units))
+        let weatherUrlRequest = String(format: Constants.CURRENT_WEATHER_URL, cityId , Constants.WEATHER_API_KEY, getUrlParam(units: units))
         let weatherUrl = NSURL(string: weatherUrlRequest)
-        let request = NSURLRequest(URL: weatherUrl!)
+        let request = NSURLRequest(url: weatherUrl! as URL)
         
-        let weatherTask = NSURLSession.sharedSession().dataTaskWithRequest(request, completionHandler:
+        let weatherTask = URLSession.shared.dataTask(with: request as URLRequest, completionHandler:
             {
                 (data, response, error) -> Void in
         
@@ -34,9 +34,9 @@ class WeatherFetcher
                     }
                     else if data != nil
                     {
-                         let weatherObj = currentWeatherFromJSON(data)
+                        let weatherObj = currentWeatherFromJSON(data: data as NSData?)
                         
-                        NSOperationQueue.mainQueue().addOperationWithBlock({
+                        OperationQueue.main.addOperation({
                             currentWeatherCallback(weatherObj)
                         })
                                                 
@@ -48,15 +48,15 @@ class WeatherFetcher
         weatherTask.resume()
     }
     
-    static func fetchFuture(futureWeatherCallback: ([FutureWeather]?) -> Void, units: String)
+    static func fetchFuture(futureWeatherCallback: @escaping ([FutureWeather]?) -> Void, units: String)
     {
         let cityId = AppPreferences.CityId
         
-        let weatherUrlRequest = String(format: Constants.FUTURE_WEATHER_URL, cityId , Constants.WEATHER_API_KEY, getUrlParam(units))
+        let weatherUrlRequest = String(format: Constants.FUTURE_WEATHER_URL, cityId , Constants.WEATHER_API_KEY, getUrlParam(units: units))
         let weatherUrl = NSURL(string: weatherUrlRequest)
-        let request = NSURLRequest(URL: weatherUrl!)
+        let request = NSURLRequest(url: weatherUrl! as URL)
         
-        let weatherTask = NSURLSession.sharedSession().dataTaskWithRequest(request, completionHandler:
+        let weatherTask = URLSession.shared.dataTask(with: request as URLRequest, completionHandler:
             {
                 (data, response, error) -> Void in
                 
@@ -68,9 +68,9 @@ class WeatherFetcher
                 }
                 else if data != nil
                 {
-                    let futureWeatherList = futureWeatherFromJSON(data)
+                    let futureWeatherList = futureWeatherFromJSON(data: data as NSData?)
                     
-                     NSOperationQueue.mainQueue().addOperationWithBlock({
+                    OperationQueue.main.addOperation({
                         futureWeatherCallback(futureWeatherList)
                         })
                     
@@ -88,7 +88,7 @@ class WeatherFetcher
         var dict:NSDictionary?
         do
         {
-            dict = try NSJSONSerialization.JSONObjectWithData(data!, options: NSJSONReadingOptions.AllowFragments) as! NSDictionary
+            dict = try JSONSerialization.jsonObject(with: data! as Data, options: JSONSerialization.ReadingOptions.allowFragments) as! NSDictionary
         }
         catch
         {
@@ -150,7 +150,7 @@ class WeatherFetcher
         var dict:NSDictionary?
         do
         {
-            dict = try NSJSONSerialization.JSONObjectWithData(data!, options: NSJSONReadingOptions.AllowFragments) as! NSDictionary
+            dict = try JSONSerialization.jsonObject(with: data! as Data, options: JSONSerialization.ReadingOptions.allowFragments) as! NSDictionary
         }
         catch
         {

@@ -30,11 +30,11 @@ class PollutionView: NSViewController {
     
     func updatePollution()
     {
-        PollutionFetcher.fetch(pollutionCallback)
+        PollutionFetcher.fetch(pollutionCallback: pollutionCallback)
     }
     
     
-    var pollutionCallback: (pollution: Pollution?) -> Void { return
+    var pollutionCallback: (_ pollution: Pollution?) -> Void { return
         {
             (pollution: Pollution?) in
             
@@ -67,11 +67,11 @@ class PollutionView: NSViewController {
 
             }
             
-            self.pollutionColorView.setPollutionValue((pollution?.qualityIndex)!)
+            self.pollutionColorView.setPollutionValue(aqi: (pollution?.qualityIndex)!)
             
            // self.updatedLabel.stringValue = getReadableTime((pollution?.updatedLong)!)
             
-            self.statusMenuViewController?.pollutionMenuItem.toolTip = getReadableTime((pollution?.updatedLong)!)
+            self.statusMenuViewController?.pollutionMenuItem.toolTip = getReadableTime(updatedTime: (pollution?.updatedLong)!)
             
             print(pollution)
         }

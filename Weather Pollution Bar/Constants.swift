@@ -62,9 +62,9 @@ struct Defaults
 func getReadableTime(updatedTime: Int) -> String
 {
     let currentDate = NSDate()
-    let updatedDate = NSDate(timeIntervalSince1970: NSTimeInterval(updatedTime))
+    let updatedDate = NSDate(timeIntervalSince1970: TimeInterval(updatedTime))
     
-    let components = NSCalendar.currentCalendar().components([.Day, .Hour, .Minute, .Second], fromDate: updatedDate, toDate: currentDate, options: [])
+    let components = NSCalendar.currentCalendar.components([.Day, .Hour, .Minute, .Second], fromDate: updatedDate, toDate: currentDate, options: [])
     
     
     let strFormat = "Updated: %@"

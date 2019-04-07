@@ -15,7 +15,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         // Insert code here to initialize your application
         
         // Do not display on dock
-        NSApp.setActivationPolicy(NSApplicationActivationPolicy.Accessory)
+        NSApp.setActivationPolicy(NSApplication.ActivationPolicy.accessory)
         
             
     }

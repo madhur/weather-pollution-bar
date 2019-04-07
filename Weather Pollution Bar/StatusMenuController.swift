@@ -17,31 +17,31 @@ class StatusMenuController: NSObject
     
     var weatherView: WeatherView?
     var pollutionView: PollutionView?
-    var timer: NSTimer?
+    var timer: Timer?
     
     var settingsWindowController: SettingsWindowController?
     var aboutWindowController: AboutWindowController?
     
-    let statusItem  = NSStatusBar.systemStatusBar().statusItemWithLength(NSVariableStatusItemLength)
+    let statusItem  = NSStatusBar.system.statusItem(withLength: NSStatusItem.variableLength)
     
     override func awakeFromNib() {
         
         var defaultsDict = [String: AnyObject]()
         
         
-        defaultsDict[Defaults.CITY_ID]=1277333
-        defaultsDict[Defaults.ICON_TYPE] = Constants.ICON_TYPE[1]
-        defaultsDict[Defaults.UNITS] = Constants.UNITS[0]
-        defaultsDict[Defaults.SYNC_INTERVAL] = Constants.SYNC_INTERVAL[0]
-        defaultsDict[Defaults.POLLUTION_ID] = [0]
+        defaultsDict[Defaults.CITY_ID]=1277333 as AnyObject
+        defaultsDict[Defaults.ICON_TYPE] = Constants.ICON_TYPE[1] as AnyObject
+        defaultsDict[Defaults.UNITS] = Constants.UNITS[0] as AnyObject
+        defaultsDict[Defaults.SYNC_INTERVAL] = Constants.SYNC_INTERVAL[0] as AnyObject
+        defaultsDict[Defaults.POLLUTION_ID] = [0] as AnyObject
         
-        NSUserDefaults.standardUserDefaults().registerDefaults(defaultsDict)
+        UserDefaults.standard.register(defaults: defaultsDict)
 
         
         let icon = NSImage(named: "statusIcon")
         icon?.size = NSSize.init(width: 18, height: 18)
-        icon?.cacheMode = NSImageCacheMode.Never
-        icon?.template = true
+        icon?.cacheMode = NSImage.CacheMode.never
+        icon?.isTemplate = true
         
         statusItem.image = icon
         statusItem.menu = statusMenu
@@ -55,15 +55,15 @@ class StatusMenuController: NSObject
        weatherView?.statusMenuViewController = self
        pollutionView?.statusMenuViewController = self
         
-       NSNotificationCenter.defaultCenter().addObserver(self, selector: "updateNotification:", name: Constants.UPDATE_NOTIFICATION, object: nil)
+        NotificationCenter.default.addObserver(self, selector: "updateNotification:", name: NSNotification.Name(rawValue: Constants.UPDATE_NOTIFICATION), object: nil)
         
         
-        let timer = NSTimer.scheduledTimerWithTimeInterval(Double(Constants.SYNC_INTERVAL[0]*60), target: self, selector: Selector("update"), userInfo: nil, repeats: true)
+        let timer = Timer.scheduledTimer(timeInterval: Double(Constants.SYNC_INTERVAL[0]*60), target: self, selector: Selector("update"), userInfo: nil, repeats: true)
         
         //let timer = NSTimer.scheduledTimerWithTimeInterval(5, target: self, selector: Selector("update"), userInfo: nil, repeats: true)
         self.timer = timer
         
-        print(statusMenu.itemArray.count)
+        print(statusMenu.items.count)
         
         
 
@@ -72,21 +72,21 @@ class StatusMenuController: NSObject
     func updateNotification(notification: NSNotification)
     {
         
-        update(weatherMenuItem)
+        update(sender: weatherMenuItem)
         
     }
     
     func update()
     {
-        update(weatherMenuItem)
+        update(sender: weatherMenuItem)
     }
     
 
     func hidePollution()
     {
-        if statusMenu.itemArray.count >= 8
+        if statusMenu.items.count >= 8
         {
-            statusMenu.removeItemAtIndex(4)
+            statusMenu.removeItem(at: 4)
         }
 
     }
@@ -94,7 +94,7 @@ class StatusMenuController: NSObject
     {
         if weatherMenuItem.menu == nil
         {
-            statusMenu.insertItem(weatherMenuItem, atIndex: 2)
+            statusMenu.insertItem(weatherMenuItem, at: 2)
         }
         
     }
@@ -103,14 +103,14 @@ class StatusMenuController: NSObject
     {
         if pollutionMenuItem.menu == nil
         {
-            statusMenu.insertItem(pollutionMenuItem, atIndex: 4)
+            statusMenu.insertItem(pollutionMenuItem, at: 4)
         }
         
     }
     
     @IBAction func quitClicked(sender: NSMenuItem)
     {
-        NSApplication.sharedApplication().terminate(self)
+        NSApplication.shared.terminate(self)
     }
     
     @IBAction func update(sender: NSMenuItem)
@@ -144,8 +144,8 @@ class StatusMenuController: NSObject
             let notification  = NSUserNotification.init()
             notification.title = "Updating Weather"
             notification.soundName = NSUserNotificationDefaultSoundName
-            let center = NSUserNotificationCenter.defaultUserNotificationCenter()
-            center.deliverNotification(notification)
+        let center = NSUserNotificationCenter.default
+        center.deliver(notification)
         #endif
         
 

@@ -15,10 +15,10 @@ class AppPreferences
     static var CityId:Int {
         get{
         
-            return NSUserDefaults.standardUserDefaults().integerForKey(Defaults.CITY_ID)
+            return UserDefaults.standard.integer(forKey: Defaults.CITY_ID)
         }
         set(value) {
-            NSUserDefaults.standardUserDefaults().setInteger(value, forKey: Defaults.CITY_ID)
+            UserDefaults.standard.set(value, forKey: Defaults.CITY_ID)
            // update()
         }
         
@@ -27,21 +27,21 @@ class AppPreferences
     static var PollutionId: [AnyObject]? {
         get{
         
-        return NSUserDefaults.standardUserDefaults().arrayForKey(Defaults.POLLUTION_ID)
+            return UserDefaults.standard.array(forKey: Defaults.POLLUTION_ID) as [AnyObject]?
         }
         set(value) {
-            NSUserDefaults.standardUserDefaults().setObject(value, forKey: Defaults.POLLUTION_ID)
+            UserDefaults.standard.set(value, forKey: Defaults.POLLUTION_ID)
         }
         
     }
     
     static var Units: String?{
         get {
-            return NSUserDefaults.standardUserDefaults().stringForKey(Defaults.UNITS)
+            return UserDefaults.standard.string(forKey: Defaults.UNITS)
         }
         set(value)
         {
-            NSUserDefaults.standardUserDefaults().setValue(value, forKeyPath: Defaults.UNITS)
+            UserDefaults.standard.setValue(value, forKeyPath: Defaults.UNITS)
             update()
         }
     }
@@ -49,21 +49,21 @@ class AppPreferences
     
     static var SyncInterval: Int {
         get {
-            return NSUserDefaults.standardUserDefaults().integerForKey(Defaults.SYNC_INTERVAL)
+            return UserDefaults.standard.integer(forKey: Defaults.SYNC_INTERVAL)
         }
         set(value)
         {
-            NSUserDefaults.standardUserDefaults().setInteger(value, forKey: Defaults.SYNC_INTERVAL)
+            UserDefaults.standard.set(value, forKey: Defaults.SYNC_INTERVAL)
         }
     }
     
     static var IconType: String {
         get {
-        return NSUserDefaults.standardUserDefaults().stringForKey(Defaults.ICON_TYPE)!
+            return UserDefaults.standard.string(forKey: Defaults.ICON_TYPE)!
         }
         set(value)
         {
-            NSUserDefaults.standardUserDefaults().setValue(value, forKey: Defaults.ICON_TYPE)
+            UserDefaults.standard.setValue(value, forKey: Defaults.ICON_TYPE)
             update()
         }
     }
@@ -74,6 +74,6 @@ class AppPreferences
     {
        // let updateNotif = NSNotification()
     
-        NSNotificationCenter.defaultCenter().postNotificationName(Constants.UPDATE_NOTIFICATION, object: nil)
+        NotificationCenter.default.post(name: NSNotification.Name(rawValue: Constants.UPDATE_NOTIFICATION), object: nil)
     }
 }
