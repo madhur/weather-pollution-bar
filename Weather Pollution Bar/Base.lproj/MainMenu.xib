@@ -19,32 +19,32 @@
                 <menuItem title="Update" id="vBh-XH-AH4">
                     <modifierMask key="keyEquivalentModifierMask"/>
                     <connections>
-                        <action selector="update:" target="6u1-zs-h70" id="FHS-ej-tVk"/>
+                        <action selector="updateWithSender:" target="6u1-zs-h70" id="GLc-9s-aPz"/>
                     </connections>
                 </menuItem>
                 <menuItem isSeparatorItem="YES" id="52Q-v2-LGB"/>
-                <menuItem isSeparatorItem="YES" id="qqM-0B-uro"/>
                 <menuItem isSeparatorItem="YES" id="FNt-XP-74n"/>
+                <menuItem isSeparatorItem="YES" id="qqM-0B-uro"/>
                 <menuItem title="Settings" id="yxd-zn-Soz">
                     <modifierMask key="keyEquivalentModifierMask"/>
                     <connections>
-                        <action selector="settingsClicked:" target="6u1-zs-h70" id="drP-Lt-mcC"/>
+                        <action selector="settingsClickedWithSender:" target="6u1-zs-h70" id="2yh-D8-Du0"/>
                     </connections>
                 </menuItem>
                 <menuItem title="About" id="Z8H-dF-GRb">
                     <modifierMask key="keyEquivalentModifierMask"/>
                     <connections>
-                        <action selector="aboutClicked:" target="6u1-zs-h70" id="1DG-9m-0uM"/>
+                        <action selector="aboutClickedWithSender:" target="6u1-zs-h70" id="smd-pP-rQk"/>
                     </connections>
                 </menuItem>
                 <menuItem title="Quit" id="LHI-Pc-PvG">
                     <modifierMask key="keyEquivalentModifierMask"/>
                     <connections>
-                        <action selector="quitClicked:" target="6u1-zs-h70" id="beY-tY-g58"/>
+                        <action selector="quitClickedWithSender:" target="6u1-zs-h70" id="m3a-lv-gqs"/>
                     </connections>
                 </menuItem>
             </items>
-            <point key="canvasLocation" x="471" y="323.5"/>
+            <point key="canvasLocation" x="471" y="323"/>
         </menu>
         <customObject id="6u1-zs-h70" customClass="StatusMenuController" customModule="Weather_Pollution_Bar" customModuleProvider="target">
             <connections>
