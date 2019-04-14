@@ -140,6 +140,11 @@ class SettingsWindowController: NSWindowController, NSComboBoxDataSource, NSComb
         
     }
     
+    func numberOfItems(in comboBox: NSComboBox) -> Int {
+        return weatherCitiesArray.count
+    }
+    
+
     func getCityIndex(typedCity : String) -> [Int: WeatherCity]?
     {
         
