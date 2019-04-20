@@ -191,23 +191,23 @@ class SettingsWindowController: NSWindowController, NSComboBoxDataSource, NSComb
         AppPreferences.IconType = iconCombo.objectValueOfSelectedItem as! String
     }
     
-    func numberOfItemsInComboBox(in aComboBox: NSComboBox) -> Int {
-        return weatherCitiesArray.count
-    }
+//    public func numberOfItemsInComboBox(in aComboBox: NSComboBox) -> Int {
+//        return weatherCitiesArray.count
+//    }
+//
+//    public func comboBox(aComboBox: NSComboBox, objectValueForItemAtIndex index: Int) -> Any? {
+//
+//        if index == -1
+//        {
+//            print("recieved -1")
+//            return weatherCitiesArray[0]
+//        }
+//
+//        return weatherCitiesArray[index].name! as AnyObject
+//
+//    }
 
-    func comboBox(aComboBox: NSComboBox, objectValueForItemAtIndex index: Int) -> Any? {
-
-        if index == -1
-        {
-            print("recieved -1")
-            return weatherCitiesArray[0]
-        }
-
-        return weatherCitiesArray[index].name! as AnyObject
-
-    }
-
-    func comboBoxSelectionDidChange(notification: NSNotification) {
+ //   func comboBoxSelectionDidChange(notification: NSNotification) {
         
 //        print(weatherCitiesArray[cityCombo.indexOfSelectedItem].name!)
 //        let cityId = weatherCitiesArray[cityCombo.indexOfSelectedItem].id!
@@ -217,7 +217,7 @@ class SettingsWindowController: NSWindowController, NSComboBoxDataSource, NSComb
 //        
 //        selectPollution((CityIdDict?.values.first)!)
         
-    }
+   // }
     
     func selectPollution(selectedWeathercity: WeatherCity)
     {
@@ -335,18 +335,4 @@ class SettingsWindowController: NSWindowController, NSComboBoxDataSource, NSComb
         var pollutionIds: [Int]
         
     }
-    
-    //    func comboBox(aComboBox: NSComboBox, indexOfItemWithStringValue string: String) -> Int {
-    //       // print(string)
-    //        let index =  getCityIndex(string)
-    //        if let indexVal = index
-    //        {
-    //            return indexVal.keys.first!
-    //        }
-    //        
-    //        print("returning zero for" + string)
-    //        return 0
-    //        
-    //    }
-    
 }
