@@ -41,9 +41,9 @@
 		73D5585551EDB2DEE2AE2FE5BA88B119 /* LoggerClient.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = LoggerClient.h; path = "Client Logger/iOS/LoggerClient.h"; sourceTree = "<group>"; };
 		89DB08E4D92936DA060643A0F7662178 /* Pods-Weather Pollution BarUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Weather Pollution BarUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		9D174A0F5188C60CC14DF01BC720A9CA /* Pods-Weather Pollution Bar-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-Weather Pollution Bar-acknowledgements.plist"; sourceTree = "<group>"; };
-		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		9F12614234781CB75DA04D2632F5BAAB /* Pods-Weather Pollution BarTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Weather Pollution BarTests.release.xcconfig"; sourceTree = "<group>"; };
-		A1465CD747789319F8E455DC8F3636C2 /* libPods-Weather Pollution BarTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; name = "libPods-Weather Pollution BarTests.a"; path = "libPods-Weather Pollution BarTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		A1465CD747789319F8E455DC8F3636C2 /* libPods-Weather Pollution BarTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Weather Pollution BarTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A49B3AD184B8202F4233B319F92C8228 /* Pods-Weather Pollution Bar.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Weather Pollution Bar.debug.xcconfig"; sourceTree = "<group>"; };
 		ACBE78FABD0942E4114FE8DD70E8A319 /* Pods-Weather Pollution BarUITests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-Weather Pollution BarUITests-dummy.m"; sourceTree = "<group>"; };
 		AE31D1FA20F17C3293A90E385D31F0D7 /* Pods-Weather Pollution BarTests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-Weather Pollution BarTests-acknowledgements.plist"; sourceTree = "<group>"; };
@@ -51,10 +51,10 @@
 		D08D6DDFDEBF81B0774BD6057EA1CEED /* NSLogger-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "NSLogger-dummy.m"; sourceTree = "<group>"; };
 		D3785DF0D41F108F6EE65C1BADFA5A1A /* Pods-Weather Pollution Bar-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-Weather Pollution Bar-acknowledgements.markdown"; sourceTree = "<group>"; };
 		D412191D82D76B8CBE09F344E605300E /* Pods-Weather Pollution Bar.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Weather Pollution Bar.release.xcconfig"; sourceTree = "<group>"; };
-		E0C975227F7DA50645A25D5BF4E83E33 /* libPods-Weather Pollution Bar.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; name = "libPods-Weather Pollution Bar.a"; path = "libPods-Weather Pollution Bar.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		E0C975227F7DA50645A25D5BF4E83E33 /* libPods-Weather Pollution Bar.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Weather Pollution Bar.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E89F93D3AB2F781C233A5AE595504869 /* LoggerCommon.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = LoggerCommon.h; path = "Client Logger/iOS/LoggerCommon.h"; sourceTree = "<group>"; };
-		ED4231886C57DCE91D793405AD8863DE /* libNSLogger.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; name = libNSLogger.a; path = libNSLogger.a; sourceTree = BUILT_PRODUCTS_DIR; };
-		FCF226F6CB304F826AC379599F3D90EF /* libPods-Weather Pollution BarUITests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; name = "libPods-Weather Pollution BarUITests.a"; path = "libPods-Weather Pollution BarUITests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		ED4231886C57DCE91D793405AD8863DE /* libNSLogger.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libNSLogger.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		FCF226F6CB304F826AC379599F3D90EF /* libPods-Weather Pollution BarUITests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Weather Pollution BarUITests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -116,7 +116,6 @@
 				EFDDA9DDE1F22C8C7A1F5FE423D312CB /* Standard */,
 				840F20EB2A3771AA5E8B89F118111E2D /* Support Files */,
 			);
-			name = NSLogger;
 			path = NSLogger;
 			sourceTree = "<group>";
 		};
@@ -320,7 +319,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0930;
-				LastUpgradeCheck = 0930;
+				LastUpgradeCheck = 1010;
 			};
 			buildConfigurationList = 4821239608C13582E20E6DA73FD5F1F9 /* Build configuration list for PBXProject "Pods" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -393,7 +392,6 @@
 			baseConfigurationReference = 72EFABAFB2078786F965B2C0A4DD9B59 /* Pods-Weather Pollution BarUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
-				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
 				CLANG_ENABLE_OBJC_WEAK = NO;
 				CODE_SIGN_IDENTITY = "-";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
@@ -416,7 +414,6 @@
 			baseConfigurationReference = 89DB08E4D92936DA060643A0F7662178 /* Pods-Weather Pollution BarUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
-				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
 				CLANG_ENABLE_OBJC_WEAK = NO;
 				CODE_SIGN_IDENTITY = "-";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
@@ -439,7 +436,6 @@
 			baseConfigurationReference = 9F12614234781CB75DA04D2632F5BAAB /* Pods-Weather Pollution BarTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
-				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
 				CLANG_ENABLE_OBJC_WEAK = NO;
 				CODE_SIGN_IDENTITY = "-";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
@@ -461,7 +457,6 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 5051C72B9128617B79CEB521B62FAA56 /* NSLogger.xcconfig */;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
 				CLANG_ENABLE_OBJC_WEAK = NO;
 				CODE_SIGN_IDENTITY = "-";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
@@ -487,7 +482,6 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 5051C72B9128617B79CEB521B62FAA56 /* NSLogger.xcconfig */;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
 				CLANG_ENABLE_OBJC_WEAK = NO;
 				CODE_SIGN_IDENTITY = "-";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
@@ -578,7 +572,6 @@
 			baseConfigurationReference = BCBE819D7350A43CA74F86A3B22D8AEE /* Pods-Weather Pollution BarTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
-				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
 				CLANG_ENABLE_OBJC_WEAK = NO;
 				CODE_SIGN_IDENTITY = "-";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
@@ -601,7 +594,6 @@
 			baseConfigurationReference = A49B3AD184B8202F4233B319F92C8228 /* Pods-Weather Pollution Bar.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
-				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
 				CLANG_ENABLE_OBJC_WEAK = NO;
 				CODE_SIGN_IDENTITY = "-";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
@@ -672,8 +664,7 @@
 				MTL_FAST_MATH = YES;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				STRIP_INSTALLED_PRODUCT = NO;
-				SWIFT_COMPILATION_MODE = wholemodule;
-				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 				SWIFT_VERSION = 4.2;
 				SYMROOT = "${SRCROOT}/../build";
 			};
@@ -684,7 +675,6 @@
 			baseConfigurationReference = D412191D82D76B8CBE09F344E605300E /* Pods-Weather Pollution Bar.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
-				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
 				CLANG_ENABLE_OBJC_WEAK = NO;
 				CODE_SIGN_IDENTITY = "-";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";

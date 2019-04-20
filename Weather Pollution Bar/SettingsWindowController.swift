@@ -188,36 +188,28 @@ class SettingsWindowController: NSWindowController, NSComboBoxDataSource, NSComb
     }
     
     @IBAction func selectIcon(sender: NSComboBox) {
+       
         AppPreferences.IconType = iconCombo.objectValueOfSelectedItem as! String
     }
     
-//    public func numberOfItemsInComboBox(in aComboBox: NSComboBox) -> Int {
-//        return weatherCitiesArray.count
-//    }
-//
-//    public func comboBox(aComboBox: NSComboBox, objectValueForItemAtIndex index: Int) -> Any? {
-//
-//        if index == -1
-//        {
-//            print("recieved -1")
-//            return weatherCitiesArray[0]
-//        }
-//
-//        return weatherCitiesArray[index].name! as AnyObject
-//
-//    }
+      func numberOfItems(in comboBox: NSComboBox) -> Int {
+        
+        return weatherCitiesArray.count
+    }
 
- //   func comboBoxSelectionDidChange(notification: NSNotification) {
+    func comboBox(_ comboBox: NSComboBox, objectValueForItemAt index: Int) -> Any? {
         
-//        print(weatherCitiesArray[cityCombo.indexOfSelectedItem].name!)
-//        let cityId = weatherCitiesArray[cityCombo.indexOfSelectedItem].id!
-//        AppPreferences.CityId = cityId
-//        
-//        let CityIdDict = getCityIndexById(cityId)
-//        
-//        selectPollution((CityIdDict?.values.first)!)
-        
-   // }
+        if index == -1
+        {
+            print("recieved -1")
+            return weatherCitiesArray[0]
+        }
+
+        return weatherCitiesArray[index].name! as AnyObject
+
+    }
+
+
     
     func selectPollution(selectedWeathercity: WeatherCity)
     {
