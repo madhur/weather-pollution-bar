@@ -8,7 +8,7 @@
     <objects>
         <customObject id="-2" userLabel="File's Owner" customClass="SettingsWindowController" customModule="Weather_Pollution_Bar" customModuleProvider="target">
             <connections>
-                <outlet property="cityCombo" destination="oem-rV-fez" id="7gB-4o-KaZ"/>
+                <outlet property="cityCombo" destination="oem-rV-fez" id="sdr-gI-UWH"/>
                 <outlet property="iconCombo" destination="weP-tB-uv1" id="Zeu-jl-uaa"/>
                 <outlet property="pollutionLabel" destination="GA1-qU-HG3" id="gzc-DZ-XSh"/>
                 <outlet property="syncCombo" destination="OIy-1z-SCV" id="fC4-IN-DRS"/>
@@ -36,7 +36,7 @@
                             <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                         </comboBoxCell>
                         <connections>
-                            <action selector="selectCityWithSender:" target="-2" id="1or-Kr-VZA"/>
+                            <action selector="selectCityWithSender:" target="-2" id="ieI-EY-Whk"/>
                             <outlet property="dataSource" destination="-2" id="h6V-UV-QIi"/>
                             <outlet property="delegate" destination="-2" id="Mcz-5S-jM4"/>
                         </connections>

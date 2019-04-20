@@ -142,10 +142,6 @@ class SettingsWindowController: NSWindowController, NSComboBoxDataSource, NSComb
         
     }
     
-    func numberOfItems(in comboBox: NSComboBox) -> Int {
-        return weatherCitiesArray.count
-    }
-    
 
     func getCityIndex(typedCity : String) -> [Int: WeatherCity]?
     {
@@ -195,22 +191,22 @@ class SettingsWindowController: NSWindowController, NSComboBoxDataSource, NSComb
         AppPreferences.IconType = iconCombo.objectValueOfSelectedItem as! String
     }
     
-    func numberOfItemsInComboBox(aComboBox: NSComboBox) -> Int {
+    func numberOfItemsInComboBox(in aComboBox: NSComboBox) -> Int {
         return weatherCitiesArray.count
     }
-    
-    func comboBox(aComboBox: NSComboBox, objectValueForItemAtIndex index: Int) -> AnyObject {
-        
+
+    func comboBox(aComboBox: NSComboBox, objectValueForItemAtIndex index: Int) -> Any? {
+
         if index == -1
         {
             print("recieved -1")
             return weatherCitiesArray[0]
         }
-        
+
         return weatherCitiesArray[index].name! as AnyObject
-        
+
     }
-    
+
     func comboBoxSelectionDidChange(notification: NSNotification) {
         
 //        print(weatherCitiesArray[cityCombo.indexOfSelectedItem].name!)
