@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		41B880B10229E0316FC5C521 /* libPods-Weather Pollution BarUITests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 44DF7DAA45D30F53307DBD38 /* libPods-Weather Pollution BarUITests.a */; };
+		8650EEAE226B221300E8A141 /* cities.json in Resources */ = {isa = PBXBuildFile; fileRef = 8650EEAD226B221200E8A141 /* cities.json */; };
+		8650EEB0226B26DC00E8A141 /* pollution_cities.json in Resources */ = {isa = PBXBuildFile; fileRef = 8650EEAF226B26DB00E8A141 /* pollution_cities.json */; };
 		C60719189266B475B20C6FBC /* libPods-Weather Pollution Bar.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 578C0370E669BCDD4130C857 /* libPods-Weather Pollution Bar.a */; };
 		E04B039F1C40B25A00DF988D /* PollutionColorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E04B039E1C40B25A00DF988D /* PollutionColorView.swift */; };
 		E04B33F01C5346F400D5AE3A /* icons.icns in Resources */ = {isa = PBXBuildFile; fileRef = E04B33EF1C5346F400D5AE3A /* icons.icns */; };
@@ -60,6 +62,8 @@
 		4AD158DB184399E445EB9773 /* Pods-Weather Pollution Bar.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Weather Pollution Bar.debug.xcconfig"; path = "Target Support Files/Pods-Weather Pollution Bar/Pods-Weather Pollution Bar.debug.xcconfig"; sourceTree = "<group>"; };
 		578C0370E669BCDD4130C857 /* libPods-Weather Pollution Bar.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Weather Pollution Bar.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		79C93B33E2C9B15CFF1E594D /* Pods-Weather Pollution BarTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Weather Pollution BarTests.debug.xcconfig"; path = "Target Support Files/Pods-Weather Pollution BarTests/Pods-Weather Pollution BarTests.debug.xcconfig"; sourceTree = "<group>"; };
+		8650EEAD226B221200E8A141 /* cities.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = cities.json; sourceTree = "<group>"; };
+		8650EEAF226B26DB00E8A141 /* pollution_cities.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = pollution_cities.json; sourceTree = "<group>"; };
 		D1FE2F48BAD2AE1EF2B05D0D /* Pods-Weather Pollution BarUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Weather Pollution BarUITests.debug.xcconfig"; path = "Target Support Files/Pods-Weather Pollution BarUITests/Pods-Weather Pollution BarUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		E009953C6A635B0651718906 /* libPods-Weather Pollution BarTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Weather Pollution BarTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E04B039E1C40B25A00DF988D /* PollutionColorView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PollutionColorView.swift; sourceTree = "<group>"; };
@@ -170,6 +174,8 @@
 		E0E390451C3857620000CDFA /* Weather Pollution Bar */ = {
 			isa = PBXGroup;
 			children = (
+				8650EEAF226B26DB00E8A141 /* pollution_cities.json */,
+				8650EEAD226B221200E8A141 /* cities.json */,
 				E04B33EF1C5346F400D5AE3A /* icons.icns */,
 				E05A09B51C5342C4001624EB /* Weather Pollution Bar.entitlements */,
 				E0E390461C3857620000CDFA /* AppDelegate.swift */,
@@ -333,8 +339,10 @@
 				E0AB53461C3D5B2B00E761F7 /* PollutionView.xib in Resources */,
 				E0E390491C3857620000CDFA /* Assets.xcassets in Resources */,
 				E0E390781C38CE2B0000CDFA /* AboutWindowController.xib in Resources */,
+				8650EEAE226B221300E8A141 /* cities.json in Resources */,
 				E0E390741C38CE180000CDFA /* SettingsWindowController.xib in Resources */,
 				E04B33F01C5346F400D5AE3A /* icons.icns in Resources */,
+				8650EEB0226B26DC00E8A141 /* pollution_cities.json in Resources */,
 				E0E3904C1C3857620000CDFA /* MainMenu.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

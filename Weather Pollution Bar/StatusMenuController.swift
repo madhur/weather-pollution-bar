@@ -55,10 +55,10 @@ class StatusMenuController: NSObject
        weatherView?.statusMenuViewController = self
        pollutionView?.statusMenuViewController = self
         
-        NotificationCenter.default.addObserver(self, selector: "updateNotification:", name: NSNotification.Name(rawValue: Constants.UPDATE_NOTIFICATION), object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(StatusMenuController.updateNotification), name: NSNotification.Name(rawValue: Constants.UPDATE_NOTIFICATION), object: nil)
         
         
-        let timer = Timer.scheduledTimer(timeInterval: Double(Constants.SYNC_INTERVAL[0]*60), target: self, selector: Selector("update"), userInfo: nil, repeats: true)
+        let timer = Timer.scheduledTimer(timeInterval: Double(Constants.SYNC_INTERVAL[0]*60), target: self, selector: #selector(StatusMenuController.update2), userInfo: nil, repeats: true)
         
         //let timer = NSTimer.scheduledTimerWithTimeInterval(5, target: self, selector: Selector("update"), userInfo: nil, repeats: true)
         self.timer = timer
@@ -69,14 +69,14 @@ class StatusMenuController: NSObject
 
     }
     
-    func updateNotification(notification: NSNotification)
+    @objc func updateNotification(notification: NSNotification)
     {
         
         update(sender: weatherMenuItem)
         
     }
     
-    func update()
+    @objc func update2()
     {
         update(sender: weatherMenuItem)
     }

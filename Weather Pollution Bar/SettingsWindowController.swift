@@ -68,8 +68,10 @@ class SettingsWindowController: NSWindowController, NSComboBoxDataSource, NSComb
             
             if let cityIndexVal = cityIndex
             {
+                DispatchQueue.main.async(execute: {
+                    self.cityCombo.stringValue = (cityIndexVal.values.first?.name!)!
+                })
                 
-                self.cityCombo.stringValue = (cityIndexVal.values.first?.name!)!
             }
 
         
@@ -185,7 +187,7 @@ class SettingsWindowController: NSWindowController, NSComboBoxDataSource, NSComb
         
         print("setting refresh interval to" + String(AppPreferences.SyncInterval))
         
-        statusMenuController.timer = Timer.scheduledTimer(timeInterval: Double(AppPreferences.SyncInterval*60), target: statusMenuController, selector: Selector("update"), userInfo: nil, repeats: true)
+        statusMenuController.timer = Timer.scheduledTimer(timeInterval: Double(AppPreferences.SyncInterval*60), target: statusMenuController, selector: #selector(StatusMenuController.update2), userInfo: nil, repeats: true)
         
     }
     
