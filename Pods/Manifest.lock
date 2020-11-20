@@ -7,7 +7,7 @@ DEPENDENCIES:
   - NSLogger
 
 SPEC REPOS:
-  https://github.com/cocoapods/specs.git:
+  trunk:
     - NSLogger
 
 SPEC CHECKSUMS:
@@ -15,4 +15,4 @@ SPEC CHECKSUMS:
 
 PODFILE CHECKSUM: 6cb5e6a9a077e5676be82732b3347782d9e2e3f6
 
-COCOAPODS: 1.6.1
+COCOAPODS: 1.9.2
